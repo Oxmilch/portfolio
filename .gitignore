@@ -25,6 +25,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # ビルド成果物・依存関係など
+dist/
+build/
+out/
+coverage/
 /.pnp
 .pnp.js
 node_modules/
