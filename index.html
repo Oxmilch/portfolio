@@ -13,18 +13,218 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <!-- <link rel="stylesheet" href="./css/index.css"> -->
+    <style>
+        /* Variables (Light Mode And Desktop Landscape Layout) */
+        :root{
+            --font-family: "IBM Plex Sans JP", sans-serif;
+            --font-color: #1F2937;
+            --font-color-sub: #1F293755;
+            --bg-color: #F3F4F6;
+            --card-bg-color: #fefefe;
+            --card-bdr-color: #E5E7EB;
+            --card-radius: 12px;
+            --card-shadow: 0 4px 6px -1px #00000003;
+            --card-glass: none;
+            --ac-color: #3B82F6;
+
+            --logo-size: 48px;
+            --logo-git: url(./img/github-mark.svg);
+            --logo-x: url(./img/logo-black.png);
+        }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root{
+                --font-color: #f8fafc;
+                --font-color-sub: #f8fafc55;
+                --bg-color: #0f172a;
+                --card-bg-color: #1e293bb3;
+                --card-bdr-color: #ffffff03;
+                --card-radius: 16px;
+                --card-shadow: 0 8px 32px 0 #0000005f;
+                --card-glass: blur(12px);
+                --ac-color: #a855f7;
+
+                --logo-size: 48px;
+                --logo-git: url(./img/github-mark-white.svg);
+                --logo-x: url(./img/logo.svg);
+            }
+        }
+
+        /* Desktop Landscape Layout */
+        /* Tag */
+        html            { font-family: var(--font-family);
+                          font-size: 100%;
+                          color: var(--font-color);
+                          line-height: 1.7rem;
+                          background-color: var(--bg-color)}
+        main            { min-width: 900px;
+                          width: 128vh;
+                          max-width: 1800px;
+                          min-height: 675px;
+                          height: 96vh;
+                          margin: 2vh auto;
+                          display: grid;
+                          gap: 12px;
+                          grid-template-columns: repeat(9, 1fr);
+                          grid-template-rows: repeat(9, 1fr);
+                          grid-template-areas:
+                             "t t t t t t t t t"
+                             "t t t t t t t t t"
+                             "d d d n n n e e e"
+                             "d d d g m x e e e"
+                             "d d d p p p e e e"
+                             "d d d p p p e e e"
+                             "d d d p p p e e e"
+                             "d d d p p p e e e"
+                             "c c c c c c c c c"
+                        ;}
+        main div div    { padding: 0.3rem 0.6rem; }
+        small           { color: var(--font-color-sub) }
+        /* Class - GridLayout */
+        .grid-title     { grid-area: t; }
+        .grid-name      { grid-area: n; }
+        .grid-git       { grid-area: g; }
+        .grid-x         { grid-area: x; }
+        .grid-me        { grid-area: m; }
+        .grid-engineer  { grid-area: e; }
+        .grid-designer  { grid-area: d; }
+        .grid-profile   { grid-area: p; }
+        .grid-copyright { grid-area: c; }
+        /* Class - GridLayout - Card */
+        .card-title,
+        .card-name,
+        .card-git,
+        .card-x,
+        .card-me,
+        .card-engineer,
+        .card-designer,
+        .card-profile,
+        .card-copyright { width: 100%;
+                          height: 100%;
+                          background-color: var(--card-bg-color);
+                          border:1px solid var(--card-bdr-color);
+                          border-radius: var(--card-radius);
+                          box-shadow: var(--card-shadow);
+                          backdrop-filter: var(--card-glass);
+                          -webkit-backdrop-filter: var(--card-glass);
+                          text-align: center;
+                          vertical-align: middle;}
+        /* Class - GridLayout - Card - Image */
+        .img-logo-git,
+        .img-logo-x     { width: var(--logo-size);
+                          height: var(--logo-size);
+                          background-repeat: no-repeat;
+                          background-size: var(--logo-size);
+                          margin: calc((100% - var(--logo-size))/4) auto 0; }
+        .img-logo-git   { background-image: var(--logo-git); }
+        .img-logo-x     { background-image: var(--logo-x); }
+        /* Tablet Portrait Layout */
+        @media(max-width:899px){
+            main        { min-width: 600px;
+                         min-height: 800px;
+                         height: 120vw;
+                         margin: 2.5vh auto;
+                         grid-template-columns: repeat(6, 1fr);
+                         grid-template-rows: repeat(12, 1fr);
+                         grid-template-areas:
+                             "t t t t t t"
+                             "t t t t t t"
+                             "t t t t t t"
+                             "n n n e e e"
+                             "g m x e e e"
+                             "d d d e e e"
+                             "d d d e e e"
+                             "d d d e e e"
+                             "d d d e e e"
+                             "d d d p p p"
+                             "d d d c c c";}
+        }
+        /* Mobile Portrait Layout */
+        @media(max-width:599px){
+            main        { min-width: 300px;
+                          min-height: 400px;
+                          height: 200vw;
+                          margin: 2.5vh auto;
+                          grid-template-columns: repeat(3, 1fr);
+                          grid-template-rows: repeat(18, 1fr);
+                          grid-template-areas:
+                              "t t t"
+                              "t t t"
+                              "t t t"
+                              "t t t"
+                              "t t t"
+                              "t t t"
+                              "n n n"
+                              "g m x"
+                              "e e e"
+                              "e e e"
+                              "e e e"
+                              "e e e"
+                              "e e e"
+                              "e e e"
+                              "d d d"
+                              "d d d"
+                              "d d d"
+                              "d d d"
+                              "d d d"
+                              "d d d"
+                              "p p p"
+                              "p p p"
+                              "p p p"
+                              "p p p"
+                              "c c c";}
+        }
+    </style>
 </head>
 <body>
-    <header>
-        Portfolio
-    </header>
-
     <main>
+        <div class="grid-name">
+            <div class="card-name">@oxmilch</div>
+        </div>
+        <div class="grid-git">
+            <div class="card-git">
+                <a href="https://github.com/oxmilch/">
+                    <!-- github logo from https://github.com/logos -->
+                    <div class="img-logo-git"></div>
+                    <!-- <img class="img-logo" src="./img/github-mark-white.svg" alt="github logo"> -->
+                </a>
+            </div>
+        </div>
+        <div class="grid-x">
+            <div class="card-x">
+                <a href="https://x.com/oxmilch">
+                    <!-- X icon by https://about.x.com/ja/who-we-are/brand-toolkit -->
+                    <div class="img-logo-x"></div>
+                </a>
+            </div>
+        </div>
+        <div class="grid-me">
+            <div class="card-me">
+                <a href="./index.html">
+                    <!-- <img class="img-logo" src="" alt="my icon"> -->
+                </a>
+            </div>
+        </div>
+        <div class="grid-title">
+            <div class="card-title">title</div>
+        </div>
+        <div class="grid-engineer">
+            <div class="card-engineer">Engineering Portfolio</div>
+        </div>
+        <div class="grid-designer">
+            <div class="card-designer">Design Portfolio</div>
+        </div>
+        <div class="grid-profile">
+            <div class="card-profile">Profile</div>
+        </div>
+        <div class="grid-copyright">
+            <div class="card-copyright">
+                <small>&copy; 2026 Oxmilch</small>
+            </div>
+        </div>
     </main>
-
-    <footer>
-    </footer>
 </body>
 </html>
