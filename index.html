@@ -11,6 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
     <!-- Style CSS -->
     <!-- <link rel="stylesheet" href="./css/style.css"> -->
@@ -19,7 +20,6 @@
         /*** Variables ***/
         :root{
             /* Light Mode */
-            --font-family: "IBM Plex Sans JP", sans-serif;
             --font-color: #1F2937;
             --font-color-sub: #1F293755;
             --bg-color: #F3F4F6;
@@ -36,28 +36,19 @@
             --default-width: 667px;
             --default-height: 335px;
             --grid-col: 3;
-            --grid-row: 15;
-            --default-logo-size: 60px;
+            --grid-row: 14;
+            --grid-gap: 18px;
             --main-w-min: 300px;
             --main-w: 90vw;
-            --main-h-min: 400px;
-            --main-h: 200vw;
-            --main-margin: 2.5vh auto;
-            --grid-gap: 9px;
+            --main-h-min: auto;
+            --main-h: 450vw;
+            --main-margin: 2.5vw auto 0;
             --grid-tmp-area:
                 "t t t"
-                "t t t"
-                "t t t"
-                "t t t"
-                "g m x"
                 "e e e"
                 "e e e"
                 "e e e"
                 "e e e"
-                "e e e"
-                "e e e"
-                "d d d"
-                "d d d"
                 "d d d"
                 "d d d"
                 "d d d"
@@ -66,6 +57,7 @@
                 "p p p"
                 "p p p"
                 "p p p"
+                "g x m"
                 "c c c";
             --title-align: center;
         }
@@ -73,7 +65,7 @@
         /* Dark Mode */
         @media(prefers-color-scheme: dark){
             :root{
-                --font-family: "IBM Plex Sans JP", sans-serif;
+                --font-ja: "IBM Plex Sans JP", sans-serif;
                 --font-color: #f8fafc;
                 --font-color-sub: #f8fafc55;
                 --bg-color: #0f172a;
@@ -95,30 +87,35 @@
                 --default-height: 1080px;
                 --grid-col: 8;
                 --grid-row: 6;
-                --grid-gap: 12px;
-                --default-logo-size: 100px;
+                --grid-gap: 36px;
                 --main-w-min: 768px;
                 --main-w: 128vh;
                 --main-h-min: 576px;
                 --main-h: 96vh;
-                --main-margin: 2vh auto;
+                --main-margin: 2vh auto 0;
                 --grid-tmp-area:
                     "m e e e e t t t"
                     "g e e e e d d d"
                     "x e e e e d d d"
-                    "c e e e e d d d"
-                    "p p p p p p 0 0"
-                    "p p p p p p 0 0";
+                    "0 e e e e d d d"
+                    "p p p p p d d d"
+                    "p p p p p d d d";
                 --title-align: right;
             }
         }
 
         /*** Styles ***/
+        /* Class - Common*/
+        .font-ja          { font-family: "IBM Plex Sans JP", sans-serif;
+                            font-style: normal;
+                            font-weight: 400;
+                            color: var(--font-color);}
+        .font-en-ex-light { font-family: "IBM Plex Sans", sans-serif;
+                            font-style: normal;
+                            font-weight: 200;
+                            color: var(--font-color);}
         /* Tag */
-        html            { font-family: var(--font-family);
-                          font-size: 100%;
-                          color: var(--font-color);
-                          line-height: 1.7rem;
+        html            { font-size: 100%;
                           background-color: var(--bg-color)}
         main            { min-width: var(--main-w-min);
                           width: var(--main-w);
@@ -130,7 +127,7 @@
                           grid-template-columns: repeat(var(--grid-col), 1fr);
                           grid-template-rows: repeat(var(--grid-row), 1fr);
                           grid-template-areas: var(--grid-tmp-area);}
-        main div div    { padding: 0.3rem 0.6rem; }
+        footer          { text-align: center; }
         small           { color: var(--font-color-sub) }
         /* Class - GridLayout */
         .grid-title     { grid-area: t; }
@@ -140,14 +137,14 @@
         .grid-engineer  { grid-area: e; }
         .grid-designer  { grid-area: d; }
         .grid-profile   { grid-area: p; }
-        .grid-copyright { grid-area: c; }
+        /* Class - GridLayout - */
         /* Class - GridLayout - Card */
-        .card-git,
-        .card-x,
-        .card-me,
         .card-engineer,
         .card-designer,
-        .card-profile   { width: 100%;
+        .card-profile,
+        .card-me,
+        .card-git,
+        .card-x          { width: 100%;
                           height: 100%;
                           background-color: var(--card-bg-color);
                           border:1px solid var(--card-bdr-color);
@@ -156,31 +153,21 @@
                           backdrop-filter: var(--card-glass);
                           -webkit-backdrop-filter: var(--card-glass);
                           text-align: center;
-                          vertical-align: middle;}
-        .card-title     { font-size: 4rem;
-                          color: var(--ac-color);
-                          text-align: var(--title-align);   }
-        .card-copyright { font-size: 0.75rem;
-                          text-align: center;
-                        }
-        /* Class - GridLayout - Card - Image */
-        .img-logo-git,
-        .img-logo-x     { min-width: calc(var(--main-w-min) / var(--default-height));
-                          width: calc(100vh / var(--default-height));
-                          min-height: calc(var(--main-h-min) / var(--default-height) * var(--default-logo-size));
-                          height: calc(100vh / var(--default-height) * var(--default-logo-size));
-                          background-repeat: no-repeat;
-                          /* background-size: calc(100vh / var(--default-height) * var(--default-logo-size)); */
-                          background-size: contain;
-                          margin: 0 auto 0; }
-        .img-logo-git   { background-image: var(--logo-git); }
-        .img-logo-x     { background-image: var(--logo-x); }
+                          vertical-align: middle; }
+        .card-title     { color: var(--ac-color);
+                          font-size: 4rem;
+                          text-align: var(--title-align);}
+        .card-git       { border: none; background-image: var(--logo-git); background-size: contain;}
+        .card-x         { border: none; background-image: var(--logo-x); background-size: contain;}
+        .card-me a,
+        .card-git a,
+        .card-x a     { display: block; min-height:100%; min-width: 100%; }
     </style>
 </head>
 <body>
-    <main>
+    <main class="font-ja">
         <div class="grid-title">
-            <div class="card-title">Portfolio</div>
+            <h1 class="card-title font-en-ex-light">Portfolio</h1>
         </div>
         <div class="grid-engineer">
             <div class="card-engineer">Engineering Portfolio</div>
@@ -191,23 +178,6 @@
         <div class="grid-profile">
             <div class="card-profile">Profile</div>
         </div>
-        <div class="grid-git">
-            <div class="card-git">
-                <a href="https://github.com/oxmilch/">
-                    <!-- github logo from https://github.com/logos -->
-                    <div class="img-logo-git"></div>
-                    <!-- <img class="img-logo" src="./img/github-mark-white.svg" alt="github logo"> -->
-                </a>
-            </div>
-        </div>
-        <div class="grid-x">
-            <div class="card-x">
-                <a href="https://x.com/oxmilch">
-                    <!-- X icon by https://about.x.com/ja/who-we-are/brand-toolkit -->
-                    <div class="img-logo-x"></div>
-                </a>
-            </div>
-        </div>
         <div class="grid-me">
             <div class="card-me">
                 <a href="./index.html">
@@ -215,11 +185,26 @@
                 </a>
             </div>
         </div>
+        <div class="grid-git">
+            <!-- github logo from https://github.com/logos -->
+            <div class="card-git">
+                <a href="https://github.com/oxmilch/"></a>
+            </div>
+        </div>
+        <div class="grid-x">
+            <!-- X icon by https://about.x.com/ja/who-we-are/brand-toolkit -->
+            <div class="card-x">
+                <a href="https://x.com/oxmilch"></a>
+            </div>
+        </div>
         <div class="grid-copyright">
             <div class="card-copyright">
-                <small>&copy; 2026 Oxmilch</small>
+                
             </div>
         </div>
     </main>
+    <footer>
+        <small class="font-en-ex-light">&copy; 2026 Oxmilch</small>
+    </footer>
 </body>
 </html>
