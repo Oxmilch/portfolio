@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
@@ -20,8 +21,8 @@
         /*** Variables ***/
         /** Prefers Color Scheme Mode **/
         /* Light Mode */
-        @media(prefers-color-scheme: light){
-            :root{
+        @media(prefers-color-scheme: light) {
+            :root {
                 /* Light Mode */
                 --font-color: #1F2937;
                 --font-color-sub: #1F293755;
@@ -36,9 +37,10 @@
                 --logo-x: url(./img/logo-black.png);
             }
         }
+
         /* Dark Mode */
-        @media(prefers-color-scheme: dark){
-            :root{
+        @media(prefers-color-scheme: dark) {
+            :root {
                 --font-color: #f8fafc;
                 --font-color-sub: #f8fafc55;
                 --bg-color: #0f172a;
@@ -55,130 +57,193 @@
 
         /** Responsive Layout **/
         /* Desktop Landscape Layout */
-        @media (min-width:768px)
-           and (min-aspect-ratio:4/3) {
-            :root{
-            --default-width: 1440px;
-            --default-height: 1080px;
-            --header-height: 24px;
-            --footer-height: 24px;
-            --wrapper-width-min: 768px;
-            --wrapper-width: 133.33vh;
-            --wrapper-height-min: 576px;
-            --wrapper-height: 100vh;
-            --wrapper-margin: 0 auto;
-            --grid-col: 8;
-            --grid-row: 6;
-            --grid-gap: 12px;
-            --grid-tmp-area:
-                "p p p p p t t t"
-                "p p p p p d d d"
-                "g e e e e d d d"
-                "x e e e e d d d"
-                "m e e e e d d d"
-                "0 e e e e d d d";
-            --title-align: right;
+        @media (min-width:768px) and (min-aspect-ratio:4/3) {
+            :root {
+                --default-width: 1440px;
+                --default-height: 1080px;
+                --header-height: 24px;
+                --footer-height: 24px;
+                --wrapper-width-min: 768px;
+                --wrapper-width: 133.33vh;
+                --wrapper-height-min: 576px;
+                --wrapper-height: 100vh;
+                --wrapper-margin: 0 auto;
+                --grid-col: 8;
+                --grid-row: 6;
+                --grid-gap: 12px;
+                --grid-tmp-area:
+                    "p p p p p t t t"
+                    "p p p p p d d d"
+                    "g e e e e d d d"
+                    "x e e e e d d d"
+                    "m e e e e d d d"
+                    "m e e e e d d d";
+                --title-align: right;
             }
         }
+
         /* Desktop Portrait Layout*/
-        @media(min-width:768px)
-          and (max-aspect-ratio:4/3){
-            :root{
-            --default-width: 1440px;
-            --default-height: 1080px;
-            --header-height: 24px;
-            --footer-height: 24px;
-            --wrapper-width-min: 768px;
-            --wrapper-width: 100vw;
-            --wrapper-height-min: 576px;
-            --wrapper-height: 75vw;
-            --wrapper-margin: 0 auto;
-            --grid-col: 8;
-            --grid-row: 6;
-            --grid-gap: 12px;
-            --grid-tmp-area:
-                "p p p p p t t t"
-                "p p p p p d d d"
-                "g e e e e d d d"
-                "x e e e e d d d"
-                "m e e e e d d d"
-                "0 e e e e d d d";
-            --title-align: right;
+        @media(min-width:768px) and (max-aspect-ratio:4/3) {
+            :root {
+                --default-width: 1440px;
+                --default-height: 1080px;
+                --header-height: 24px;
+                --footer-height: 24px;
+                --wrapper-width-min: 768px;
+                --wrapper-width: 100vw;
+                --wrapper-height-min: 576px;
+                --wrapper-height: 75vw;
+                --wrapper-margin: 0 auto;
+                --grid-col: 8;
+                --grid-row: 6;
+                --grid-gap: 12px;
+                --grid-tmp-area:
+                    "p p p p p t t t"
+                    "p p p p p d d d"
+                    "g e e e e d d d"
+                    "x e e e e d d d"
+                    "m e e e e d d d"
+                    "m e e e e d d d";
+                --title-align: right;
             }
         }
 
         /*** Styles ***/
         /** Common **/
         /* Class */
-        .font-ja          { font-family: "IBM Plex Sans JP", sans-serif;
-                            font-style: normal;
-                            font-weight: 400;
-                            color: var(--font-color);}
-        .font-en-ex-light { font-family: "IBM Plex Sans", sans-serif;
-                            font-style: normal;
-                            font-weight: 200;
-                            color: var(--font-color);}
-        .font-en          { font-family: "IBM Plex Sans", sans-serif;
-                            font-style: normal;
-                            font-weight: 400;
-                            color: var(--font-color);}
-        .font-size-100  { font-size: 1.0rem; }
-        .wrapper        { margin: var(--wrapper-margin); }
+        .font-ja {
+            font-family: "IBM Plex Sans JP", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            color: var(--font-color);
+        }
+
+        .font-en-ex-light {
+            font-family: "IBM Plex Sans", sans-serif;
+            font-style: normal;
+            font-weight: 200;
+            color: var(--font-color);
+        }
+
+        .font-en {
+            font-family: "IBM Plex Sans", sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            color: var(--font-color);
+        }
+
+        .font-size-100 {
+            font-size: 1.0rem;
+        }
+
+        .wrapper {
+            margin: var(--wrapper-margin);
+        }
+
         /* Tag */
-        html            { font-size: 100%;
-                          background-color: var(--bg-color)}
-        header          { min-height: var(--header-height); }
-        main            { min-width: var(--wrapper-width-min);
-                          width: var(--wrapper-width);
-                          min-height: calc(var(--wrapper-height-min)
-                                           - (var(--header-height) + var(--footer-height)));
-                          height: calc(var(--wrapper-height)
-                                       - (var(--header-height) + var(--footer-height)));
-                          display: grid;
-                          gap: var(--grid-gap);
-                          grid-template-columns: repeat(var(--grid-col), 1fr);
-                          grid-template-rows: repeat(var(--grid-row), 1fr);
-                          grid-template-areas: var(--grid-tmp-area);}
-        footer          { min-height: var(--footer-height);
-                          text-align: center; }
-        small           { color: var(--font-color-sub) }
+        html {
+            font-size: 100%;
+            background-color: var(--bg-color)
+        }
+
+        header {
+            min-height: var(--header-height);
+        }
+
+        main {
+            min-width: var(--wrapper-width-min);
+            width: var(--wrapper-width);
+            min-height: calc(var(--wrapper-height-min) - (var(--header-height) + var(--footer-height)));
+            height: calc(var(--wrapper-height) - (var(--header-height) + var(--footer-height)));
+            display: grid;
+            gap: var(--grid-gap);
+            grid-template-columns: repeat(var(--grid-col), 1fr);
+            grid-template-rows: repeat(var(--grid-row), 1fr);
+            grid-template-areas: var(--grid-tmp-area);
+        }
+
+        footer {
+            min-height: var(--footer-height);
+            text-align: center;
+        }
+
+        small {
+            color: var(--font-color-sub)
+        }
+
         /** MainGridLayout **/
         /* Class */
-        .grid-title     { grid-area: t; }
-        .grid-git       { grid-area: g; }
-        .grid-x         { grid-area: x; }
-        .grid-me        { grid-area: m; }
-        .grid-engineer  { grid-area: e; }
-        .grid-designer  { grid-area: d; }
-        .grid-profile   { grid-area: p; }
+        .grid-title {
+            grid-area: t;
+        }
+
+        .grid-git {
+            grid-area: g;
+        }
+
+        .grid-x {
+            grid-area: x;
+        }
+
+        .grid-me {
+            grid-area: m;
+        }
+
+        .grid-engineer {
+            grid-area: e;
+        }
+
+        .grid-designer {
+            grid-area: d;
+        }
+
+        .grid-profile {
+            grid-area: p;
+        }
+
         /* GridLayout - Card */
         .card-engineer,
         .card-designer,
         .card-profile,
         .card-me,
         .card-git,
-        .card-x         { width: 100%;
-                          height: 100%;
-                          background-color: var(--card-bg-color);
-                          border:1px solid var(--card-bdr-color);
-                          border-radius: var(--card-radius);
-                          box-shadow: var(--card-shadow);
-                          backdrop-filter: var(--card-glass);
-                          -webkit-backdrop-filter: var(--card-glass);
-                          text-align: center;
-                          vertical-align: middle; }
-        .card-title     { color: var(--ac-color);
-                          font-size: 4rem;
-                          text-align: var(--title-align);}
+        .card-x {
+            width: 100%;
+            height: 100%;
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--card-bdr-color);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            backdrop-filter: var(--card-glass);
+            -webkit-backdrop-filter: var(--card-glass);
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .card-title {
+            color: var(--ac-color);
+            font-size: 4rem;
+            text-align: var(--title-align);
+        }
+
         .card-me,
         .card-git,
-        .card-x         { display: block;
-                          border: none;
-                          background-size: contain;}
-        .card-git       { background-image: var(--logo-git); }
-        .card-x         { background-image: var(--logo-x); }
+        .card-x {
+            display: block;
+            border: none;
+            background-size: contain;
+        }
+
+        .card-git {
+            background-image: var(--logo-git);
+        }
+
+        .card-x {
+            background-image: var(--logo-x);
+        }
     </style>
 </head>
+
 <body>
     <header></header>
     <main class="font-ja wrapper">
@@ -198,7 +263,7 @@
         <div class="grid-profile">
             <div class="card-profile">
                 <h2>Profile</h2>
-                <div style="text-align: left; margin: 1rem;" >
+                <div style="text-align: left; margin: 1rem;">
                     <p>id: @oxmilch</p>
                     <p>job: backend dev. and design student</p>
                 </div>
@@ -220,4 +285,5 @@
         <small class="font-en-ex-light">&copy; 2026 Oxmilch</small>
     </footer>
 </body>
+
 </html>
