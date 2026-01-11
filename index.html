@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
-    <meta name="description" content="">
+    <meta name="description" content="Oxmlich's Portfolio">
     <meta name="robots" content="none, nosnippet, noimageindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Reset CSS -->
@@ -78,7 +78,6 @@
                     "x e e e e d d d"
                     "m e e e e d d d"
                     "m e e e e d d d";
-                --title-align: right;
             }
         }
 
@@ -104,7 +103,56 @@
                     "x e e e e d d d"
                     "m e e e e d d d"
                     "m e e e e d d d";
-                --title-align: right;
+            }
+        }
+
+        /* Mobile Landscape Layout */
+        @media(max-width:768px) and (min-aspect-ratio:4/3) {
+            :root {
+                --default-width: 1440px;
+                --default-height: 1080px;
+                --header-height: 24px;
+                --footer-height: 24px;
+                --wrapper-width-min: 768px;
+                --wrapper-width: 133.33vh;
+                --wrapper-height-min: 576px;
+                --wrapper-height: 100vh;
+                --wrapper-margin: 0 auto;
+                --grid-col: 8;
+                --grid-row: 6;
+                --grid-gap: 12px;
+                --grid-tmp-area:
+                    "p p p p p t t t"
+                    "p p p p p d d d"
+                    "g e e e e d d d"
+                    "x e e e e d d d"
+                    "m e e e e d d d"
+                    "m e e e e d d d";
+            }
+        }
+
+        /* Mobile Portrait Layout */
+        @media(max-width:768px) and (max-aspect-ratio:4/3) {
+            :root {
+                --default-width: 1440px;
+                --default-height: 1080px;
+                --header-height: 24px;
+                --footer-height: 24px;
+                --wrapper-width-min: 768px;
+                --wrapper-width: 100vw;
+                --wrapper-height-min: 576px;
+                --wrapper-height: 75vw;
+                --wrapper-margin: 0 auto;
+                --grid-col: 8;
+                --grid-row: 6;
+                --grid-gap: 12px;
+                --grid-tmp-area:
+                    "p p p p p t t t"
+                    "p p p p p d d d"
+                    "g e e e e d d d"
+                    "x e e e e d d d"
+                    "m e e e e d d d"
+                    "m e e e e d d d";
             }
         }
 
@@ -222,8 +270,9 @@
 
         .card-title {
             color: var(--ac-color);
-            font-size: 4rem;
-            text-align: var(--title-align);
+            font-size: clamp(3rem, 5vw + 1rem, 7rem);
+            display: flex;
+            justify-content: space-between;
         }
 
         .card-me,
@@ -248,7 +297,9 @@
     <header></header>
     <main class="font-ja wrapper">
         <div class="grid-title">
-            <h1 class="card-title font-en-ex-light">Portfolio</h1>
+            <h1 class="card-title font-en-ex-light" aria-label="Portfolio">
+                <span>P</span><span>o</span><span>r</span><span>t</span><span>f</span><span>o</span><span>l</span><span>i</span><span>o</span>
+            </h1>
         </div>
         <div class="grid-engineer">
             <div class="card-engineer">
