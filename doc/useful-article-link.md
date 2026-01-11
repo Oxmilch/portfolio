@@ -37,10 +37,11 @@
 
 ### Google Antigravity
 - [Google Antigravity は VS Code ユーザーに向いているのか？実際に触ってみた](https://qiita.com/00b012deb7c8/items/5f9c333e33cc94c11144)
+- [GoogleAntigravity 日本語化3点セット（追記訂正あり）](https://note.com/liuk_net/n/n91aef1e6306f)
 
 ### npm
 - [npmを使ってJSプロジェクトの管理](https://qiita.com/yhornisse/items/c746111e31b4c04f56f5)
-
+- [npm start と npm run dev の違いについて調べてみた](https://zenn.dev/1m4nim/articles/46f480fc1e39c8)
 ### Vite
 - [Vite はじめに](https://ja.vite.dev/guide/)
 

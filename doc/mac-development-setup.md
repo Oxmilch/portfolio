@@ -12,9 +12,17 @@
     ```
 
 - npm
+    - npm インストール
+        https://nodejs.org/ja/download
+
     - npm プロジェクトインストール
         ```zsh
         npm install
+        ```
+
+    - npm 
+        ```zsh
+        npm run dev
         ```
 - Vite
     - Viteのグローバルインストール（非推奨）
