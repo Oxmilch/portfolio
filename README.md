@@ -11,6 +11,7 @@ https://oxmilch.github.io/portfolio/
     - Windows 11 (25H2)
 - 開発ソフトウェア
     - [Visual Studio Code](https://code.visualstudio.com/download)
+    - [Google AntiGravity](https://antigravity.google/)
     - [homebrew](https://brew.sh/ja)
     - [git for Windows](https://gitforwindows.org/)
     - [node.js](https://nodejs.org/ja)
@@ -26,8 +27,7 @@ https://oxmilch.github.io/portfolio/
 - Webサイト公開利用サービス
     - [github](https://github.co.jp/)
 - 制作補助サービス
-    - [Github Copilot](https://github.com/features/copilot?locale=ja)
-    - [Gemini](https://gemini.google.com/app)
+    - [Google Gemini](https://gemini.google.com/app)
     - [Pinterest](https://jp.pinterest.com)
 
 ## 開発環境構築
