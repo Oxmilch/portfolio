@@ -54,8 +54,9 @@
 - [アスペクト比の理解と設定](https://developer.mozilla.org/ja/docs/Web/CSS/Guides/Box_sizing/Aspect_ratios#%E4%B8%BB%E3%81%AA_aspect-ratio_%E3%81%AE%E7%94%A8%E9%80%94)
 - [レスポンシブ対応の可変フォントサイズを実現するCSSテクニック｜clamp関数・単位の違い・実装ガイド](https://watashi.xyz/responsive-font-size/)
 
-### JavaScript
-- 
+### MarkDown
+- [Markdown記法で画像サイズを変更する方法（widthを指定する）](https://k-koh.hatenablog.com/entry/2020/02/22/111440)
+
 ## デザインソフトウェア
 ### Adobe Illustrator
 - 

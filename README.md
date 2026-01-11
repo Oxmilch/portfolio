@@ -47,7 +47,7 @@ graph TD
 ## ラフ
 ### Index
 - Inbox - Desktop Layout
-    ![Rouph Design Inbox(Desktop)](./doc/design-rouph/rough-inbox.png)
+    ![Rouph Design Inbox(Desktop)](./doc/design-rouph/rough-inbox-desktop.png)
     - Engineering
         ![Engineering](./doc/design-rouph/rough-inbox-desktop-engineering.png)
 - Inbox - Mobile Layout
