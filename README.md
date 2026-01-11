@@ -2,10 +2,7 @@
 https://oxmilch.github.io/portfolio/
 
 ## 目的
-- 
-
-## 目次
-
+- 今までの経歴、成果などについてポートフォリオとしてまとめ、記す。
 
 ## 利用ソフトウェア一覧
 - オペレーティングシステム
@@ -26,13 +23,31 @@ https://oxmilch.github.io/portfolio/
     - Adobe Illustrator 2025 (29.8.4) (mac / win)
     - Adobe Photoshop 2025 (26.11.2) (mac / win)
     - Adobe Premiere Pro 2025 (25.6.3) (mac / win)
-- 利用サービス
-    - [github](https://github.com/Oxmilch)
+- Webサイト公開利用サービス
+    - [github](https://github.co.jp/)
+- 制作補助サービス
+    - [Github Copilot](https://github.com/features/copilot?locale=ja)
+    - [Gemini](https://gemini.google.com/app)
+    - [Pinterest](https://jp.pinterest.com)
+
+## 開発環境構築
+- [macOS](./doc/mac-development-setup.md)
+- [Windows](./doc/win-development-setup.md)
+- [参考記事URL一覧](./doc/useful-article-link.md)
 
 ## サイトマップ
 ```mermaid
 graph TD
-    A[Index] --> B[Profile]
-    A --> C[Engineering Portfolio]
-    A --> D[Design Portfolio]
+    A[Index] --- B[Profile]
+    A --- C[Engineering Portfolio]
+    A --- D[Design Portfolio]
+
+    D --- E[Design Portfolio Detail]
 ```
+
+## ワイヤーフレーム
+### Index
+### Profile
+### Engineering Portfolio
+### Design Portfolio
+### Design Portfolio Detail
