@@ -18,54 +18,27 @@
     <!-- <link rel="stylesheet" href="./css/index.css"> -->
     <style>
         /*** Variables ***/
-        :root{
-            /* Light Mode */
-            --font-color: #1F2937;
-            --font-color-sub: #1F293755;
-            --bg-color: #F3F4F6;
-            --card-bg-color: #fefefe;
-            --card-bdr-color: #E5E7EB;
-            --card-radius: 12px;
-            --card-shadow: 0 4px 6px -1px #00000003;
-            --card-glass: none;
-            --ac-color: #3B82F6;
-            --logo-git: url(./img/github-mark.svg);
-            --logo-x: url(./img/logo-black.png);
-
-            /* Mobile Portlate Layout */
-            --default-width: 667px;
-            --default-height: 335px;
-            --grid-col: 3;
-            --grid-row: 14;
-            --grid-gap: 18px;
-            --main-w-min: 300px;
-            --main-w: 90vw;
-            --main-h-min: auto;
-            --main-h: 450vw;
-            --main-margin: 2.5vw auto 0;
-            --grid-tmp-area:
-                "t t t"
-                "e e e"
-                "e e e"
-                "e e e"
-                "e e e"
-                "d d d"
-                "d d d"
-                "d d d"
-                "d d d"
-                "p p p"
-                "p p p"
-                "p p p"
-                "p p p"
-                "g x m"
-                "c c c";
-            --title-align: center;
+        /** Prefers Color Scheme Mode **/
+        /* Light Mode */
+        @media(prefers-color-scheme: light){
+            :root{
+                /* Light Mode */
+                --font-color: #1F2937;
+                --font-color-sub: #1F293755;
+                --bg-color: #F3F4F6;
+                --card-bg-color: #fefefe;
+                --card-bdr-color: #E5E7EB;
+                --card-radius: 12px;
+                --card-shadow: 0 4px 6px -1px #00000003;
+                --card-glass: none;
+                --ac-color: #3B82F6;
+                --logo-git: url(./img/github-mark.svg);
+                --logo-x: url(./img/logo-black.png);
+            }
         }
-
         /* Dark Mode */
         @media(prefers-color-scheme: dark){
             :root{
-                --font-ja: "IBM Plex Sans JP", sans-serif;
                 --font-color: #f8fafc;
                 --font-color-sub: #f8fafc55;
                 --bg-color: #0f172a;
@@ -80,32 +53,63 @@
             }
         }
 
+        /** Responsive Layout **/
         /* Desktop Landscape Layout */
-        @media(min-width:768px){
+        @media (min-width:768px)
+           and (min-aspect-ratio:4/3) {
             :root{
-                --default-width: 1920px;
-                --default-height: 1080px;
-                --grid-col: 8;
-                --grid-row: 6;
-                --grid-gap: 36px;
-                --main-w-min: 768px;
-                --main-w: 128vh;
-                --main-h-min: 576px;
-                --main-h: 96vh;
-                --main-margin: 2vh auto 0;
-                --grid-tmp-area:
-                    "m e e e e t t t"
-                    "g e e e e d d d"
-                    "x e e e e d d d"
-                    "0 e e e e d d d"
-                    "p p p p p d d d"
-                    "p p p p p d d d";
-                --title-align: right;
+            --default-width: 1440px;
+            --default-height: 1080px;
+            --header-height: 24px;
+            --footer-height: 24px;
+            --wrapper-width-min: 768px;
+            --wrapper-width: 133.33vh;
+            --wrapper-height-min: 576px;
+            --wrapper-height: 100vh;
+            --wrapper-margin: 0 auto;
+            --grid-col: 8;
+            --grid-row: 6;
+            --grid-gap: 12px;
+            --grid-tmp-area:
+                "p p p p p t t t"
+                "p p p p p d d d"
+                "g e e e e d d d"
+                "x e e e e d d d"
+                "m e e e e d d d"
+                "0 e e e e d d d";
+            --title-align: right;
+            }
+        }
+        /* Desktop Portrait Layout*/
+        @media(min-width:768px)
+          and (max-aspect-ratio:4/3){
+            :root{
+            --default-width: 1440px;
+            --default-height: 1080px;
+            --header-height: 24px;
+            --footer-height: 24px;
+            --wrapper-width-min: 768px;
+            --wrapper-width: 100vw;
+            --wrapper-height-min: 576px;
+            --wrapper-height: 75vw;
+            --wrapper-margin: 0 auto;
+            --grid-col: 8;
+            --grid-row: 6;
+            --grid-gap: 12px;
+            --grid-tmp-area:
+                "p p p p p t t t"
+                "p p p p p d d d"
+                "g e e e e d d d"
+                "x e e e e d d d"
+                "m e e e e d d d"
+                "0 e e e e d d d";
+            --title-align: right;
             }
         }
 
         /*** Styles ***/
-        /* Class - Common*/
+        /** Common **/
+        /* Class */
         .font-ja          { font-family: "IBM Plex Sans JP", sans-serif;
                             font-style: normal;
                             font-weight: 400;
@@ -114,22 +118,32 @@
                             font-style: normal;
                             font-weight: 200;
                             color: var(--font-color);}
+        .font-en          { font-family: "IBM Plex Sans", sans-serif;
+                            font-style: normal;
+                            font-weight: 400;
+                            color: var(--font-color);}
+        .font-size-100  { font-size: 1.0rem; }
+        .wrapper        { margin: var(--wrapper-margin); }
         /* Tag */
         html            { font-size: 100%;
                           background-color: var(--bg-color)}
-        main            { min-width: var(--main-w-min);
-                          width: var(--main-w);
-                          min-height: var(--main-h-min);
-                          height: var(--main-h);
-                          margin: var(--main-margin);
+        header          { min-height: var(--header-height); }
+        main            { min-width: var(--wrapper-width-min);
+                          width: var(--wrapper-width);
+                          min-height: calc(var(--wrapper-height-min)
+                                           - (var(--header-height) + var(--footer-height)));
+                          height: calc(var(--wrapper-height)
+                                       - (var(--header-height) + var(--footer-height)));
                           display: grid;
                           gap: var(--grid-gap);
                           grid-template-columns: repeat(var(--grid-col), 1fr);
                           grid-template-rows: repeat(var(--grid-row), 1fr);
                           grid-template-areas: var(--grid-tmp-area);}
-        footer          { text-align: center; }
+        footer          { min-height: var(--footer-height);
+                          text-align: center; }
         small           { color: var(--font-color-sub) }
-        /* Class - GridLayout */
+        /** MainGridLayout **/
+        /* Class */
         .grid-title     { grid-area: t; }
         .grid-git       { grid-area: g; }
         .grid-x         { grid-area: x; }
@@ -137,14 +151,13 @@
         .grid-engineer  { grid-area: e; }
         .grid-designer  { grid-area: d; }
         .grid-profile   { grid-area: p; }
-        /* Class - GridLayout - */
-        /* Class - GridLayout - Card */
+        /* GridLayout - Card */
         .card-engineer,
         .card-designer,
         .card-profile,
         .card-me,
         .card-git,
-        .card-x          { width: 100%;
+        .card-x         { width: 100%;
                           height: 100%;
                           background-color: var(--card-bg-color);
                           border:1px solid var(--card-bdr-color);
@@ -157,50 +170,50 @@
         .card-title     { color: var(--ac-color);
                           font-size: 4rem;
                           text-align: var(--title-align);}
-        .card-git       { border: none; background-image: var(--logo-git); background-size: contain;}
-        .card-x         { border: none; background-image: var(--logo-x); background-size: contain;}
-        .card-me a,
-        .card-git a,
-        .card-x a     { display: block; min-height:100%; min-width: 100%; }
+        .card-me,
+        .card-git,
+        .card-x         { display: block;
+                          border: none;
+                          background-size: contain;}
+        .card-git       { background-image: var(--logo-git); }
+        .card-x         { background-image: var(--logo-x); }
     </style>
 </head>
 <body>
-    <main class="font-ja">
+    <header></header>
+    <main class="font-ja wrapper">
         <div class="grid-title">
             <h1 class="card-title font-en-ex-light">Portfolio</h1>
         </div>
         <div class="grid-engineer">
-            <div class="card-engineer">Engineering Portfolio</div>
+            <div class="card-engineer">
+                <h2>Engineering Portfolio</h2>
+            </div>
         </div>
         <div class="grid-designer">
-            <div class="card-designer">Design Portfolio</div>
+            <div class="card-designer">
+                <h2>Design Portfolio</h2>
+            </div>
         </div>
         <div class="grid-profile">
-            <div class="card-profile">Profile</div>
+            <div class="card-profile">
+                <h2>Profile</h2>
+                <div style="text-align: left; margin: 1rem;" >
+                    <p>id: @oxmilch</p>
+                    <p>job: backend dev. and design student</p>
+                </div>
+            </div>
         </div>
         <div class="grid-me">
-            <div class="card-me">
-                <a href="./index.html">
-                    <!-- <img class="img-logo" src="" alt="my icon"> -->
-                </a>
-            </div>
+            <a class="card-me" href="./index.html"></a>
         </div>
         <div class="grid-git">
             <!-- github logo from https://github.com/logos -->
-            <div class="card-git">
-                <a href="https://github.com/oxmilch/"></a>
-            </div>
+            <a class="card-git" href="https://github.com/oxmilch/"></a>
         </div>
         <div class="grid-x">
             <!-- X icon by https://about.x.com/ja/who-we-are/brand-toolkit -->
-            <div class="card-x">
-                <a href="https://x.com/oxmilch"></a>
-            </div>
-        </div>
-        <div class="grid-copyright">
-            <div class="card-copyright">
-                
-            </div>
+            <a class="card-x" href="https://x.com/oxmilch"></a>
         </div>
     </main>
     <footer>

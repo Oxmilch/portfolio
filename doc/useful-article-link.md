@@ -39,6 +39,9 @@
 ## Web言語
 ### HTML
 ### CSS
+- [メディアクエリ アスペクト比に応じてCSSを変更する](https://www.greenwich.co.jp/blog-archives/p/22879)
+- [アスペクト比の理解と設定](https://developer.mozilla.org/ja/docs/Web/CSS/Guides/Box_sizing/Aspect_ratios#%E4%B8%BB%E3%81%AA_aspect-ratio_%E3%81%AE%E7%94%A8%E9%80%94)
+- [レスポンシブ対応の可変フォントサイズを実現するCSSテクニック｜clamp関数・単位の違い・実装ガイド](https://watashi.xyz/responsive-font-size/)
 ### JavaScript
 
 ## デザインソフトウェア
