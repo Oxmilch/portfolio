@@ -37,21 +37,21 @@ https://oxmilch.github.io/portfolio/
 ## サイトマップ
 ```mermaid
 graph TD
-    A[Index] --- B[Profile]
-    A --- C[Engineering Portfolio]
-    A --- D[Design Portfolio]
+    A[Index / Bento UI] --- B[Profile]
+    A --- C[Engineering Portfolio / Timeline UI]
+    A --- D[Design Portfolio / Tile UI]
 
     D --- E[Design Portfolio Detail]
 ```
 
 ## ラフ
 ### Index
-- Inbox - Desktop Layout
-    ![Rouph Design Inbox(Desktop)](./doc/design-rouph/rough-inbox-desktop.png)
+- Index - Desktop Layout
+    ![Rouph Design Index(Desktop)](./doc/design-rouph/rough-inbox-desktop.png)
     - Engineering
         ![Engineering](./doc/design-rouph/rough-inbox-desktop-engineering.png)
-- Inbox - Mobile Layout
-    ![Rouph Design Inbox(Mobile)](./doc/design-rouph/rough-inbox-mobile.png)
+- Index - Mobile Layout
+    ![Rouph Design Index(Mobile)](./doc/design-rouph/rough-inbox-mobile.png)
 
 ### Profile
 ### Engineering Portfolio
