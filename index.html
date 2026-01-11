@@ -33,8 +33,10 @@
                 --card-shadow: 0 4px 6px -1px #00000003;
                 --card-glass: none;
                 --ac-color: #3B82F6;
-                --logo-git: url(./img/github-mark.svg);
                 --logo-x: url(./img/logo-black.png);
+                --logo-git: url(./img/github-mark.svg);
+                --logo-repository: url(./img/code.svg);
+                --logo-comprehensive: url(./img/swatch.svg);
             }
         }
 
@@ -50,8 +52,10 @@
                 --card-shadow: 0 8px 32px 0 #0000005f;
                 --card-glass: blur(12px);
                 --ac-color: #a855f7;
-                --logo-git: url(./img/github-mark-white.svg);
                 --logo-x: url(./img/logo.svg);
+                --logo-git: url(./img/github-mark-white.svg);
+                --logo-repository: url(./img/code-white.svg);
+                --logo-comprehensive: url(./img/swatch-white.svg);
             }
         }
 
@@ -74,10 +78,10 @@
                 --grid-tmp-area:
                     "p p p p p t t t"
                     "p p p p p d d d"
-                    "g e e e e d d d"
                     "x e e e e d d d"
-                    "m e e e e d d d"
-                    "m e e e e d d d";
+                    "g e e e e d d d"
+                    "r e e e e d d d"
+                    "c e e e e d d d";
             }
         }
 
@@ -99,10 +103,10 @@
                 --grid-tmp-area:
                     "p p p p p t t t"
                     "p p p p p d d d"
-                    "g e e e e d d d"
                     "x e e e e d d d"
-                    "m e e e e d d d"
-                    "m e e e e d d d";
+                    "g e e e e d d d"
+                    "r e e e e d d d"
+                    "c e e e e d d d";
             }
         }
 
@@ -118,16 +122,22 @@
                 --wrapper-height-min: 576px;
                 --wrapper-height: 100vh;
                 --wrapper-margin: 0 auto;
-                --grid-col: 8;
-                --grid-row: 6;
-                --grid-gap: 12px;
+                --grid-col: 3;
+                --grid-row: 12;
+                --grid-gap: 6px;
                 --grid-tmp-area:
-                    "p p p p p t t t"
-                    "p p p p p d d d"
-                    "g e e e e d d d"
-                    "x e e e e d d d"
-                    "m e e e e d d d"
-                    "m e e e e d d d";
+                    "t t t"
+                    "p p p"
+                    "p p p"
+                    "p p p"
+                    "e e e"
+                    "e e e"
+                    "e e e"
+                    "d d d"
+                    "d d d"
+                    "d d d"
+                    "x a g"
+                    "r a c";
             }
         }
 
@@ -143,16 +153,22 @@
                 --wrapper-height-min: 576px;
                 --wrapper-height: 75vw;
                 --wrapper-margin: 0 auto;
-                --grid-col: 8;
-                --grid-row: 6;
-                --grid-gap: 12px;
+                --grid-col: 3;
+                --grid-row: 12;
+                --grid-gap: 6px;
                 --grid-tmp-area:
-                    "p p p p p t t t"
-                    "p p p p p d d d"
-                    "g e e e e d d d"
-                    "x e e e e d d d"
-                    "m e e e e d d d"
-                    "m e e e e d d d";
+                    "t t t"
+                    "p p p"
+                    "p p p"
+                    "p p p"
+                    "e e e"
+                    "e e e"
+                    "e e e"
+                    "d d d"
+                    "d d d"
+                    "d d d"
+                    "x a g"
+                    "r a c";
             }
         }
 
@@ -225,16 +241,8 @@
             grid-area: t;
         }
 
-        .grid-git {
-            grid-area: g;
-        }
-
-        .grid-x {
-            grid-area: x;
-        }
-
-        .grid-me {
-            grid-area: m;
+        .grid-profile {
+            grid-area: p;
         }
 
         .grid-engineer {
@@ -245,17 +253,31 @@
             grid-area: d;
         }
 
-        .grid-profile {
-            grid-area: p;
+        .grid-x {
+            grid-area: x;
         }
+
+        .grid-git {
+            grid-area: g;
+        }
+
+        .grid-repository {
+            grid-area: r;
+        }
+
+        .grid-comprehensive {
+            grid-area: c;
+        }
+
 
         /* GridLayout - Card */
         .card-engineer,
         .card-designer,
         .card-profile,
-        .card-me,
+        .card-x,
         .card-git,
-        .card-x {
+        .card-repository,
+        .card-comprehensive {
             width: 100%;
             height: 100%;
             background-color: var(--card-bg-color);
@@ -275,20 +297,29 @@
             justify-content: space-between;
         }
 
-        .card-me,
+        .card-x,
         .card-git,
-        .card-x {
+        .card-repository,
+        .card-comprehensive {
             display: block;
             border: none;
             background-size: contain;
+        }
+
+        .card-x {
+            background-image: var(--logo-x);
         }
 
         .card-git {
             background-image: var(--logo-git);
         }
 
-        .card-x {
-            background-image: var(--logo-x);
+        .card-repository {
+            background-image: var(--logo-repository);
+        }
+
+        .card-comprehensive {
+            background-image: var(--logo-comprehensive);
         }
     </style>
 </head>
@@ -320,16 +351,21 @@
                 </div>
             </div>
         </div>
-        <div class="grid-me">
-            <a class="card-me" href="./index.html"></a>
+        <div class="grid-x">
+            <!-- X icon by https://about.x.com/ja/who-we-are/brand-toolkit -->
+            <a class="card-x" href="https://x.com/oxmilch"></a>
         </div>
         <div class="grid-git">
             <!-- github logo from https://github.com/logos -->
             <a class="card-git" href="https://github.com/oxmilch/"></a>
         </div>
-        <div class="grid-x">
-            <!-- X icon by https://about.x.com/ja/who-we-are/brand-toolkit -->
-            <a class="card-x" href="https://x.com/oxmilch"></a>
+        <div class="grid-repository">
+            <!-- code-bracket-square logo from https://heroicons.com/solid -->
+            <a class="card-repository" href="https://github.com/oxmilch/Portfolio/"></a>
+        </div>
+        <div class="grid-comprehensive">
+            <!-- swatch logo from https://heroicons.com/solid -->
+            <a class="card-comprehensive" href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ"></a>
         </div>
     </main>
     <footer>
