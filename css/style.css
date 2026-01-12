@@ -32,8 +32,38 @@
     }
 }
 
+
 /*** Styles ***/
 /** Common **/
+/* Tag */
+html {
+    font-size: 100%;
+    background-color: var(--color-background-base)
+}
+
+footer {
+    min-height: var(--footer-height);
+    text-align: center;
+}
+
+small {
+    color: var(--color-sub)
+}
+
+a {
+    color: var(--color-accents);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Class */
 .font-ja {
     font-family: "IBM Plex Sans JP", sans-serif;
@@ -62,28 +92,4 @@
 
 .wrapper {
     margin: var(--wrapper-margin);
-}
-
-/* Tag */
-html {
-    font-size: 100%;
-    background-color: var(--color-background-base)
-}
-
-small {
-    color: var(--color-sub)
-}
-
-a {
-    color: var(--color-accents);
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
 }

@@ -1,18 +1,39 @@
 @charset "UTF-8";
 
-body {
-    background-color: var(--color-background-base);
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+/*** CSS Variables ***/
+/** Prefers Color Scheme Mode **/
+/* Light Mode */
+/* Dark Mode*/
+@media(prefers-color-scheme: dark) {
+}
+
+/** Responsive Layout **/
+/* Desktop Landscape Layout */
+
+/* Desktop Portrait Layout*/
+@media(min-width:768px) and (max-aspect-ratio:4/3) {
+}
+
+/* Mobile Landscape Layout */
+@media(max-width:768px) and (min-aspect-ratio:4/3) {
+}
+
+/* Mobile Portrait Layout */
+@media(max-width:768px) and (max-aspect-ratio:4/3) {
 }
 
 
+/*** Styles ***/
+/** Tag **/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Class */
 .container {
     width: 100%;
-    max-width: 1024px;
     /* Adjust based on needs */
     aspect-ratio: 4 / 3;
     display: flex;

@@ -3,14 +3,11 @@
 /*** CSS Variables ***/
 /** Prefers Color Scheme Mode **/
 /* Light Mode */
-@media(prefers-color-scheme: light) {
-    :root {
-        /* Light Mode */
-        --logo-x: url(../img/icon/logo-black.webp);
-        --logo-git: url(../img/icon/github-mark.svg);
-        --logo-repository: url(../img/icon/code.svg);
-        --logo-comprehensive: url(../img/icon/swatch.svg);
-    }
+:root {
+    --logo-x: url(../img/icon/logo-black.webp);
+    --logo-git: url(../img/icon/github-mark.svg);
+    --logo-repository: url(../img/icon/code.svg);
+    --logo-comprehensive: url(../img/icon/swatch.svg);
 }
 
 /* Dark Mode */
@@ -26,28 +23,26 @@
 
 /** Responsive Layout **/
 /* Desktop Landscape Layout */
-@media (min-width:768px) and (min-aspect-ratio:4/3) {
-    :root {
-        --default-width: 1440px;
-        --default-height: 1080px;
-        --header-height: 24px;
-        --footer-height: 24px;
-        --wrapper-width-min: 768px;
-        --wrapper-width: 133.33vh;
-        --wrapper-height-min: 576px;
-        --wrapper-height: 100vh;
-        --wrapper-margin: 0 auto;
-        --grid-col: 8;
-        --grid-row: 6;
-        --grid-gap: 12px;
-        --grid-tmp-area:
-            "p p p p p t t t"
-            "p p p p p d d d"
-            "x e e e e d d d"
-            "g e e e e d d d"
-            "r e e e e d d d"
-            "c e e e e d d d";
-    }
+:root {
+    --default-width: 1440px;
+    --default-height: 1080px;
+    --header-height: 24px;
+    --footer-height: 24px;
+    --wrapper-width-min: 768px;
+    --wrapper-width: 133.33vh;
+    --wrapper-height-min: 576px;
+    --wrapper-height: 100vh;
+    --wrapper-margin: 0 auto;
+    --grid-col: 8;
+    --grid-row: 6;
+    --grid-gap: 12px;
+    --grid-tmp-area:
+        "p p p p p t t t"
+        "p p p p p d d d"
+        "x e e e e d d d"
+        "g e e e e d d d"
+        "r e e e e d d d"
+        "c e e e e d d d";
 }
 
 /* Desktop Portrait Layout*/
@@ -137,7 +132,9 @@
     }
 }
 
-/* Tag */
+
+/*** Styles ***/
+/** Tag **/
 header {
     min-height: var(--header-height);
 }
@@ -154,13 +151,8 @@ main {
     grid-template-areas: var(--grid-tmp-area);
 }
 
-footer {
-    min-height: var(--footer-height);
-    text-align: center;
-}
 
 /** MainGridLayout **/
-/* Class */
 .grid-title {
     grid-area: t;
 }
