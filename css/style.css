@@ -15,10 +15,10 @@
         --card-shadow: 0 4px 6px -1px #00000003;
         --card-glass: none;
         --ac-color: #3B82F6;
-        --logo-x: url(./img/icon/logo-black.webp);
-        --logo-git: url(./img/icon/github-mark.svg);
-        --logo-repository: url(./img/icon/code.svg);
-        --logo-comprehensive: url(./img/icon/swatch.svg);
+        --logo-x: url(../img/icon/logo-black.webp);
+        --logo-git: url(../img/icon/github-mark.svg);
+        --logo-repository: url(../img/icon/code.svg);
+        --logo-comprehensive: url(../img/icon/swatch.svg);
     }
 }
 
@@ -34,9 +34,9 @@
         --card-shadow: 0 8px 32px 0 #0000005f;
         --card-glass: blur(12px);
         --ac-color: #a855f7;
-        --logo-x: url(./img/icon/logo.svg);
-        --logo-git: url(./img/icon/github-mark-white.svg);
-        --logo-repository: url(./img/icon/code-white.svg);
-        --logo-comprehensive: url(./img/icon/swatch-white.svg);
+        --logo-x: url(../img/icon/logo.svg);
+        --logo-git: url(../img/icon/github-mark-white.svg);
+        --logo-repository: url(../img/icon/code-white.svg);
+        --logo-comprehensive: url(../img/icon/swatch-white.svg);
     }
 }

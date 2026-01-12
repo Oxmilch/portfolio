@@ -246,20 +246,27 @@ small {
     display: block;
     border: none;
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
 }
 
 .card-x {
     background-image: var(--logo-x);
+    padding: 15%;
 }
 
 .card-git {
     background-image: var(--logo-git);
+    padding: 10%;
 }
 
 .card-repository {
     background-image: var(--logo-repository);
+    padding: 2%;
 }
 
 .card-comprehensive {
     background-image: var(--logo-comprehensive);
+    padding: 2%;
 }
