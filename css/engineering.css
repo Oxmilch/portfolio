@@ -3,8 +3,19 @@
 /*** CSS Variables ***/
 /** Prefers Color Scheme Mode **/
 /* Light Mode */
+:root {
+    --logo-vscode: url(../img/icon/vscode.svg);
+    --logo-javascript: url(../img/icon/js.svg);
+    --logo-jquery: url(../img/icon/jQuery-Logo.webp);
+}
+
 /* Dark Mode*/
 @media(prefers-color-scheme: dark) {
+    :root {
+        --logo-vscode: url(../img/icon/vscode.svg);
+        --logo-javascript: url(../img/icon/js.svg);
+        --logo-jquery: url(../img/icon/jQuery-Logo_On_Dark.webp);
+    }
 }
 
 /** Responsive Layout **/

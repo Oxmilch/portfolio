@@ -86,5 +86,11 @@
 ## 素材
 - [X ブランドツールキット](https://about.x.com/ja/who-we-are/brand-toolkit)
 - [GitHub Logos and Usage](https://github.com/logos)
-- [Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.](https://heroicons.com/solid)
+- [Visual Studio Code Icons and names usage guidelines](https://code.visualstudio.com/brand)
+- [よく使う技術・サービスの公式ロゴのURLをまとめてみた！](https://qiita.com/Ry0xi/items/857687c892f783955fe1)
+    - [W3C HTML5 Logo](https://www.w3.org/html/logo/#downloads)
+    - [JS Logo By The Community](https://github.com/voodootikigod/logo.js/)
+    - [Branding Logos and design assets for TypeScript](https://www.typescriptlang.org/branding/)
+    - [jQuery logos](https://brand.jquery.org/logos/)
 - [無料で使えるsvgアイコン](https://qiita.com/takegons/items/35044719b18afb7db31e)
+    - [Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.](https://heroicons.com/solid)
