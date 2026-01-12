@@ -20,6 +20,8 @@
     - [Adobe Illustrator](#adobe-illustrator)
     - [Adobe Photoshop](#adobe-photoshop)
     - [Adobe Premiere Pro](#adobe-premiere-pro)
+- [ポートフォリオ制作](#ポートフォリオ制作)
+- [素材](#素材)
 
 ## Webサービス
 ### Github
@@ -57,6 +59,7 @@
 - [レスポンシブ対応の可変フォントサイズを実現するCSSテクニック｜clamp関数・単位の違い・実装ガイド](https://watashi.xyz/responsive-font-size/)
 - [このデザイン、どうコーディングする？ #8｜CSSとHTMLだけで実現！レスポンシブ対応のタイムラインUI](https://fastcoding.jp/blog/all/jquery/responsive-timeline-by-css/)
 - [図形の線の色を変更](https://shanabrian.com/web/svg/style-stroke.php)
+
 ### MarkDown
 - [Markdown記法で画像サイズを変更する方法（widthを指定する）](https://k-koh.hatenablog.com/entry/2020/02/22/111440)
 
@@ -70,10 +73,15 @@
 - 
 
 ### Adobe Photoshop
-- 
+- [WebP 圧縮の研究](https://developers.google.com/speed/webp/docs/webp_study?hl=ja)
+- [Photoshopの「コピーを保存」でWebPが選べない！](https://www.netimpact.co.jp/technique/26387/)
 
 ### Adobe Premiere Pro
 - 
+
+
+## ポートフォリオ制作
+- [作品数が少なくても担当者の目にとまるデザインポートフォリオ6つの法則](https://online.dhw.co.jp/kuritama/6rules_on_portfolio/)
 
 ## 素材
 - [X ブランドツールキット](https://about.x.com/ja/who-we-are/brand-toolkit)

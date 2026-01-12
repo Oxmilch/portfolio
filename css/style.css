@@ -1,23 +1,42 @@
 @charset "UTF-8";
 
-html{
-    font-size: 100%;
-    font-family: "IBM Plex Sans JP", sans-serif;
+/*** Variables ***/
+/** Prefers Color Scheme Mode **/
+/* Light Mode */
+@media(prefers-color-scheme: light) {
+    :root {
+        /* Light Mode */
+        --font-color: #1F2937;
+        --font-color-sub: #1F293755;
+        --bg-color: #F3F4F6;
+        --card-bg-color: #fefefe;
+        --card-bdr-color: #E5E7EB;
+        --card-radius: 12px;
+        --card-shadow: 0 4px 6px -1px #00000003;
+        --card-glass: none;
+        --ac-color: #3B82F6;
+        --logo-x: url(./img/icon/logo-black.webp);
+        --logo-git: url(./img/icon/github-mark.svg);
+        --logo-repository: url(./img/icon/code.svg);
+        --logo-comprehensive: url(./img/icon/swatch.svg);
+    }
 }
 
-body{
-    background-color: #F3F4F6;
-    color:#1F2937;
-}
-
-img{
-    max-width: 100%;
-}
-
-.accent-color{
-    color: #3B82F6;
-}
-
-.border-color{
-    border: 1px solid #E5E7EB;
+/* Dark Mode */
+@media(prefers-color-scheme: dark) {
+    :root {
+        --font-color: #f8fafc;
+        --font-color-sub: #f8fafc55;
+        --bg-color: #0f172a;
+        --card-bg-color: #1e293bb3;
+        --card-bdr-color: #ffffff03;
+        --card-radius: 16px;
+        --card-shadow: 0 8px 32px 0 #0000005f;
+        --card-glass: blur(12px);
+        --ac-color: #a855f7;
+        --logo-x: url(./img/icon/logo.svg);
+        --logo-git: url(./img/icon/github-mark-white.svg);
+        --logo-repository: url(./img/icon/code-white.svg);
+        --logo-comprehensive: url(./img/icon/swatch-white.svg);
+    }
 }
