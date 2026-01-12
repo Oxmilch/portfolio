@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* Engineering Page Styles */
+:root {
+    --timeline-line-color: #ddd;
+    --timeline-point-color: #3B82F6;
+    --bg-color-eng: #f9f9f9;
+    --card-bg-eng: #ffffff;
+    --font-color-eng: #333;
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --timeline-line-color: #333;
+        --timeline-point-color: #a855f7;
+        --bg-color-eng: #0f172a;
+        --card-bg-eng: #1e293b;
+        --font-color-eng: #f8fafc;
+    }
+}
+
+body {
+    background-color: var(--bg-color-eng);
+    color: var(--font-color-eng);
+    font-family: "IBM Plex Sans JP", sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1024px;
+    /* Adjust based on needs */
+    aspect-ratio: 4 / 3;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.timeline {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center items vertically if they don't fill height */
+}
+
+/* Timeline Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 33.333%;
+    /* 1:2 split */
+    width: 2px;
+    background-color: var(--timeline-line-color);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    position: relative;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 1:2 Split */
+.timeline-left {
+    width: 33.333%;
+    padding-right: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.timeline-right {
+    width: 66.666%;
+    padding-left: 2rem;
+    box-sizing: border-box;
+}
+
+/* Timeline Point */
+.timeline-point {
+    position: absolute;
+    left: 33.333%;
+    top: 1.5rem;
+    /* Adjust to align with card top or center */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--timeline-point-color);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Content Box */
+.content-box {
+    background-color: var(--card-bg-eng);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    min-height: 100px;
+    /* Placeholder height */
+}
+
+/* Icon Placeholder */
+.tech-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #eee;
+    /* Placeholder */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #666;
+}
