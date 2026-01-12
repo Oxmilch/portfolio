@@ -1,34 +1,14 @@
 @charset "UTF-8";
 
-/* Engineering Page Styles */
-:root {
-    --timeline-line-color: #ddd;
-    --timeline-point-color: #3B82F6;
-    --bg-color-eng: #f9f9f9;
-    --card-bg-eng: #ffffff;
-    --font-color-eng: #333;
-}
-
-@media(prefers-color-scheme: dark) {
-    :root {
-        --timeline-line-color: #333;
-        --timeline-point-color: #a855f7;
-        --bg-color-eng: #0f172a;
-        --card-bg-eng: #1e293b;
-        --font-color-eng: #f8fafc;
-    }
-}
-
 body {
-    background-color: var(--bg-color-eng);
-    color: var(--font-color-eng);
-    font-family: "IBM Plex Sans JP", sans-serif;
+    background-color: var(--color-background-base);
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
+
 
 .container {
     width: 100%;
@@ -59,7 +39,7 @@ body {
     left: 33.333%;
     /* 1:2 split */
     width: 2px;
-    background-color: var(--timeline-line-color);
+    background-color: var(--color-sub);
     transform: translateX(-50%);
 }
 
@@ -99,17 +79,17 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: var(--timeline-point-color);
+    background-color: var(--color-accents);
     transform: translate(-50%, -50%);
     z-index: 1;
 }
 
 /* Content Box */
 .content-box {
-    background-color: var(--card-bg-eng);
+    background-color: var(--color-background-main);
     padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
     min-height: 100px;
     /* Placeholder height */
 }
@@ -118,12 +98,12 @@ body {
 .tech-icon {
     width: 48px;
     height: 48px;
-    background-color: #eee;
+    background-color: var(--color-background-main);
     /* Placeholder */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
-    color: #666;
+    color: var(--color-main);
 }
