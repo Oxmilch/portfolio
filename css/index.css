@@ -235,10 +235,12 @@ li a{
     background-repeat: no-repeat;
     background-position: center;
     background-origin: content-box;
+    border-radius: var(--card-radius);
     transition: 300ms;
 }
 li a:hover{
     background-color: var(--color-background-sub);
+    color: var(--color-sub);
 }
 
 /* Grid - Title */
@@ -248,7 +250,6 @@ li a:hover{
     box-shadow: none;
 }
 .grid-title h1{
-    color: var(--color-accents);
     font-size: clamp(4rem, var(--title-font-size-v), 8rem);
     text-align: center;
 }
@@ -256,7 +257,7 @@ li a:hover{
 /* Grid - Profile */
 .grid-profile a{
     display: grid;
-    grid-template-columns: 1fr 3fr 2fr;
+    grid-template-columns: 1fr 2fr 2fr;
     grid-template-rows: 1fr 1fr 2fr;
     grid-template-areas:
         "nk nv im"
@@ -298,8 +299,8 @@ li a:hover{
 .grid-profile-job-value::before{
     position: absolute;
     pointer-events: none;
-    top: clamp(0.9rem, var(--profile-value-back-text), 1.8rem);
-    left: clamp(6rem, var(--profile-value-back-text), 12rem);
+    top: 0.9em;
+    left: 4em;
     font-size: clamp(1rem, var(--profile-value-back-text), 2rem);
     color: var(--color-sub);
     white-space: nowrap;

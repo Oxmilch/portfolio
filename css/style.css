@@ -20,13 +20,13 @@
 @media(prefers-color-scheme: dark) {
     :root {
         --color-main: #f8fafc;
-        --color-sub: #f8fafc55;
+        --color-sub: #f8fafc77;
         --color-background-base: #0f172a;
         --color-background-main: #1e293bb3;
-        --color-background-sub: #ffffff03;
+        --color-background-sub: #27364db3;
         --color-accents: #a855f7;
 
-        --card-radius: 16px;
+        --card-radius: calc(16px + 1%);;
         --card-shadow: 0 8px 32px 0 #0000005f;
         --card-glass: blur(12px);
     }
@@ -70,28 +70,36 @@ img {
     font-family: "IBM Plex Sans JP", sans-serif;
     font-style: normal;
     font-weight: 400;
-    color: var(--color-main);
 }
 
 .font-en-ex-light {
     font-family: "IBM Plex Sans", sans-serif;
     font-style: normal;
     font-weight: 200;
-    color: var(--color-main);
 }
 
 .font-en {
     font-family: "IBM Plex Sans", sans-serif;
     font-style: normal;
     font-weight: 400;
-    color: var(--color-main);
 }
 
 .font-en-bold {
     font-family: "IBM Plex Sans", sans-serif;
     font-style: normal;
     font-weight: 700;
+}
+
+.font-color-main{
     color: var(--color-main);
+}
+
+.font-color-sub{
+    color: var(--color-sub);
+}
+
+.font-color-accents{
+    color: var(--color-accents);
 }
 
 .wrapper {
