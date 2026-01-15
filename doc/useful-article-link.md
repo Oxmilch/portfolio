@@ -96,5 +96,8 @@
     - [JS Logo By The Community](https://github.com/voodootikigod/logo.js/)
     - [Branding Logos and design assets for TypeScript](https://www.typescriptlang.org/branding/)
     - [jQuery logos](https://brand.jquery.org/logos/)
+    - [The Python Logo](https://www.python.org/community/logos/)
+    - [Official Django Logos](https://www.djangoproject.com/community/logos/)
+    - [Docker Brand Guidelines](https://www.docker.com/company/newsroom/media-resources/)
 - [無料で使えるsvgアイコン](https://qiita.com/takegons/items/35044719b18afb7db31e)
     - [Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.](https://heroicons.com/solid)

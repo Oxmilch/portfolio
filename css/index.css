@@ -47,8 +47,8 @@
         "g e e e e d d d"
         "r e e e e d d d"
         "c e e e e d d d";
-    --title-font-size-v: 12vh;
-    --profile-title-font-size: 12vh;
+    --title-font-size: 12vh;
+    --grid-title-font-size: 12vh;
     --profile-key-text: 3vh;
     --profile-value-text: 3vh;
     --profile-value-back-text: 3vh;
@@ -80,8 +80,8 @@
             "g e e e e d d d"
             "r e e e e d d d"
             "c e e e e d d d";
-        --title-font-size-v: 9vw;
-        --profile-title-font-size: 9vw;
+        --title-font-size: 9vw;
+        --grid-title-font-size: 9vw;
         --profile-key-text: 2.25vw;
         --profile-value-text: 2.25vw;
         --profile-value-back-text: 2.25vw;
@@ -116,8 +116,8 @@
             "d d d"
             "x a g"
             "r a c";
-        --title-font-size-v: 12vh;
-        --profile-title-font-size: 12vh;
+        --title-font-size: 12vh;
+        --grid-title-font-size: 12vh;
         --profile-key-text: 3vh;
         --profile-value-text: 3vh;
         --profile-value-back-text: 3vh;
@@ -152,8 +152,8 @@
             "d d d"
             "x a g"
             "r a c";
-        --title-font-size-v: 9vw;
-        --profile-title-font-size: 9vw;
+        --title-font-size: 9vw;
+        --grid-title-font-size: 9vw;
         --profile-key-text: 2.25vw;
         --profile-value-text: 2.25vw;
         --profile-value-back-text: 2.25vw;
@@ -239,8 +239,7 @@ li a{
     transition: 300ms;
 }
 li a:hover{
-    background-color: var(--color-background-sub);
-    color: var(--color-sub);
+    opacity: 0.3;
 }
 
 /* Grid - Title */
@@ -250,7 +249,7 @@ li a:hover{
     box-shadow: none;
 }
 .grid-title h1{
-    font-size: clamp(4rem, var(--title-font-size-v), 8rem);
+    font-size: clamp(4rem, var(--title-font-size), 8rem);
     text-align: center;
 }
 
@@ -274,7 +273,7 @@ li a:hover{
 .grid-profile-title{
     grid-area: tt;
     margin: auto auto 0 0.5rem;
-    font-size: clamp(4rem, var(--profile-title-font-size), 8rem);
+    font-size: clamp(4rem, var(--grid-title-font-size), 8rem);
 }
 
 /* Grid - Profile - Name, Job */
@@ -307,7 +306,6 @@ li a:hover{
     z-index: -1;
 }
 
-
 /* Grid - Profile - Name */
 .grid-profile-name-key{
     grid-area: nk;
@@ -339,6 +337,68 @@ li a:hover{
 }
 
 /* Grid - Engineer */
+.grid-engineer a{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 2fr repeat(6, 1fr);
+    grid-template-areas:
+        "a t t t t t t t t t"
+        "h h z z z z z z z k"
+        "h h b v v v c c c c"
+        "e e b v v v c c c c"
+        "i j j v v v l l p p"
+        "i j j m m m g g p p"
+        "q q q m m m s s d d";
+    padding: 10px;
+}
+
+/* Grid - Engineer - Title */
+.grid-engineer-title{
+    grid-area: t;
+    margin: 0 0.5rem auto auto;
+    font-size: clamp(4rem, var(--grid-title-font-size), 8rem);
+}
+
+.grid-engineer img{
+    display: block;
+
+}
+
+.grid-engineer-vsc{
+    grid-area: v;
+    height: 90%;
+    margin: auto;
+}
+
+.grid-engineer-html{
+    grid-area: h;
+}
+
+.grid-engineer-js{
+    grid-area: j;
+}
+
+.grid-engineer-jq{
+    grid-area: q;
+}
+
+.grid-engineer-py{
+    grid-area: p;
+}
+
+.grid-engineer-dj{
+    grid-area: d;
+}
+
+.grid-engineer-psql{
+    grid-area: s;
+    width: 50%;
+    height:100%;
+}
+
+.grid-engineer-dk{
+    grid-area: k;
+}
 
 /* Grid - Design */
 
