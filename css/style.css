@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+/**** Common ****/
 /*** Variables ***/
 /** Prefers Color Scheme Mode **/
 /* Light Mode */
@@ -11,8 +11,8 @@
     --color-background-sub: #E5E7EB;
     --color-accents: #3B82F6;
 
-    --card-radius: 12px;
-    --card-shadow: 0 4px 6px -1px #00000003;
+    --card-radius: calc(12px + 1%);
+    --card-shadow: 0 4px 6px -1px #0002;
     --card-glass: none;
 }
 
@@ -38,7 +38,8 @@
 /* Tag */
 html {
     font-size: 100%;
-    background-color: var(--color-background-base)
+    background-color: var(--color-background-base);
+    margin: auto;
 }
 
 footer {
@@ -51,7 +52,7 @@ small {
 }
 
 a {
-    color: var(--color-accents);
+    color: var(--color-main);
     text-decoration: none;
 }
 
@@ -86,8 +87,11 @@ img {
     color: var(--color-main);
 }
 
-.font-size-100 {
-    font-size: 1.0rem;
+.font-en-bold {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--color-main);
 }
 
 .wrapper {

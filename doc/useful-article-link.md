@@ -21,6 +21,7 @@
     - [Adobe Photoshop](#adobe-photoshop)
     - [Adobe Premiere Pro](#adobe-premiere-pro)
 - [ポートフォリオ制作](#ポートフォリオ制作)
+- [法関連](#法関連)
 - [素材](#素材)
 
 ## Webサービス
@@ -82,6 +83,9 @@
 
 ## ポートフォリオ制作
 - [作品数が少なくても担当者の目にとまるデザインポートフォリオ6つの法則](https://online.dhw.co.jp/kuritama/6rules_on_portfolio/)
+
+## 法関連
+ - [ベルヌ条約とは？IT業界に役立つ国際著作権保護のしくみ](https://words.af-e.net/berne-convention/)
 
 ## 素材
 - [X ブランドツールキット](https://about.x.com/ja/who-we-are/brand-toolkit)

@@ -3,10 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio (Oxmilch)</title>
-    <meta name="description" content="Oxmlich's Portfolio">
+    <title>Top | Oxmlich's Portfolio</title>
+    <meta name="description" content="ミルクせんせーのポートフォリオを公開しているサイトです - Oxmilch's Portfolio">
     <meta name="robots" content="none, nosnippet, noimageindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- OGP Common -->
+    <meta property="og:title" content="Top | Oxmlich's Portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oxmilch.github.io/portfolio/">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="ミルクせんせーのポートフォリオを公開しているサイトです - Oxmilch's Portfolio">
+    <meta property="og:locale" content="ja_JP">
+    <!-- OGP X -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@oxmilch">
+    <meta name="twitter:creator" content="@oxmilch">
+    <meta name="twitter:title" content="Top | Oxmilch's Portfolio">
+    <meta name="twitter:description" content="ミルクせんせーのポートフォリオを公開しているサイトです - Oxmilch's Portfolio">
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./css/ress.min.css">
     <!-- Google Fonts -->
@@ -21,47 +34,48 @@
 
 <body>
     <header></header>
-    <main class="font-ja wrapper">
-        <div class="grid-title">
-            <h1 class="card-title font-en-ex-light" aria-label="Portfolio">
-                <span>P</span><span>o</span><span>r</span><span>t</span><span>f</span><span>o</span><span>l</span><span>i</span><span>o</span>
-            </h1>
-        </div>
-        <div class="grid-profile">
-            <div class="card-profile">
-                <h2>Profile</h2>
-                <div style="text-align: left; margin: 1rem;">
-                    <p>id: @oxmilch</p>
-                    <p>job: backend dev. and design student</p>
-                </div>
-            </div>
-        </div>
-        <div class="grid-engineer">
-            <div class="card-engineer">
-                <h2>Engineering Portfolio</h2>
-            </div>
-        </div>
-        <div class="grid-designer">
-            <div class="card-designer">
-                <h2>Design Portfolio</h2>
-            </div>
-        </div>
-        <div class="grid-x">
-            <!-- X icon by https://about.x.com/ja/who-we-are/brand-toolkit -->
-            <a class="card-x" href="https://x.com/oxmilch"></a>
-        </div>
-        <div class="grid-git">
-            <!-- github logo from https://github.com/logos -->
-            <a class="card-git" href="https://github.com/oxmilch/"></a>
-        </div>
-        <div class="grid-repository">
-            <!-- code-bracket-square logo from https://heroicons.com/solid -->
-            <a class="card-repository" href="https://github.com/oxmilch/Portfolio/"></a>
-        </div>
-        <div class="grid-comprehensive">
-            <!-- swatch logo from https://heroicons.com/solid -->
-            <a class="card-comprehensive" href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ"></a>
-        </div>
+    <main>
+        <ul class="font-ja wrapper">
+            <li class="grid-title">
+                <h1 class="font-en-ex-light">Portfolio</h1>
+            </li>
+            <li class="grid-profile">
+                <a href="#">
+                    <h2 class="grid-profile-title font-en-bold">Profile</h2>
+                    <p class="grid-profile-name-key">name</p>
+                    <p class="grid-profile-name-value">ミルクせんせー</p>
+                    <p class="grid-profile-job-key">job</p>
+                    <p class="grid-profile-job-value">デザイン学生</p>
+                    <img class="gird-profile-image" src="./img/icon/js.svg" alt="プロフィール画像">
+                </a>
+            </li>
+            <li class="grid-engineer">
+                <a href="./engineering.html">
+                    <h2>Engineering</h2>
+                </a>
+            </li>
+            <li class="grid-designer">
+                <a href="#">
+                    <h2>Design</h2>
+                </a>
+            </li>
+            <li class="grid-x">
+                <!-- X icon by https://about.x.com/ja/who-we-are/brand-toolkit -->
+                <a href="https://x.com/oxmilch"></a>
+            </li>
+            <li class="grid-git">
+                <!-- github logo from https://github.com/logos -->
+                <a href="https://github.com/oxmilch/"></a>
+            </li>
+            <li class="grid-repository">
+                <!-- code-bracket-square logo from https://heroicons.com/solid -->
+                <a href="https://github.com/oxmilch/Portfolio/"></a>
+            </li>
+            <li class="grid-comprehensive">
+                <!-- swatch logo from https://heroicons.com/solid -->
+                <a href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ"></a>
+            </li>
+        </ul>
     </main>
     <footer>
         <small class="font-en-ex-light">&copy; 2026 Oxmilch</small>
