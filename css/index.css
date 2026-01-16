@@ -471,15 +471,14 @@ li a:hover{
 
 /* Grid - Design - Title */
 .grid-design-title{
-    grid-area: t;
     position: relative;
     top: 75%;
-    margin: 0 auto;
+    left: -7%;
     font-size: var(--grid-title-font-size);
     text-shadow:
         0.03em  0.00em 0 var(--color-background-sub),
         0.03em  0.03em 0 var(--color-background-sub);
-    z-index: 5;
+    z-index: 6;
 }
 .grid-design-title::before{
     position: absolute;
@@ -490,41 +489,69 @@ li a:hover{
        -0.01em  0.01em 0 var(--color-accents),
         0.01em -0.01em 0 var(--color-accents),
        -0.01em -0.01em 0 var(--color-accents);
-    z-index: 4;
+    z-index: 5;
 }
 
 
 /* Grid - Design - Images */
+/* width: 50% = height: 31.146 */
 .grid-design-img-area{
     position: relative;
-    height: 100%;
+    height: 80%;
+    font-size: 0;
+    line-height: 0;
 }
 
-.grid-design-img1{
+.grid-design-img-triangle{
     position: absolute;
-    aspect-ratio: 1/1;
-    max-width: 60%;
-    top: 15%;
-    left: 1%;
+    background-color: var(--color-accents);
+    opacity: 0.91;
+    width: 50%;
+    height: 33.719%;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    top: 27.5%;
+    left: 26%;
+    z-index: 4;
+}
+
+.grid-design-img-circle{
+    position: absolute;
+    border-top: 2px solid var(--color-accents);
+    border-left: 2px solid var(--color-accents);
+    background-color: transparent;
+    opacity: 1;
+    aspect-ratio: 1;
+    width: 72%;
+    height: auto;
+    border-radius: 50%;
+    top: -12%;
+    left: 3%;
     z-index: 3;
 }
 
-.grid-design-img2{
+.grid-design-img-square{
     position: absolute;
-    aspect-ratio: 3/2;
-    max-width: 92%;
-    top: -21%;
-    left: 5%;
-    z-index: 1;
+    background-color: var(--color-main);
+    opacity: 0.67;
+    aspect-ratio: 1;
+    width: 45%;
+    height: auto;
+    top: 5%;
+    left: 51%;
+    z-index: 2;
 }
 
-.grid-design-img3{
+.grid-design-img-border{
     position: absolute;
-    aspect-ratio: 16/10 ;
-    max-width: 83%;
-    top: 8%;
-    left: 5%;
-    z-index: 2;
+    border-right: 1px solid var(--color-main);
+    opacity: 0.5;
+    transform: rotate(23.4deg);
+    transform-origin: center;
+    width: 0;
+    height: 135%;
+    top: -29.375%;
+    left: 66%;
+    z-index: 1;
 }
 
 
