@@ -11,7 +11,7 @@
     <meta name="googlebot" content="nosnippet">
     <meta name="googlebot-news" content="nosnippet">
     <!-- OGP Common -->
-    <meta property="og:title" content="Top | Oxmlich's Portfolio">
+    <meta property="og:title" content="Engineering | Oxmlich's Portfolio">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://oxmilch.github.io/portfolio/">
     <meta property="og:site_name" content="">
@@ -21,7 +21,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@oxmilch">
     <meta name="twitter:creator" content="@oxmilch">
-    <meta name="twitter:title" content="Top | Oxmilch's Portfolio">
+    <meta name="twitter:title" content="Engineering | Oxmilch's Portfolio">
     <meta name="twitter:description" content="ミルクせんせーのポートフォリオを公開しているサイトです - Oxmilch's Portfolio">
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./css/ress.min.css">
@@ -33,57 +33,54 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/engineering.css">
+    <!-- Script -->
+    <script src="./js/engineering.js" defer></script>
 </head>
 
 <body>
     <div class="container wrapper">
         <header></header>
-        <main class="font-ja">
-            <h1 style="text-align: center; margin-bottom: 2rem;">Engineering Portfolio</h1>
-            <ul class="timeline">
-                <!-- Item 1 -->
-                <li class="timeline-item">
-                    <div class="timeline-left">
-                        <div class="tech-icon">Icon</div>
-                    </div>
-                    <div class="timeline-point"></div>
-                    <div class="timeline-right">
-                        <div class="content-box">
-                            <h3>Project Name 1</h3>
-                            <p>Project description goes here.</p>
-                        </div>
-                    </div>
-                </li>
+        <div class="split-container font-ja">
+            <aside class="sidebar">
+                <div class="sticky-wrapper">
+                <h2>Skill Set</h2>
+                <div id="skill-list" class="skill-cloud">
+                    <span class="skill-tag" data-tech="go">Go</span>
+                    <span class="skill-tag" data-tech="python">Python</span>
+                    <span class="skill-tag" data-tech="js">JavaScript</span>
+                    <span class="skill-tag" data-tech="aws">AWS</span>
+                    <span class="skill-tag" data-tech="docker">Docker</span>
+                    <span class="skill-tag" data-tech="mysql">MySQL</span>
+                </div>
+                </div>
+            </aside>
 
-                <!-- Item 2 -->
-                <li class="timeline-item">
-                    <div class="timeline-left">
-                        <div class="tech-icon">Icon</div>
-                    </div>
-                    <div class="timeline-point"></div>
-                    <div class="timeline-right">
-                        <div class="content-box">
-                            <h3>Project Name 2</h3>
-                            <p>Project description goes here.</p>
-                        </div>
-                    </div>
-                </li>
+            <main class="timeline">
+                <div class="timeline-line"></div>
+                <section class="intro-area">
+                    <h1>Engineering History</h1>
+                    <p>スクロールしてプロジェクト履歴を表示</p>
+                </section>
 
-                <!-- Item 3 -->
-                <li class="timeline-item">
-                    <div class="timeline-left">
-                        <div class="tech-icon">Icon</div>
-                    </div>
-                    <div class="timeline-point"></div>
-                    <div class="timeline-right">
-                        <div class="content-box">
-                            <h3>Project Name 3</h3>
-                            <p>Project description goes here.</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </main>
+                <article class="project-card" data-techs="go,aws,docker,mysql">
+                    <div class="date">時期１</div>
+                    <h3>件名１</h3>
+                    <p>詳細</p>
+                </article>
+
+                <article class="project-card" data-techs="python,aws">
+                    <div class="date">時期２</div>
+                    <h3>件名</h3>
+                    <p>詳細</p>
+                </article>
+
+                <article class="project-card" data-techs="js">
+                    <div class="date">時期３</div>
+                    <h3>件名</h3>
+                    <p>詳細</p>
+                </article>
+            </main>
+        </div>
         <footer>
             <small class="font-en-ex-light">&copy; 2026 Oxmilch</small>
         </footer>
