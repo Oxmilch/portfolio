@@ -51,11 +51,13 @@ graph TD
 ### ラフ
 - Index
      - Desktop Layout
-        ![Rouph Design Index(Desktop)](./doc/design-rouph/rough-inbox-desktop.webp)
+        ![Rouph Design Index(Desktop)](./doc/design-rouph/rough-index-desktop.webp)
         - Card - Engineering
-        ![Engineering](./doc/design-rouph/rough-inbox-desktop-engineering.webp)
+        ![Engineering](./doc/design-rouph/rough-index-desktop-engineering.webp)
+        - Card - Design
+        ![Design](./doc/design-rouph/rough-index-desktop-design.svg)
     - Mobile Layout
-        ![Rouph Design Index(Mobile)](./doc/design-rouph/rough-inbox-mobile.webp)
+        ![Rouph Design Index(Mobile)](./doc/design-rouph/rough-index-mobile.webp)
 - Profile
 - Engineering Portfolio
     - Desktop Layout

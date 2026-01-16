@@ -75,7 +75,7 @@
 
 ## デザインソフトウェア
 ### Adobe Illustrator
-- 
+- [アートワークの書き出し - SVG 書き出しオプション](https://helpx.adobe.com/jp/illustrator/using/exporting-artwork.html#svg-export-options)
 
 ### Adobe Photoshop
 - [WebP 圧縮の研究](https://developers.google.com/speed/webp/docs/webp_study?hl=ja)
