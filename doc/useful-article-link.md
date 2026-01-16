@@ -14,6 +14,7 @@
 - [Web言語](#web言語)
     - [HTML](#html)
     - [CSS](#css)
+    - [JavaScript](#javascript)
     - [Markdown](#markdown)
         - [Mermaid](#mermaid)
 - [デザインソフトウェア](#デザインソフトウェア)
@@ -64,6 +65,9 @@
 - [【2025年版】font-familyの正しい指定方法・タイプ別おすすめフォント設定例](https://willcloud.jp/knowhow/font-family/)
 - [【文字の縁取り】CSSでテキストに境界線をつける方法](https://kinsta.com/jp/blog/css-text-outline/)
 - [デザイナーの角丸へのこだわりに応えよう【HTML/CSS/JavaScript編】](https://qiita.com/kurogoma939/items/fab2ec2e6c39b819b996)
+
+### JavaScript
+- [JavaScriptをHTMLのどこで読み込むのか？メリット/デメリットも解説](https://qiita.com/ota_LHL/items/7d3ccbf4a920d1776d9d)
 
 ### MarkDown
 - [Markdown記法で画像サイズを変更する方法（widthを指定する）](https://k-koh.hatenablog.com/entry/2020/02/22/111440)

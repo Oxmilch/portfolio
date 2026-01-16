@@ -11,7 +11,7 @@ https://oxmilch.github.io/portfolio/
     - Windows 11 (25H2)
 - 開発ソフトウェア
     - [Visual Studio Code](https://code.visualstudio.com/download)
-    - [Google AntiGravity](https://antigravity.google/)
+    - [Google Antigravity](https://antigravity.google/)
     - [homebrew](https://brew.sh/ja)
     - [git for Windows](https://gitforwindows.org/)
     - [node.js](https://nodejs.org/ja)
@@ -19,6 +19,7 @@ https://oxmilch.github.io/portfolio/
 - プログラム言語等
     - HTML Living Standard
     - CSS 3
+    - JavaScript
 - デザインソフトウェア
     - Adobe
         - Illustrator 2024 (28.0) (mac)
