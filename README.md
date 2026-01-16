@@ -41,7 +41,7 @@ https://oxmilch.github.io/portfolio/
 ```mermaid
 graph TD
     A[Index / Bento UI] --- B[Profile]
-    A --- C[Engineering Portfolio / Timeline UI]
+    A --- C[Engineering Portfolio / Split Layout and Timeline UI]
     A --- D[Design Portfolio / Tile UI]
 
     D --- E[Design Portfolio Detail]

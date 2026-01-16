@@ -52,6 +52,9 @@
     --profile-key-text: 3vh;
     --profile-value-text: 3vh;
     --profile-value-back-text: 3vh;
+    --engineer-text-large: 7vh;
+    --engineer-text-midium: 5vh;
+    --engineer-text-small: 3vh;
 }
 
 /* Desktop Portrait Layout*/
@@ -85,6 +88,9 @@
         --profile-key-text: 2.25vw;
         --profile-value-text: 2.25vw;
         --profile-value-back-text: 2.25vw;
+        --engineer-text-large: 5.25vw;
+        --engineer-text-midium: 3.75vw;
+        --engineer-text-small: 2.25vw;
     }
 }
 
@@ -121,6 +127,9 @@
         --profile-key-text: 3vh;
         --profile-value-text: 3vh;
         --profile-value-back-text: 3vh;
+        --engineer-text-large: 7vh;
+        --engineer-text-midium: 5vh;
+        --engineer-text-small: 3vh;
     }
 }
 
@@ -157,6 +166,9 @@
         --profile-key-text: 2.25vw;
         --profile-value-text: 2.25vw;
         --profile-value-back-text: 2.25vw;
+        --engineer-text-large: 5.25vw;
+        --engineer-text-midium: 3.75vw;
+        --engineer-text-small: 2.25vw;
     }
 }
 
@@ -166,6 +178,7 @@
 header {
     min-height: var(--header-height);
 }
+
 
 /** Main **/
 /* Grid - Layout */
@@ -181,7 +194,7 @@ header {
     grid-area: e;
 }
 
-.grid-designer {
+.grid-design {
     grid-area: d;
 }
 
@@ -200,6 +213,7 @@ header {
 .grid-comprehensive {
     grid-area: c;
 }
+
 
 /* Grid */
 ul {
@@ -230,17 +244,19 @@ li {
 li a{
     display: block;
     height: 100%;
-    border: none;
+    border: 1px solid transparent;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-origin: content-box;
     border-radius: var(--card-radius);
-    transition: 300ms;
+    transition: opacity 0.3s, border 0.15s;
 }
 li a:hover{
-    opacity: 0.3;
+    border: 1px solid var(--color-accents);
+    opacity: 0.5;
 }
+
 
 /* Grid - Title */
 .grid-title{
@@ -249,9 +265,12 @@ li a:hover{
     box-shadow: none;
 }
 .grid-title h1{
-    font-size: clamp(4rem, var(--title-font-size), 8rem);
-    text-align: center;
+    font-size: var(--title-font-size);
+    text-shadow:
+        0.03em  0.00em 0 var(--color-background-sub),
+        0.03em  0.03em 0 var(--color-background-sub);
 }
+
 
 /* Grid - Profile */
 .grid-profile a{
@@ -265,51 +284,75 @@ li a:hover{
     padding: 10px;
 }
 
-.grid-profile a p{
-    display: block;
-}
-
 /* Grid - Profile - Title */
 .grid-profile-title{
     grid-area: tt;
+    position: relative;
     margin: auto auto 0 0.5rem;
-    font-size: clamp(4rem, var(--grid-title-font-size), 8rem);
+    font-size: var(--grid-title-font-size);
+    text-shadow:
+        0.03em  0.00em 0 var(--color-background-sub),
+        0.03em  0.03em 0 var(--color-background-sub);
+    z-index: 1;
+}
+.grid-profile-title::before{
+    position: absolute;
+    content: "P";
+    color: var(--color-accents);
+    text-shadow:
+        0.01em  0.01em 0 var(--color-accents),
+       -0.01em  0.01em 0 var(--color-accents),
+        0.01em -0.01em 0 var(--color-accents),
+       -0.01em -0.01em 0 var(--color-accents);
+    z-index: 2;
 }
 
 /* Grid - Profile - Name, Job */
 .grid-profile-name-key,
 .grid-profile-job-key{
     position: relative;
-    font-size: clamp(1rem, var(--profile-key-text), 2rem);
+    font-size: var(--profile-key-text);
     text-align: left;
     padding-left: 1rem;
+    z-index: 2;
 }
 
 .grid-profile-name-value,
 .grid-profile-job-value{
     position: relative;
-    font-size: clamp(1rem, var(--profile-value-text), 2rem);
+    font-size: var(--profile-value-text);
     text-align: left;
     padding-left: 1rem;
-    z-index: 1;
+    z-index: 2;
 }
 
+.grid-profile-name-key::before,
+.grid-profile-job-key::before,
 .grid-profile-name-value::before,
 .grid-profile-job-value::before{
     position: absolute;
     pointer-events: none;
     top: 0.9em;
     left: 4em;
-    font-size: clamp(1rem, var(--profile-value-back-text), 2rem);
-    color: var(--color-sub);
+    font-size: var(--profile-value-back-text);
+    color: var(--color-main);
+    opacity: 0.33;
     white-space: nowrap;
-    z-index: -1;
+    z-index: 1;
+}
+.grid-profile-name-key::before,
+.grid-profile-job-key::before{
+    left: 2em;
 }
 
 /* Grid - Profile - Name */
 .grid-profile-name-key{
     grid-area: nk;
 }
+.grid-profile-name-key::before{
+    content:"id";
+}
+
 .grid-profile-name-value{
     grid-area: nv;
 }
@@ -321,11 +364,15 @@ li a:hover{
 .grid-profile-job-key{
     grid-area: jk;
 }
+.grid-profile-job-key::before{
+    content:"prev.";
+}
+
 .grid-profile-job-value{
     grid-area: jv;
 }
 .grid-profile-job-value::before{
-    content:"Backend Dev.";
+    content:"backend dev.";
 }
 
 /* Grid - Profile - Image */
@@ -336,71 +383,150 @@ li a:hover{
     margin: auto;
 }
 
+
 /* Grid - Engineer */
 .grid-engineer a{
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 2fr repeat(6, 1fr);
-    grid-template-areas:
-        "a t t t t t t t t t"
-        "h h z z z z z z z k"
-        "h h b v v v c c c c"
-        "e e b v v v c c c c"
-        "i j j v v v l l p p"
-        "i j j m m m g g p p"
-        "q q q m m m s s d d";
-    padding: 10px;
+    text-align: right;
+    padding: 0 10px 10px;
+    line-height: 1.2;
+}
+
+.grid-engineer h2{
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+.grid-engineer p{
+    text-align: center;
+    margin: auto 0.5rem;
+    line-height: 1.15;
+    color: var(--color-main);
+    opacity: 0.5;
+}
+
+.grid-engineer span{
+    margin:auto 0.1em;
 }
 
 /* Grid - Engineer - Title */
 .grid-engineer-title{
-    grid-area: t;
-    margin: 0 0.5rem auto auto;
-    font-size: clamp(4rem, var(--grid-title-font-size), 8rem);
+    position: relative;
+    margin: 0 auto 0 0;
+    font-size: var(--grid-title-font-size);
+    text-shadow:
+        0.03em  0.00em 0 var(--color-background-sub),
+        0.03em  0.03em 0 var(--color-background-sub);
+    z-index: 1;
+}
+.grid-engineer-title::before{
+    position: absolute;
+    content: "E";
+    color: var(--color-accents);
+    text-shadow:
+        0.01em  0.01em 0 var(--color-accents),
+       -0.01em  0.01em 0 var(--color-accents),
+        0.01em -0.01em 0 var(--color-accents),
+       -0.01em -0.01em 0 var(--color-accents);
+    z-index: 2;
 }
 
-.grid-engineer img{
-    display: block;
-
+/* Grid - Engineer - Midium */
+.grid-engineer-middle{
+    font-size: var(--engineer-text-midium);
 }
 
-.grid-engineer-vsc{
-    grid-area: v;
-    height: 90%;
-    margin: auto;
+/* Grid - Engineer - Small */
+.grid-engineer-small{
+    font-size: var(--engineer-text-small);
 }
 
-.grid-engineer-html{
-    grid-area: h;
+/* Grid - Engineer - And More.. */
+.grid-engineer-more{
+    margin: 0 0 0 auto;
+    line-height: 1;
+    font-size: var(--engineer-text-large);
+    text-shadow:
+        0.03em  0.00em 0 var(--color-background-sub),
+        0.03em  0.03em 0 var(--color-background-sub);
+}
+.grid-engineer-more::after{
+    content: ".";
+    color: var(--color-accents);
+    text-shadow:
+        0.03em  0.00em 0 var(--color-background-sub),
+        0.03em  0.03em 0 var(--color-background-sub);
 }
 
-.grid-engineer-js{
-    grid-area: j;
-}
-
-.grid-engineer-jq{
-    grid-area: q;
-}
-
-.grid-engineer-py{
-    grid-area: p;
-}
-
-.grid-engineer-dj{
-    grid-area: d;
-}
-
-.grid-engineer-psql{
-    grid-area: s;
-    width: 50%;
-    height:100%;
-}
-
-.grid-engineer-dk{
-    grid-area: k;
-}
 
 /* Grid - Design */
+.grid-design a{
+    padding: 10px;
+}
+
+.grid-design img{
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/* Grid - Design - Title */
+.grid-design-title{
+    grid-area: t;
+    position: relative;
+    top: 75%;
+    margin: 0 auto;
+    font-size: var(--grid-title-font-size);
+    text-shadow:
+        0.03em  0.00em 0 var(--color-background-sub),
+        0.03em  0.03em 0 var(--color-background-sub);
+    z-index: 5;
+}
+.grid-design-title::before{
+    position: absolute;
+    content: "D";
+    color: var(--color-accents);
+    text-shadow:
+        0.01em  0.01em 0 var(--color-accents),
+       -0.01em  0.01em 0 var(--color-accents),
+        0.01em -0.01em 0 var(--color-accents),
+       -0.01em -0.01em 0 var(--color-accents);
+    z-index: 4;
+}
+
+
+/* Grid - Design - Images */
+.grid-design-img-area{
+    position: relative;
+    height: 100%;
+}
+
+.grid-design-img1{
+    position: absolute;
+    aspect-ratio: 1/1;
+    max-width: 60%;
+    top: 15%;
+    left: 1%;
+    z-index: 3;
+}
+
+.grid-design-img2{
+    position: absolute;
+    aspect-ratio: 3/2;
+    max-width: 92%;
+    top: -21%;
+    left: 5%;
+    z-index: 1;
+}
+
+.grid-design-img3{
+    position: absolute;
+    aspect-ratio: 16/10 ;
+    max-width: 83%;
+    top: 8%;
+    left: 5%;
+    z-index: 2;
+}
+
 
 /* Grid - X */
 .grid-x a{
@@ -408,17 +534,20 @@ li a:hover{
     padding: 20%;
 }
 
+
 /* Grid - Github */
 .grid-git a{
     background-image: var(--logo-git);
     padding: 15%;
 }
 
+
 /* Grid - Repository */
 .grid-repository a{
     background-image: var(--logo-repository);
     padding: 7%;
 }
+
 
 /* Grid - Comprehensive */
 .grid-comprehensive a{

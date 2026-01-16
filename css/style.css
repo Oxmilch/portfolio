@@ -5,11 +5,11 @@
 /* Light Mode */
 :root {
     --color-main: #1f2937;
-    --color-sub: #1F293755;
-    --color-background-base: #F3F4F6;
+    --color-sub: #1f293755;
+    --color-background-base: #f3f4f6;
     --color-background-main: #fefefe;
-    --color-background-sub: #E5E7EB;
-    --color-accents: #3B82F6;
+    --color-background-sub: #e5e7eb;
+    --color-accents: #3b82f6;
 
     --card-radius: calc(12px + 1%);
     --card-shadow: 0 4px 6px -1px #0002;
@@ -67,25 +67,31 @@ img {
 
 /* Class */
 .font-ja {
-    font-family: "IBM Plex Sans JP", sans-serif;
+    font-family: "IBM Plex Sans JP",         /* web Ja */
+                 "Helvetica Neue",           /* mac En */
+                 "Arial",                    /* win En */
+                 "Hiragino Sans",            /* mac Ja (10.13~) */
+                 "Hiragino Kaku Gothic Pro", /* mac Ja (~10.12) */
+                 "BIZ-UDPGothic",            /* win Ja (10, 11) */
+                 sans-serif;
     font-style: normal;
     font-weight: 400;
 }
 
 .font-en-ex-light {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "IBM Plex Sans",  /* web En */
+                 "Helvetica Neue", /* mac En */
+                 "Arial",          /* win En */
+                 sans-serif;
     font-style: normal;
     font-weight: 200;
 }
 
-.font-en {
-    font-family: "IBM Plex Sans", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-}
-
 .font-en-bold {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "IBM Plex Sans",  /* web En */
+                 "Helvetica Neue", /* mac En */
+                 "Arial",          /* win En */
+                 sans-serif;
     font-style: normal;
     font-weight: 700;
 }

@@ -60,6 +60,10 @@
 - [レスポンシブ対応の可変フォントサイズを実現するCSSテクニック｜clamp関数・単位の違い・実装ガイド](https://watashi.xyz/responsive-font-size/)
 - [このデザイン、どうコーディングする？ #8｜CSSとHTMLだけで実現！レスポンシブ対応のタイムラインUI](https://fastcoding.jp/blog/all/jquery/responsive-timeline-by-css/)
 - [図形の線の色を変更](https://shanabrian.com/web/svg/style-stroke.php)
+- [2026年に最適なfont-familyの書き方](https://ics.media/entry/200317/)
+- [【2025年版】font-familyの正しい指定方法・タイプ別おすすめフォント設定例](https://willcloud.jp/knowhow/font-family/)
+- [【文字の縁取り】CSSでテキストに境界線をつける方法](https://kinsta.com/jp/blog/css-text-outline/)
+- [デザイナーの角丸へのこだわりに応えよう【HTML/CSS/JavaScript編】](https://qiita.com/kurogoma939/items/fab2ec2e6c39b819b996)
 
 ### MarkDown
 - [Markdown記法で画像サイズを変更する方法（widthを指定する）](https://k-koh.hatenablog.com/entry/2020/02/22/111440)
