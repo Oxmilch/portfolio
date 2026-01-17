@@ -1,0 +1,29 @@
+[
+    {
+        "date": "2025-12-01",
+        "period": 6,
+        "industry": "学生",
+        "skill": {
+            "os": ["mac"],
+            "other": [],
+            "database": [],
+            "language": ["hls", "CSS3", "js"],
+            "framework-library": [],
+            "officesweet": [],
+            "ide": ["vsc"],
+            "versioning": [],
+            "design": ["ai", "ps", "pr"]
+        },
+        "process":{
+            "rd": false,
+            "bd": false,
+            "dd": false,
+            "d": false,
+            "ut": false,
+            "it": false,
+            "rt": false
+        },
+        "title": "デザインの勉強中",
+        "body": ""
+    }
+]
