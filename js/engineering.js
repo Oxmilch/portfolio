@@ -4,46 +4,55 @@
 class createElements {
   /**
    * スキルタグを作成
-   * @param {HTMLElement} target
    */
-  async skillTags(targetElement) {
-    if (!targetElement) {
-      targetElement = document.querySelector('#skill-list');
-    }
-    if (!targetElement) return;
+  async skillTags() {
+    const targetElement = document.querySelector('#skill-list');
+    let data = [];
 
+    //ファイル読み込み
     try {
       const response = await fetch("./doc/engineering-skill.json");
-      if (!response.ok) {
-        throw new Error(`HTTPエラー: ${response.status}`);
-      }
-      const data = await response.json();
-
-      // 既存のコンテンツをクリア
-      targetElement.innerHTML = '';
-
-      // JSONデータの並び順(order)でソート
-      data.sort((a, b) => a.order - b.order);
-
-      data.forEach(item => {
-        // skill-tagを作成
-        const span = document.createElement('span');
-        span.className = 'skill-tag';
-        span.dataset.tech = item.key;
-        span.textContent = item.value;
-
-        // 追加
-        targetElement.appendChild(span);
-        // スペースや改行の代わりに少し隙間が必要ならCSSで調整するが、
-        // 元のHTMLに合わせてspanを並べる
-      });
-
-      // 読み込み完了後に現在表示中の要素に対してハイライトを再適用する必要があるかもしれないが、
-      // 一旦DOM生成までを行う
-
+      if (!response.ok) throw new Error(`HTTPエラー: ${response.status}`);
+      data =  await response.json();
+      
     } catch (error) {
-      console.error('ファイル読み込み失敗:', error);
+      alert('ファイル読み込み失敗:', error);
+      return;
     }
+
+    // 表示中のローディングを削除と初期化
+    targetElement.innerHTML = "";
+
+    // JSONデータを(group_order, order)の昇順でソート
+    const groupPow = Math.pow(10, 3);
+    data.sort((a, b) => (a.group_order * groupPow + a.order) - (b.group_order * groupPow + b.order));
+
+    // スキルタグの生成処理
+    for(let i = 0; i < data.length; i++){
+      // タイプが異なる場合はタイプ見出し新規作成
+      if (i === 0 || data[i - 1].type !== data[i].type) {
+        const h3 = document.createElement("h3");
+        h3.className = "";
+        h3.textContent = data[i].type;
+        targetElement.appendChild(h3);
+      }
+
+      // スキルタグを作成
+      const span = document.createElement('span');
+      span.className = "skill-tag";
+      span.dataset.tech = data[i].key;
+      span.textContent = data[i].value;
+
+      // 追加
+      targetElement.appendChild(span);
+    }
+  }
+
+  /**
+   * 
+   */
+  async historyTag(){
+
   }
 }
 
