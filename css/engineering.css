@@ -1,23 +1,6 @@
 @charset "UTF-8";
 
 /*** CSS Variables ***/
-/** Prefers Color Scheme Mode **/
-/* Light Mode */
-:root {
-    --logo-vscode: url(../img/icon/vscode.svg);
-    --logo-javascript: url(../img/icon/js.svg);
-    --logo-jquery: url(../img/icon/jQuery-Logo.webp);
-}
-
-/* Dark Mode*/
-@media(prefers-color-scheme: dark) {
-    :root {
-        --logo-vscode: url(../img/icon/vscode.svg);
-        --logo-javascript: url(../img/icon/js.svg);
-        --logo-jquery: url(../img/icon/jQuery-Logo_On_Dark.webp);
-    }
-}
-
 /** Responsive Layout **/
 /* Desktop Landscape Layout */
 
@@ -63,34 +46,34 @@ body {
   height: fit-content;
 }
 
-/* スキルタグのデザイン */
+/* SkillSet - Skilltag - Base */
 .skill-tag {
   display: inline-block;
-  padding: 8px 16px;
-  margin: 4px;
-  border-radius: 20px;
-  background-color: #e5e7eb;
-  color: #374151;
-  font-weight: bold;
-  /* 色の変化を滑らかにする */
+  padding: 0.33rem 0.67rem;
+  margin: 0.33rem;
+  border-radius: 0.75rem;
+  background-color: var(--color-background-sub);
+  color: var(--color-main);
+  font-size:  0.75rem;
   transition: all 0.3s ease;
 }
 
-/* --- 状態変化のスタイル --- */
-
-/* アクティブ（ハイライト）状態 */
-.skill-tag.active {
-  background-color: #3b82f6; /* 鮮やかな青 */
-  color: white;
-  transform: scale(1.05); /* 少し大きくする */
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+/* SkillSet - Skilltag - All */
+.skill-tag.all {
+  background-color: var(--color-accents);
+  color: var(--color-background-main);
 }
 
-/* 非アクティブ（薄くなる）状態 */
-.skill-tag.inactive {
-  background-color: #f3f4f6;
-  color: #d1d5db; /* 文字も薄く */
-  opacity: 0.5;
+/* SkillSet - Skilltag - Active */
+.skill-tag.active {
+  background-color: var(--color-accents);
+  color: var(--color-background-main);
+  transform: scale(1.2);
+}
+
+/* Skillset - Skilltag - nonActive */
+.skill-tag.non-active {
+  transform: scale(0.8);
 }
 
 

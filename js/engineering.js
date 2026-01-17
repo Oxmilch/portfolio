@@ -39,7 +39,7 @@ class createElements {
 
       // スキルタグを作成
       const span = document.createElement('span');
-      span.className = "skill-tag";
+      span.className = "skill-tag all";
       span.dataset.tech = data[i].key;
       span.textContent = data[i].value;
 
@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // techArrayに含まれているなら active, そうでないなら inactive
       if (techArray.includes(techName)) {
         tag.classList.add('active');
-        tag.classList.remove('inactive');
+        tag.classList.remove('non-active');
       } else {
-        tag.classList.add('inactive');
+        tag.classList.add('non-active');
         tag.classList.remove('active');
       }
     });
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const observerOptions = {
     root: null,
-    rootMargin: '-45% 0px -45% 0px',
+    // rootMargin: '-45% 0px -45% 0px',
     threshold: 0
   };
 

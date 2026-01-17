@@ -1,6 +1,18 @@
 @charset "UTF-8";
 /**** Common ****/
 /*** Variables ***/
+/** Base **/
+:root {
+    --width-min-desktop: 768px;
+    --width-max-desktop: 1440px;
+    --height-min-desktop: 576px;
+    --height-max-desktop: 1080px;
+    --width-min-mobile: 320px;
+    --widht-max-mobile: 767px;
+    --height-min-mobile: 480px;
+    --heihgt-max-mobile: auto;
+}
+
 /** Prefers Color Scheme Mode **/
 /* Light Mode */
 :root {
