@@ -1,46 +1,49 @@
 /**
  * エレメント作成
  */
-class createElements{
+class createElements {
   /**
    * スキルタグを作成
    * @param {HTMLElement} target
    */
-  skillTags(targetElement){
-    const skillRaw = [];
-    /* Jsonファイルの読み取り */
-    fetch("./doc/engineering-skill.json")
-     .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTPエラー: ${response.status}`);
-        }
-        return response.data();
-    }).then(data => {
-      skillRaw.concat(data);
-    }).catch(error => {
-      console.error('ファイル読み込み失敗:', error);
-      return;
-    });
-
-    /*  */
-    const skillArray = [];
-    for(i = 0; i < skillRaw.length; i++){
-      const skillJson = skillRaw[i].json();
-      // 初回作成
-      if(skillArray.length === 0){
-        skillArray.add({type: skillJson.type, data: []});
-      }
-
-      const matchSkill = skillArray.filter((skill) => skill.key == skillJson.type);
-      if(matchSkill){
-        //  typeが一致する場合は追加
-        matchSkill.data.add({key: skillJson.key, value: skillJson.value, order: skillJson.order});
-      } else {
-        // typeが一致しない場合は新規作成
-        skillArray.add({type: skillJson.type, data: [{key: skillJson.key, value: skillJson.value, order: skillJson.order}]});
-      }
+  async skillTags(targetElement) {
+    if (!targetElement) {
+      targetElement = document.querySelector('#skill-list');
     }
+    if (!targetElement) return;
 
+    try {
+      const response = await fetch("./doc/engineering-skill.json");
+      if (!response.ok) {
+        throw new Error(`HTTPエラー: ${response.status}`);
+      }
+      const data = await response.json();
+
+      // 既存のコンテンツをクリア
+      targetElement.innerHTML = '';
+
+      // JSONデータの並び順(order)でソート
+      data.sort((a, b) => a.order - b.order);
+
+      data.forEach(item => {
+        // skill-tagを作成
+        const span = document.createElement('span');
+        span.className = 'skill-tag';
+        span.dataset.tech = item.key;
+        span.textContent = item.value;
+
+        // 追加
+        targetElement.appendChild(span);
+        // スペースや改行の代わりに少し隙間が必要ならCSSで調整するが、
+        // 元のHTMLに合わせてspanを並べる
+      });
+
+      // 読み込み完了後に現在表示中の要素に対してハイライトを再適用する必要があるかもしれないが、
+      // 一旦DOM生成までを行う
+
+    } catch (error) {
+      console.error('ファイル読み込み失敗:', error);
+    }
   }
 }
 
@@ -87,14 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const observerOptions = {
     root: null,
-    rootMargin: '-45% 0px -45% 0px', 
+    rootMargin: '-45% 0px -45% 0px',
     threshold: 0
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        
+
         // イントロエリア（一番上）が見えている時はリセット
         if (entry.target.classList.contains('intro-area')) {
           resetSkills();
@@ -113,11 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   // 監視開始
-  if(introArea) observer.observe(introArea);
+  if (introArea) observer.observe(introArea);
   projects.forEach(project => observer.observe(project));
-  
+
   // 初期ロード時はリセット状態にしておく
   resetSkills();
 
-  // new createElements().skillTags();
+  new createElements().skillTags();
 });
