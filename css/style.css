@@ -179,7 +179,7 @@ small {
 
 /* Class - wrapper */
 .wrapper {
-    width: 96vw;
+    width: 96%;
     max-width: var(--width-max-desktop);
     margin: 0 auto;
 }

@@ -25,25 +25,71 @@ main {
     align-items: center;
 }
 
-/* Class */
-/* レイアウト構成 (Split Screen) */
-/* レイアウト構成 (Split Screen) */
-.split-container {
-  display: flex;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
+h2 {
+  font-size: 2rem;
+  color: var(--color-accents);
 }
 
-/* 左側サイドバー */
-.sidebar {
-  width: 300px;
-  /* 画面上部に固定する設定 */
-  position: sticky;
-  top: 40px; /* 上端からの距離 */
+h3 {
+  font-size: 1.5rem;
+  color: var(--color-main);
+}
+
+article {
+  background-color: var(--color-background-main);
+  min-height: 10rem;
+  margin-bottom: 80px; /* カード間の距離を空ける */
   padding: 20px;
-  height: fit-content;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+time {
+  color: var(--color-sub);
+}
+
+p {
+  color: var(--color-main);
+}
+
+/* Class */
+/* レイアウト構成 (Split Screen) */
+.split {
+  display: table;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  padding: 1vh 1vw;
+}
+
+.split-item{
+  display: table-cell;
+}
+
+.split-left{
+  position: relative;
+  width: 49vw;
+  height: 100%;
+}
+
+.split-left-fix{
+  position: fixed;
+  width: 49vw;
+  max-width: calc(var(--width-max-desktop) * 0.49);
+}
+
+.split-center{
+  position: relative;
+  width: 1vw;
+}
+
+.split-center-fix{
+  position: fixed;
+  height: 88%;
+  border: 1px solid var(--color-accents);
+}
+
+.split-right{
+  width: 50%;
 }
 
 /* SkillSet - Skilltag - Base */
@@ -74,27 +120,4 @@ main {
 /* Skillset - Skilltag - nonActive */
 .skill-tag.non-active {
   transform: scale(0.8);
-}
-
-
-/* 右側タイムライン（簡易） */
-.timeline {
-  flex: 1;
-  padding: 20px 0 20px 40px;
-  border-left: 2px solid #e5e7eb; /* タイムラインの線 */
-}
-
-.project-card {
-  margin-bottom: 80px; /* カード間の距離を空ける */
-  padding: 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.intro-area {
-  height: 40vh; /* 最初のスクロール余白 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
