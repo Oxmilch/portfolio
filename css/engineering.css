@@ -19,6 +19,10 @@
 
 /*** Styles ***/
 /** Tag **/
+body {
+  overflow: hidden;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -37,8 +41,9 @@ h3 {
 }
 
 article {
+  scroll-snap-align: center;
   background-color: var(--color-background-main);
-  min-height: 15rem;
+  height: 60vh;
   padding: 1rem;
   margin-top: 2rem;
   border-radius: 12px;
@@ -105,7 +110,12 @@ p {
 }
 
 .split-right{
-  width: 50%;
+    position: relative;
+    width: 50%;
+    height: 90vh;
+    overflow:auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 /* SkillSet - Skilltag - Base */
@@ -138,4 +148,11 @@ p {
 .skill-tag.non-active {
   border-color: transparent;
   transform: scale(0.8);
+}
+
+/* 上下のダミー余白（スクロールの調整用） */
+.spacer-top,
+.spacer-bottom {
+  height: 10vh;
+  scroll-snap-align: none;
 }
