@@ -33,23 +33,39 @@ h2 {
 h3 {
   font-size: 1.5rem;
   color: var(--color-main);
+  margin-top: 0.5rem;
 }
 
 article {
   background-color: var(--color-background-main);
-  min-height: 10rem;
-  margin-bottom: 80px; /* カード間の距離を空ける */
-  padding: 20px;
+  min-height: 15rem;
+  padding: 1rem;
+  margin-top: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
+article div{
+  margin-top: 0.5rem;
+}
+article span{
+  font-size:  0.9rem;
+  color: var(--color-main);
+  background-color: var(--color-background-main);
+  padding: 0.33rem 0.67rem;
+  margin: 0.5rem 0.33rem 0.5rem 0;
+  border: 1px solid var(--color-accents);
+  border-radius: 0.75rem;
+}
 
 time {
-  color: var(--color-sub);
+  font-size: 1.5rem;
+  color: var(--color-accents);
 }
 
 p {
+  font-size: 1rem;
   color: var(--color-main);
+  margin: 0.5rem 0 0 0.5rem;
 }
 
 /* Class */
@@ -106,8 +122,9 @@ p {
 
 /* SkillSet - Skilltag - All */
 .skill-tag.all {
-  background-color: var(--color-accents);
-  color: var(--color-background-main);
+  background-color: var(--color-background-main);
+  color: var(--color-main);
+  border: 1px solid var(--color-accents);
 }
 
 /* SkillSet - Skilltag - Active */
@@ -119,5 +136,6 @@ p {
 
 /* Skillset - Skilltag - nonActive */
 .skill-tag.non-active {
+  border-color: transparent;
   transform: scale(0.8);
 }
