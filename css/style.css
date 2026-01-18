@@ -26,6 +26,11 @@
     --card-radius: calc(12px + 1%);
     --card-shadow: 0 4px 6px -1px #0002;
     --card-glass: none;
+
+    --logo-x: url(../img/icon/logo-black.webp);
+    --logo-git: url(../img/icon/github-mark.svg);
+    --logo-repository: url(../img/icon/code.svg);
+    --logo-comprehensive: url(../img/icon/swatch.svg);
 }
 
 /* Dark Mode */
@@ -41,40 +46,22 @@
         --card-radius: calc(16px + 1%);;
         --card-shadow: 0 8px 32px 0 #0000005f;
         --card-glass: blur(12px);
+
+        --logo-x: url(../img/icon/logo.svg);
+        --logo-git: url(../img/icon/github-mark-white.svg);
+        --logo-repository: url(../img/icon/code-white.svg);
+        --logo-comprehensive: url(../img/icon/swatch-white.svg);
     }
 }
 
 
 /*** Styles ***/
 /** Common **/
-/* Tag */
+/* Base */
 html {
     font-size: 100%;
     background-color: var(--color-background-base);
     margin: auto;
-}
-
-header {
-    position: sticky;
-    top: 0;
-    background-color: var(--color-background-main);
-    z-index: 99;
-}
-header div{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content:end;
-    padding: 0.5rem 2vw;
-}
-
-footer {
-    min-height: var(--footer-height);
-    text-align: center;
-}
-
-small {
-    color: var(--color-sub)
 }
 
 a {
@@ -91,7 +78,62 @@ img {
     height: auto;
 }
 
-/* Class */
+/* Header Area */
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background-main);
+    padding-top: 0.3rem;
+    z-index: 99;
+}
+header div{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
+}
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+header ul{
+    display: flex;
+    gap: 1em;
+}
+header a{
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    padding: 0 1em;
+    transition: opacity 0.3s, border 0.15s;
+}
+header a:hover{
+    border: 1px solid var(--color-accents);
+    opacity: 0.5;
+}
+
+nav li{
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+}
+nav a{
+    font-size: 1.2rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+/* Footer Area */
+footer {
+    min-height: var(--footer-height);
+    text-align: center;
+}
+
+small {
+    color: var(--color-sub)
+}
+
+
+/* Class - font */
 .font-ja {
     font-family: "IBM Plex Sans JP",         /* web Ja */
                  "Helvetica Neue",           /* mac En */
@@ -135,8 +177,51 @@ img {
     color: var(--color-accents);
 }
 
+/* Class - wrapper */
 .wrapper {
     width: 96vw;
     max-width: var(--width-max-desktop);
     margin: 0 auto;
+}
+
+/* Class - image */
+.header-img {
+    display: flex;
+    justify-content: space-between;
+    width: 15rem;
+    height: 3rem;
+}
+.header-img li{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.header-img a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+}
+
+.logo-x{
+    background-image: var(--logo-x);
+    padding: 20%;
+}
+
+.logo-git{
+    background-image: var(--logo-git);
+    padding: 15%;
+}
+
+.logo-repository{
+    background-image: var(--logo-repository);
+    padding: 7%;
+}
+
+.logo-comprehensive{
+    background-image: var(--logo-comprehensive);
+    padding: 7%;
 }

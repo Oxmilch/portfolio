@@ -1,26 +1,6 @@
 @charset "UTF-8";
 /**** Index ****/
 /*** Variables ***/
-/** Prefers Color Scheme Mode **/
-/* Light Mode */
-:root {
-    --logo-x: url(../img/icon/logo-black.webp);
-    --logo-git: url(../img/icon/github-mark.svg);
-    --logo-repository: url(../img/icon/code.svg);
-    --logo-comprehensive: url(../img/icon/swatch.svg);
-}
-
-/* Dark Mode */
-@media(prefers-color-scheme: dark) {
-    :root {
-        --logo-x: url(../img/icon/logo.svg);
-        --logo-git: url(../img/icon/github-mark-white.svg);
-        --logo-repository: url(../img/icon/code-white.svg);
-        --logo-comprehensive: url(../img/icon/swatch-white.svg);
-    }
-}
-
-
 /** Responsive Layout **/
 /* Desktop Landscape Layout */
 :root {
@@ -43,8 +23,8 @@
     --grid-tmp-area:
         "p p p p p t t t"
         "p p p p p d d d"
-        "x e e e e d d d"
         "g e e e e d d d"
+        "x e e e e d d d"
         "r e e e e d d d"
         "c e e e e d d d";
     --title-font-size: 12vh;
@@ -79,8 +59,8 @@
         --grid-tmp-area:
             "p p p p p t t t"
             "p p p p p d d d"
-            "x e e e e d d d"
             "g e e e e d d d"
+            "x e e e e d d d"
             "r e e e e d d d"
             "c e e e e d d d";
         --title-font-size: 9vw;
