@@ -54,6 +54,20 @@ html {
     margin: auto;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background-main);
+    z-index: 99;
+}
+header div{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content:end;
+    padding: 0.5rem 2vw;
+}
+
 footer {
     min-height: var(--footer-height);
     text-align: center;
@@ -122,5 +136,7 @@ img {
 }
 
 .wrapper {
-    margin: var(--wrapper-margin);
+    width: 96vw;
+    max-width: var(--width-max-desktop);
+    margin: 0 auto;
 }

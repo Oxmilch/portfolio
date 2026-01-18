@@ -1,12 +1,23 @@
 /**
- * エレメント作成
+ * スキルタグ
  */
-class createElements {
+class skillTag {
+  __targetElement;
+  __isCreate;
+  __skillTags;
+
+  /**
+   * コンストラクタ
+   */
+  constructor(){
+    this.__targetElement = document.querySelector('#skill-list');
+    this.__isCreate = false;
+  }
+
   /**
    * スキルタグを作成
    */
-  async skillTags() {
-    const targetElement = document.querySelector('#skill-list');
+  async create() {
     let data = [];
 
     //ファイル読み込み
@@ -21,7 +32,7 @@ class createElements {
     }
 
     // 表示中のローディングを削除と初期化
-    targetElement.innerHTML = "";
+    this.__targetElement.innerHTML = "";
 
     // JSONデータを(group_order, order)の昇順でソート
     const groupPow = Math.pow(10, 3);
@@ -34,7 +45,7 @@ class createElements {
         const h3 = document.createElement("h3");
         h3.className = "";
         h3.textContent = data[i].type;
-        targetElement.appendChild(h3);
+        this.__targetElement.appendChild(h3);
       }
 
       // スキルタグを作成
@@ -44,44 +55,35 @@ class createElements {
       span.textContent = data[i].value;
 
       // 追加
-      targetElement.appendChild(span);
+      this.__targetElement.appendChild(span);
     }
+
+    this.__isCreate == true;
   }
 
   /**
-   * 
+   * スタイルを初期化
    */
-  async historyTag(){
+  styleReset(){
+    if (!this.__isCreate) return;
+    if (!this.__skillTags) {
+      this.__skillTags = this.__targetElement.querySelectorAll(".skill-tag");
+    }
 
-  }
-}
-
-
-/**
- * HTML Loaded
- */
-document.addEventListener('DOMContentLoaded', () => {
-  const skillTags = document.querySelectorAll('.skill-tag');
-  const projects = document.querySelectorAll('.project-card');
-  const introArea = document.querySelector('.intro-area');
-
-  /**
-   * 全スキルを初期状態（アクティブ）にする関数
-   */
-  const resetSkills = () => {
-    skillTags.forEach(tag => {
+    this.__skillTags.forEach(tag => {
       tag.classList.remove('inactive');
       tag.classList.add('active');
     });
-  };
+  }
 
   /**
-   * 特定のスキルだけをハイライトする関数
-  */
-  const highlightSkills = (techArray) => {
-    skillTags.forEach(tag => {
+   * スタイルをハイライトする
+   * @param {*} techArray ハイライトするtech
+   */
+  styleActive(techArray){
+    this.__skillTags.forEach(tag =>{
       const techName = tag.dataset.tech;
-      // techArrayに含まれているなら active, そうでないなら inactive
+      // techArrayに含まれているなら active, そうでないなら non-active
       if (techArray.includes(techName)) {
         tag.classList.add('active');
         tag.classList.remove('non-active');
@@ -90,7 +92,57 @@ document.addEventListener('DOMContentLoaded', () => {
         tag.classList.remove('active');
       }
     });
-  };
+  }
+}
+
+/**
+ * プロジェクトカード
+ */
+class projectCard {
+  __targetElement;
+  __isCreate;
+  __projectCard;
+
+  /**
+   *  コンストラクタ
+   */
+  constructor(){
+    this.__targetElement = document.querySelector();
+    this.__isCreate = false;
+  }
+
+  /**
+   * プロジェクト履歴のカードを作成
+   */
+  async create(){
+
+  }
+
+  /**
+   * オブザーバーの設定
+   * rootMargin: '-45% 0px -45% 0px' とすることで、「画面の中央10%のライン」を通過したものを検知エリアにします。
+   * これにより、画面内に複数入っても「中央にあるもの」を判定しやすくなります。
+   */
+  observerOptions(){
+    root: null;
+    // rootMargin: '-45% 0px -45% 0px',
+    threshold: 0;
+  }
+}
+
+/**
+ * HTML Loaded
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  const skillTags = new skillTag();
+  const projects = document.querySelectorAll('.project-card');
+  const introArea = document.querySelector('.intro-area');
+
+  // スキルタグ作成
+  skillTags.create();
+
+  // プロジェクト履歴を作成
+
 
   /**
    * オブザーバーの設定
@@ -109,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // イントロエリア（一番上）が見えている時はリセット
         if (entry.target.classList.contains('intro-area')) {
-          resetSkills();
+          skillTags.styleReset();
           return;
         }
 
@@ -118,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (techs) {
           // カンマ区切りを配列に変換 (例: "go,aws" -> ["go", "aws"])
           const techArray = techs.split(',');
-          highlightSkills(techArray);
+          skillTags.styleActive(techArray);
         }
       }
     });
@@ -128,8 +180,4 @@ document.addEventListener('DOMContentLoaded', () => {
   if (introArea) observer.observe(introArea);
   projects.forEach(project => observer.observe(project));
 
-  // 初期ロード時はリセット状態にしておく
-  resetSkills();
-
-  new createElements().skillTags();
 });
