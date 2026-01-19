@@ -45,22 +45,42 @@
                     Portfolio
                 </a>
             </h1>
-            <nav>
-                <ul class="font-en-bold">
+            <nav class="header-desktop-nav">
+                <ul class="header-desktop-nav-content font-en-bold">
                     <li><a href="#">Profile</a></li>
                     <li class="font-color-accents">Engineering</li>
                     <li><a href="#">Design</a></li>
                 </ul>
+                <ul class="header-desktop-nav-sns">
+                    <li><a class="logo-git" href="https://github.com/oxmilch/"></a></li>
+                    <li><a class="logo-x" href="https://x.com/oxmilch"></a></li>
+                    <li><a class="logo-repository" href="https://github.com/oxmilch/Portfolio/"></a></li>
+                    <li><a class="logo-comprehensive" href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ"></a></li>
+                </ul>
             </nav>
-            <ul class="header-img">
-                <li><a class="logo-git" href="https://github.com/oxmilch/"></a></li>
-                <li><a class="logo-x" href="https://x.com/oxmilch"></a></li>
-                <li><a class="logo-repository" href="https://github.com/oxmilch/Portfolio/"></a></li>
-                <li><a class="logo-comprehensive" href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ"></a></li>
-            </ul>
+            <section class="header-mobile-menu">
+                <input type="checkbox" id="header-mobile-menu-check" hidden>
+                <label class="header-mobile-menu-icon" for="header-mobile-menu-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="overlay"></div>
+                <nav class="header-mobile-nav">
+                    <ul>
+                        <li><a href="./index.html">Top</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="https://github.com/oxmilch/">github トップ</a></li>
+                        <li><a href="https://x.com/oxmilch">X (Twitter)</a></li>
+                        <li><a href="https://github.com/oxmilch/Portfolio/">ソースコード</a></li>
+                        <li><a href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ">デザイン詳細</a></li>
+                    </ul>
+                </nav>
+            </section>
         </div>
     </header>
-    <main class="split wrapper font-ja">
+    <main class="split wrapper wrapper-height font-ja">
         <section class="split-item split-left">
             <div class="split-left-fix">
                 <h2>Skill Set</h2>

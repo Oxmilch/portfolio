@@ -49,9 +49,11 @@ article {
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
+
 article div{
   margin-top: 0.5rem;
 }
+
 article span{
   font-size:  0.9rem;
   color: var(--color-main);

@@ -3,60 +3,19 @@
 /*** Variables ***/
 /** Responsive Layout **/
 /* Desktop Landscape Layout */
-:root {
-    --default-width-min: 768px;
-    --default-height-min: 576px;
-    --default-width-max: 1440px;
-    --default-height-max: 1080px;
-    --header-height: 24px;
-    --header-display: none;
-    --footer-height: 24px;
-    --wrapper-width-min: 744px;
-    --wrapper-width: 133.33vh;
-    --wrapper-width-max: 1440px;
-    --wrapper-height-min: 528px;
-    --wrapper-height: 100vh;
-    --wrapper-height-max: 1032px;
-    --wrapper-margin: 0 auto;
-    --grid-col: 8;
-    --grid-row: 6;
-    --grid-gap: 12px;
-    --grid-tmp-area:
-        "p p p p p t t t"
-        "p p p p p d d d"
-        "g e e e e d d d"
-        "x e e e e d d d"
-        "r e e e e d d d"
-        "c e e e e d d d";
-    --title-font-size: 12vh;
-    --grid-title-font-size: 12vh;
-    --profile-key-text: 3vh;
-    --profile-value-text: 3vh;
-    --profile-value-back-text: 3vh;
-    --engineer-text-large: 7vh;
-    --engineer-text-midium: 5vh;
-    --engineer-text-small: 3vh;
-}
-
-/* Desktop Portrait Layout*/
-@media(min-width:768px) and (max-aspect-ratio:4/3) {
+@media(min-width:768px) and (min-aspect-ratio:4/3) {
     :root {
-        --default-width-min: 768px;
-        --default-height-min: 576px;
-        --default-width-max: 1440px;
-        --default-height-max: 1080px;
-        --header-height: 24px;
+        /* Common Variables Override */
+        --header-height-min: 0px;
+        --header-height: 0px;
+        --header-height-max: 0px;
         --header-display: none;
-        --footer-height: 24px;
-        --wrapper-width-min: 744px;
-        --wrapper-width: 100vw;
-        --wrapper-width-max: 1440px;
-        --wrapper-height-min: 576px;
-        --wrapper-height: 75vw;
-        --wrapper-height-max: 1032px;
-        --wrapper-margin: 0 auto;
-        --grid-col: 8;
-        --grid-row: 6;
+        --wrapper-height-max: 1080px;
+
+        /* Index Variables */
+        /* Main */
+        --grid-col: repeat(8, 1fr);
+        --grid-row: repeat(6, 1fr);
         --grid-gap: 12px;
         --grid-tmp-area:
             "p p p p p t t t"
@@ -65,109 +24,243 @@
             "x e e e e d d d"
             "r e e e e d d d"
             "c e e e e d d d";
-        --title-font-size: 9vw;
-        --grid-title-font-size: 9vw;
-        --profile-key-text: 2.25vw;
-        --profile-value-text: 2.25vw;
-        --profile-value-back-text: 2.25vw;
-        --engineer-text-large: 5.25vw;
-        --engineer-text-midium: 3.75vw;
-        --engineer-text-small: 2.25vw;
+        /* Title */
+        --title-display: inline-block;
+        --title-font-size: clamp(4.375rem, 12vh, 8.75rem);
+        /* Grid Content*/
+        --grid-title-font-size: clamp(4.375rem, 12vh, 8.125rem);
+        /* Grid Profile */
+        --profile-grid-tmp-col: 1fr 2fr 2fr;
+        --profile-grid-tmp-row: 1fr 1fr 2fr;
+        --profile-grid-tmp-area:
+            "nk nv im"
+            "jk jv im"
+            "tt tt im";
+        --profile-key-text: clamp(1.1rem, 3vh, 2.1875rem);
+        --profile-value-text: clamp(1.1rem, 3vh, 2.1875rem);
+        --profile-value-back-text: clamp(1.1rem, 3vh, 2.1875rem);
+        /* Grid Engineer */
+        --engineer-text-large: clamp(2.265rem, 7vh, 5.125rem);
+        --engineer-text-midium: clamp(1.8rem, 5vh, 3.5875rem);
+        --engineer-text-small: clamp(1.1rem, 3vh, 2.1875rem);
+        /* Grid Design */
+        --design-title-top: 75%;
+        --design-title-left: -7%;
+        --design-image-area-height: 80%;
+        --design-image-triangle-width: 50%;
+        --design-image-triangle-height: 33.719%;
+        --design-image-triangle-top: 27.5%;
+        --design-image-triangle-left: 26%;
+        --design-image-circle-width: 72%;
+        --design-image-circle-top: -12%;
+        --design-image-circle-left: 3%;
+        --design-image-square-width: 45%;
+        --design-image-square-top: 5%;
+        --design-image-square-left: 51%;
+        --design-image-border-height: 131.5%;
+        --design-image-border-top: -25.375%;
+        --design-image-border-left: 65.5%;
+        /* Grid SNS */
+        --sns-display: block;
+    }
+}
+/* Desktop Portrait Layout*/
+@media(min-width:768px) and (max-aspect-ratio:4/3) {
+    :root {
+        /* Common Variables Override */
+        --header-height-min: 0px;
+        --header-height: 0px;
+        --header-height-max: 0px;
+        --header-display: none;
+        --wrapper-height-max: 1080px;
+
+        /* Index Variables */
+        /* Main */
+        --grid-col: repeat(8, 1fr);
+        --grid-row: repeat(6, 1fr);
+        --grid-gap: 12px;
+        --grid-tmp-area:
+            "p p p p p t t t"
+            "p p p p p d d d"
+            "g e e e e d d d"
+            "x e e e e d d d"
+            "r e e e e d d d"
+            "c e e e e d d d";
+        /* Title */
+        --title-display: inline-block;
+        --title-font-size: clamp(4.375rem, 9vw, 8.75rem);
+        /* Grid Content*/
+        --grid-title-font-size: clamp(4.375rem, 9vw, 8.75rem);
+        /* Grid Profile */
+        --profile-grid-tmp-col: 1fr 2fr 2fr;
+        --profile-grid-tmp-row: 1fr 1fr 2fr;
+        --profile-grid-tmp-area:
+            "nk nv im"
+            "jk jv im"
+            "tt tt im";
+        --profile-key-text: clamp(1.1rem, 2.25vw, 2.1875rem);
+        --profile-value-text: clamp(1.1rem, 2.25vw, 2.1875rem);
+        --profile-value-back-text: clamp(1.1rem, 2.25vw, 2.1875rem);
+        /* Grid Engineer */
+        --engineer-text-large: clamp(2.265rem, 5.25vw, 5.125rem);
+        --engineer-text-midium: clamp(1.8rem, 3.75vw, 3.6875rem);
+        --engineer-text-small: clamp(1.1rem, 2.25vw, 2.1875rem);
+        /* Grid Design */
+        --design-title-top: 75%;
+        --design-title-left: -7%;
+        --design-image-area-height: 80%;
+        --design-image-triangle-width: 50%;
+        --design-image-triangle-height: 33.719%;
+        --design-image-triangle-top: 27.5%;
+        --design-image-triangle-left: 26%;
+        --design-image-circle-width: 72%;
+        --design-image-circle-top: -12%;
+        --design-image-circle-left: 3%;
+        --design-image-square-width: 45%;
+        --design-image-square-top: 5%;
+        --design-image-square-left: 51%;
+        --design-image-border-height: 131.5%;
+        --design-image-border-top: -25.375%;
+        --design-image-border-left: 65.5%;
+        /* Grid SNS */
+        --sns-display: block;
     }
 }
 
 /* Mobile Landscape Layout */
 @media(max-width:767px) and (min-aspect-ratio:4/3) {
     :root {
-        --default-width: 1440px;
-        --default-height: 1080px;
-        --header-height: 24px;
-        --header-display: block;
-        --footer-height: 24px;
-        --wrapper-width-min: 768px;
-        --wrapper-width: 133.33vh;
-        --wrapper-height-min: 576px;
-        --wrapper-height: 100vh;
-        --wrapper-margin: 0 auto;
-        --grid-col: 3;
-        --grid-row: 12;
+        /* Index Variables */
+        /* Main */
+        --grid-col: auto;
+        --grid-row: repeat(3, 1fr);
         --grid-gap: 6px;
         --grid-tmp-area:
-            "t t t"
-            "p p p"
-            "p p p"
-            "p p p"
-            "e e e"
-            "e e e"
-            "e e e"
-            "d d d"
-            "d d d"
-            "d d d"
-            "x a g"
-            "r a c";
-        --title-font-size: 12vh;
+            "g"
+            "p"
+            "x"
+            "e"
+            "r"
+            "d"
+            "c";
+        /* Title */
+        --title-display: none;
+        --title-font-size: 0;
+        /* Grid Content*/
         --grid-title-font-size: 12vh;
+        /* Grid Profile */
+        --profile-grid-tmp-col: repeat(3, 1fr);
+        --profile-grid-tmp-row: repeat(3, 1fr);
+        --profile-grid-tmp-area:
+            "tt tt im"
+            "nk nv nv"
+            "jk jv jv";
         --profile-key-text: 3vh;
         --profile-value-text: 3vh;
         --profile-value-back-text: 3vh;
+        /* Grid Engineer */
         --engineer-text-large: 7vh;
         --engineer-text-midium: 5vh;
         --engineer-text-small: 3vh;
+        /* Grid Design */
+        --design-title-top: 75%;
+        --design-title-left: -7%;
+        --design-image-area-height: 80%;
+        --design-image-triangle-width: 50%;
+        --design-image-triangle-height: 33.719%;
+        --design-image-triangle-top: 27.5%;
+        --design-image-triangle-left: 26%;
+        --design-image-circle-width: 72%;
+        --design-image-circle-top: -12%;
+        --design-image-circle-left: 3%;
+        --design-image-square-width: 45%;
+        --design-image-square-top: 5%;
+        --design-image-square-left: 51%;
+        --design-image-border-height: 131.5%;
+        --design-image-border-top: -25.375%;
+        --design-image-border-left: 65.5%;
+        /* Grid SNS */
+        --sns-display: none;
     }
 }
 
 /* Mobile Portrait Layout */
 @media(max-width:767px) and (max-aspect-ratio:4/3) {
     :root {
-        --default-width: 1440px;
-        --default-height: 1080px;
-        --header-height: 24px;
-        --header-display: block;
-        --footer-height: 24px;
-        --wrapper-width-min: 768px;
-        --wrapper-width: 100vw;
-        --wrapper-height-min: 576px;
-        --wrapper-height: 75vw;
-        --wrapper-margin: 0 auto;
-        --grid-col: 3;
-        --grid-row: 12;
+        /* Index Variables */
+        /* Main */
+        --grid-col: auto;
+        --grid-row: repeat(8, minmax(auto, 1fr));
         --grid-gap: 6px;
         --grid-tmp-area:
-            "t t t"
-            "p p p"
-            "p p p"
-            "p p p"
-            "e e e"
-            "e e e"
-            "e e e"
-            "d d d"
-            "d d d"
-            "d d d"
-            "x a g"
-            "r a c";
-        --title-font-size: 9vw;
-        --grid-title-font-size: 9vw;
-        --profile-key-text: 2.25vw;
-        --profile-value-text: 2.25vw;
-        --profile-value-back-text: 2.25vw;
-        --engineer-text-large: 5.25vw;
-        --engineer-text-midium: 3.75vw;
-        --engineer-text-small: 2.25vw;
+            "t"
+            "p"
+            "g"
+            "e"
+            "x"
+            "d"
+            "r"
+            "c";
+        /* Title */
+        --title-display: none;
+        --title-font-size: 0;
+        /* Grid Content*/
+        --grid-title-font-size: clamp(4.375rem, 9vw, 8.75rem);
+        /* Grid Profile */
+        --profile-grid-tmp-col: 1fr 2fr 1fr;
+        --profile-grid-tmp-row: 2fr 1fr 1fr;
+        --profile-grid-tmp-area:
+            "tt tt im"
+            "nk nv nv"
+            "jk jv jv";
+        --profile-key-text: clamp(1.1rem, 2.25vw, 2.1875rem);
+        --profile-value-text: clamp(1.1rem, 2.25vw, 2.1875rem);
+        --profile-value-back-text: clamp(1.1rem, 2.25vw, 2.1875rem);
+        /* Grid Engineer */
+        --engineer-text-large: clamp(2.265rem, 5.25vw, 5.125rem);
+        --engineer-text-midium: clamp(1.1rem, 2.25vw, 2.1875rem);
+        --engineer-text-small: clamp(1.1rem, 2.25vw, 2.1875rem);
+        /* Grid Design */
+        --design-title-top: 3%;
+        --design-title-left: -13%;
+        --design-image-area-height: 50vw;
+        --design-image-triangle-width: 40%;
+        --design-image-triangle-height: 69.282%;
+        --design-image-triangle-top: 27.5%;
+        --design-image-triangle-left: 27%;
+        --design-image-circle-width: 65%;
+        --design-image-circle-top: -41%;
+        --design-image-circle-left: 10%;
+        --design-image-square-width: 40%;
+        --design-image-square-top: -15%;
+        --design-image-square-left: 47%;
+        --design-image-border-height: 155%;
+        --design-image-border-top: -49.375%;
+        --design-image-border-left: 76%;
+        /* Grid SNS */
+        --sns-display: none;
     }
 }
 
 
 /*** Styles ***/
-/** Header **/
-header {
-    display: var(--header-display);
+/** Main **/
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* override */
+.wrapper-height{
+    height: calc(var(--wrapper-height) - var(--footer-height));
+    max-height: var(--wrapper-height-max);
+}
 
-/** Main **/
 /* Grid - Layout */
 .grid-title {
     grid-area: t;
+    display: var(--title-display);
 }
 
 .grid-profile {
@@ -184,31 +277,31 @@ header {
 
 .grid-x {
     grid-area: x;
+    display: var(--sns-display);
 }
 
 .grid-git {
     grid-area: g;
+    display: var(--sns-display);
 }
 
 .grid-repository {
     grid-area: r;
+    display: var(--sns-display);
 }
 
 .grid-comprehensive {
     grid-area: c;
+    display: var(--sns-display);
 }
 
 
 /* Grid */
 main ul {
-    min-width: var(--wrapper-width-min);
-    width: var(--wrapper-width);
-    min-height: calc(var(--wrapper-height-min) - (var(--header-height) + var(--footer-height)));
-    height: calc(var(--wrapper-height) - (var(--header-height) + var(--footer-height)));
     display: grid;
     gap: var(--grid-gap);
-    grid-template-columns: repeat(var(--grid-col), 1fr);
-    grid-template-rows: repeat(var(--grid-row), 1fr);
+    grid-template-columns: var(--grid-col);
+    grid-template-rows: var(--grid-row);
     grid-template-areas: var(--grid-tmp-area);
 }
 
@@ -259,13 +352,10 @@ main li a:hover{
 /* Grid - Profile */
 .grid-profile a{
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-    grid-template-rows: 1fr 1fr 2fr;
-    grid-template-areas:
-        "nk nv im"
-        "jk jv im"
-        "tt tt im";
-    padding: 10px;
+    grid-template-columns: var(--profile-grid-tmp-col);
+    grid-template-rows: var(--profile-grid-tmp-row);
+    grid-template-areas: var(--profile-grid-tmp-area);
+    padding: 1%;
 }
 
 /* Grid - Profile - Title */
@@ -371,7 +461,7 @@ main li a:hover{
 /* Grid - Engineer */
 .grid-engineer a{
     text-align: right;
-    padding: 0 10px 10px;
+    padding: 0 1% 1%;
     line-height: 1.2;
 }
 
@@ -444,7 +534,7 @@ main li a:hover{
 
 /* Grid - Design */
 .grid-design a{
-    padding: 10px;
+    padding: 1%;
 }
 
 .grid-design img{
@@ -456,8 +546,8 @@ main li a:hover{
 /* Grid - Design - Title */
 .grid-design-title{
     position: relative;
-    top: 75%;
-    left: -7%;
+    top: var(--design-title-top);
+    left: var(--design-title-left);
     font-size: var(--grid-title-font-size);
     text-shadow:
         0.03em  0.00em 0 var(--color-background-sub),
@@ -481,7 +571,7 @@ main li a:hover{
 /* width: 50% = height: 31.146 */
 .grid-design-img-area{
     position: relative;
-    height: 80%;
+    height: var(--design-image-area-height);
     font-size: 0;
     line-height: 0;
 }
@@ -490,26 +580,26 @@ main li a:hover{
     position: absolute;
     background-color: var(--color-accents);
     opacity: 0.91;
-    width: 50%;
-    height: 33.719%;
+    width: var(--design-image-triangle-width);
+    height: var(--design-image-triangle-height);
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    top: 27.5%;
-    left: 26%;
+    top: var(--design-image-triangle-top);
+    left: var(--design-image-triangle-left);
     z-index: 4;
 }
 
 .grid-design-img-circle{
     position: absolute;
-    border-top: 2px solid var(--color-accents);
+    border: 2px solid var(--color-accents);
     border-left: 2px solid var(--color-accents);
     background-color: transparent;
     opacity: 1;
     aspect-ratio: 1;
-    width: 72%;
+    width: var(--design-image-circle-width);
     height: auto;
     border-radius: 50%;
-    top: -12%;
-    left: 3%;
+    top: var(--design-image-circle-top);
+    left: var(--design-image-circle-left);
     z-index: 3;
 }
 
@@ -518,10 +608,10 @@ main li a:hover{
     background-color: var(--color-main);
     opacity: 0.67;
     aspect-ratio: 1;
-    width: 45%;
+    width: var(--design-image-square-width);
     height: auto;
-    top: 5%;
-    left: 51%;
+    top: var(--design-image-square-top);
+    left: var(--design-image-square-left);
     z-index: 2;
 }
 
@@ -532,36 +622,17 @@ main li a:hover{
     transform: rotate(23.4deg);
     transform-origin: center;
     width: 0;
-    height: 135%;
-    top: -29.375%;
-    left: 66%;
+    height: var(--design-image-border-height);
+    top: var(--design-image-border-top);
+    left: var(--design-image-border-left);
     z-index: 1;
 }
 
-
-/* Grid - X */
-.grid-x a{
-    background-image: var(--logo-x);
-    padding: 20%;
-}
-
-
-/* Grid - Github */
-.grid-git a{
-    background-image: var(--logo-git);
-    padding: 15%;
-}
-
-
-/* Grid - Repository */
-.grid-repository a{
-    background-image: var(--logo-repository);
-    padding: 7%;
-}
-
-
-/* Grid - Comprehensive */
-.grid-comprehensive a{
-    background-image: var(--logo-comprehensive);
-    padding: 7%;
+/* Grid - SNS */
+.grid-sns,
+.logo-git,
+.logo-x,
+.logo-repository,
+.logo-comprehensive{
+    display: var(--sns-display);
 }
