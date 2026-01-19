@@ -15,6 +15,7 @@
     --card-shadow: 0 4px 6px -1px #0002;
     --card-glass: none;
 
+    --logo: url(../img/portfolio-logo.svg);
     --logo-x: url(../img/icon/logo-black.webp);
     --logo-git: url(../img/icon/github-mark.svg);
     --logo-repository: url(../img/icon/code.svg);
@@ -35,6 +36,7 @@
         --card-shadow: 0 8px 32px 0 #0000005f;
         --card-glass: blur(12px);
 
+        --logo: url(../img/portfolio-logo-dark.svg);
         --logo-x: url(../img/icon/logo.svg);
         --logo-git: url(../img/icon/github-mark-white.svg);
         --logo-repository: url(../img/icon/code-white.svg);
