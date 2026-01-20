@@ -29,13 +29,12 @@ class skillTag {
       alert("Webページの読み込みに失敗しました。時間をおいて再度アクセスしてください。");
       return;
     }
-
-    // 表示中のローディングを削除と初期化
-    this.__targetElement.innerHTML = "";
-
     // JSONデータを(group_order, order)の昇順でソート
     const groupPow = Math.pow(10, 3);
     data.sort((a, b) => (a.group_order * groupPow + a.order) - (b.group_order * groupPow + b.order));
+
+    // 表示中のローディングを削除と初期化
+    this.__targetElement.innerHTML = "";
 
     // スキルタグの生成処理
     data.forEach((value, i) => {
@@ -114,18 +113,27 @@ class projectCard {
    */
   async create(){
     let process = [];
+    let skills = [];
     let data = [];
 
     try {
       // 工程のファイル読み込み
-      // const response1 = await fetch("./doc/data/enginnering-process.json");
-      // if (!response1.ok) throw new Error("工程ファイルの読み込みに失敗");
-      // process =  await response1.json();
+      const response1 = await fetch("./doc/data/engineering-process.json");
+      if (!response1.ok) throw new Error("工程ファイルの読み込みに失敗");
+      process =  await response1.json();
+
+      // スキルセットのファイル読み込み
+      const response2 = await fetch("./doc/data/engineering-skill.json");
+      if (!response2.ok) throw new Error("スキルセットのファイル読み込みに失敗");
+      skills =  await response2.json();
+      // JSONデータを(group_order, order)の昇順でソート
+      const groupPow = Math.pow(10, 3);
+      skills.sort((a, b) => (a.group_order * groupPow + a.order) - (b.group_order * groupPow + b.order));
 
       // プロジェクト履歴のファイル読み込み
-      const response2 = await fetch("./doc/data/enginnering-history.json");
-      if (!response2.ok) throw new Error("プロジェクト履歴のファイル読み込みに失敗");
-      data =  await response2.json();
+      const response3 = await fetch("./doc/data/enginnering-history.json");
+      if (!response3.ok) throw new Error("プロジェクト履歴のファイル読み込みに失敗");
+      data =  await response3.json();
     } catch (error) {
       alert("Webページの読み込みに失敗しました。時間をおいて再度アクセスしてください。");
       return;
@@ -141,18 +149,61 @@ class projectCard {
 
       // 見出し作成
       const h3 = document.createElement("h3");
-      h3.textContent = value.industry;
+      h3.textContent = value.title;
       article.appendChild(h3);
+
+      // 業種
+      const span_industry = document.createElement("span");
+      span_industry.textContent = value.industry;
+      article.appendChild(span_industry);
 
       // 時期作成
       const timeTag = document.createElement("time");
       timeTag.dateTime = value.date;
       const startDate = new Date(value.date);
-      const endDateMonth = ((startDate.getMonth() + value.period) % 12) - 1;
-      const endDateYear = startDate.getFullYear() + Math.trunc(((startDate.getMonth() + value.period) / 12));
-      const endDate = new Date(endDateYear, endDateMonth, 1);
-      timeTag.textContent = `${startDate.getFullYear()}年${startDate.getMonth() + 1}月〜${endDate.getFullYear()}年${endDate.getMonth() + 1}月`;
+      if (value.period == null || value.period < 1) {
+        timeTag.textContent = `${startDate.getFullYear()}年${startDate.getMonth() + 1}月〜`;
+      } else if (value.period == 1) {
+        timeTag.textContent = `${startDate.getFullYear()}年${startDate.getMonth() + 1}月`;
+      } else {
+        const endDateMonth = ((startDate.getMonth() + value.period) % 12) - 1;
+        const endDateYear = startDate.getFullYear() + Math.trunc(((startDate.getMonth() + value.period) / 12));
+        const endDate = new Date(endDateYear, endDateMonth, 1);
+        timeTag.textContent = `${startDate.getFullYear()}年${startDate.getMonth() + 1}月〜${endDate.getFullYear()}年${endDate.getMonth() + 1}月`;
+      }
       article.appendChild(timeTag);
+
+      // 作業工程
+      const ul = document.createElement("ul");
+      process.forEach((procValue) => {
+        const li = document.createElement("li");
+        li.textContent = procValue.name;
+        if(value.process.filter((v) => v == procValue.key).length == 1) li.className = "enable";
+        ul.appendChild(li);
+      });
+      article.appendChild(ul);
+
+      // スキルセット
+      const dataTechs = [];
+      const divSkills = document.createElement("div");
+      divSkills.classList = "project-skills";
+      skills.forEach((skill) => {
+        if(Object.values(value.skill).filter(a => a.find(v => v == skill.key)).length == 1) {
+          const span = document.createElement("span");
+          span.className = "skill-tag all";
+          span.textContent = skill.value;
+          divSkills.appendChild(span);
+          dataTechs.push(skill);
+        }
+      });
+      article.dataset.name = "techs";
+      article.dataset.techs = dataTechs.join(",");
+      article.appendChild(divSkills);
+
+      // 本文
+      const p = document.createElement("p");
+      p.textContent = value.body;
+      article.appendChild(p);
 
       // 追加
       this.__targetElement.appendChild(article);
@@ -207,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   // 監視開始
-  if (introArea) observer.observe(introArea);
-  projects.forEach(project => observer.observe(project));
+  // if (introArea) observer.observe(introArea);
+  // projects.forEach(project => observer.observe(project));
 
 });

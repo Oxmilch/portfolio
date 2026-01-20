@@ -18,64 +18,29 @@
 
 
 /*** Styles ***/
-/** Tag **/
+/** Common **/
 body {
   overflow: hidden;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
   font-size: 2rem;
   color: var(--color-accents);
+  margin-top: 0.5em;
 }
 
 h3 {
   font-size: 1.5rem;
   color: var(--color-main);
-  margin-top: 0.5rem;
+  margin-top: 0.5em;
 }
 
-article {
-  scroll-snap-align: center;
-  background-color: var(--color-background-main);
-  height: 60vh;
-  padding: 1rem;
-  margin-top: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-article div{
-  margin-top: 0.5rem;
-}
-
-article span{
-  font-size:  0.9rem;
-  color: var(--color-main);
-  background-color: var(--color-background-main);
-  padding: 0.33rem 0.67rem;
-  margin: 0.5rem 0.33rem 0.5rem 0;
-  border: 1px solid var(--color-accents);
-  border-radius: 0.75rem;
-}
-
-time {
-  font-size: 1.5rem;
-  color: var(--color-accents);
-}
-
-p {
-  font-size: 1rem;
-  color: var(--color-main);
-  margin: 0.5rem 0 0 0.5rem;
-}
-
-/* Class */
 /* レイアウト構成 (Split Screen) */
 .split {
   display: table;
@@ -112,14 +77,15 @@ p {
 }
 
 .split-right{
-    position: relative;
-    width: 50%;
-    height: 90vh;
-    overflow:auto;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+  position: relative;
+  width: 50%;
+  height: 90vh;
+  overflow:auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
+/* Split - Left */
 /* SkillSet - Skilltag - Base */
 .skill-tag {
   display: inline-block;
@@ -150,6 +116,69 @@ p {
 .skill-tag.non-active {
   border-color: transparent;
   transform: scale(0.8);
+}
+
+
+/* Split - Right */
+article {
+  scroll-snap-align: center;
+  background-color: var(--color-background-main);
+  height: 60vh;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+article div{
+  margin-top: 0.5rem;
+}
+
+article ul,
+.project-skills{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1px 4px;
+  margin-top: 0.25rem;
+}
+
+article li{
+  font-size: 0.75rem;
+  color: var(--color-sub);
+  padding: 0.125em 0.5em;
+  border:1px solid var(--color-sub);
+  border-radius: 1em;
+  margin-top: 0.25em;
+}
+
+article .enable{
+  font-size: 0.91rem;
+  color: var(--color-main);
+  border:2px solid var(--color-accents);
+}
+
+
+article span{
+  font-size:  0.75rem;
+  color: var(--color-main);
+  background-color: var(--color-background-main);
+  padding: 0.33rem 0.67rem;
+  margin: 0.5rem 0.33rem 0.5rem 0;
+  border: 1px solid var(--color-accents);
+  border-radius: 0.75rem;
+}
+
+time {
+  font-size: 0.75rem;
+  color: var(--color-accents);
+}
+
+p {
+  font-size: 1rem;
+  color: var(--color-main);
+  margin: 0.5rem 0 0 0.5rem;
 }
 
 /* 上下のダミー余白（スクロールの調整用） */

@@ -1,8 +1,9 @@
 [
     {
         "date": "2025-12-01",
-        "period": 6,
-        "industry": "学生",
+        "period": 0,
+        "industry": "デザイン学生",
+        "title": "デザインの勉強中",
         "skill": {
             "os": ["mac"],
             "other": [],
@@ -14,16 +15,7 @@
             "versioning": [],
             "design": ["ai", "ps", "pr"]
         },
-        "process":{
-            "rd": false,
-            "bd": false,
-            "dd": false,
-            "d": false,
-            "ut": false,
-            "it": false,
-            "rt": false
-        },
-        "title": "デザインの勉強中",
-        "body": ""
+        "process":[],
+        "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam rem repellendus ipsum necessitatibus doloremque labore, adipisci alias reiciendis commodi, voluptate porro quo cupiditate expedita consequatur hic in, esse earum harum."
     }
 ]
