@@ -22,11 +22,11 @@ class skillTag {
 
     //ファイル読み込み
     try {
-      const response = await fetch("./doc/engineering-skill.json");
+      const response = await fetch("./doc/data/engineering-skill.json");
       if (!response.ok) throw new Error("スキルセットのファイル読み込みに失敗");
       data =  await response.json();
     } catch (error) {
-      alert("Webページの読み込みに失敗しました。¥n時間をおいて再度アクセスしてください。");
+      alert("Webページの読み込みに失敗しました。時間をおいて再度アクセスしてください。");
       return;
     }
 
@@ -99,7 +99,6 @@ class skillTag {
  */
 class projectCard {
   __targetElement;
-  __isCreate;
   __projectCard;
 
   /**
@@ -124,7 +123,7 @@ class projectCard {
       // process =  await response1.json();
 
       // プロジェクト履歴のファイル読み込み
-      const response2 = await fetch("./doc/enginnering-history.json");
+      const response2 = await fetch("./doc/data/enginnering-history.json");
       if (!response2.ok) throw new Error("プロジェクト履歴のファイル読み込みに失敗");
       data =  await response2.json();
     } catch (error) {
@@ -149,13 +148,13 @@ class projectCard {
       const timeTag = document.createElement("time");
       timeTag.dateTime = value.date;
       const startDate = new Date(value.date);
-      const endDateMonth = ((startDate.getMonth() + 1 + value.period) % 12) - 1;
-      const endDateYear = startDate.getFullYear() + Math.trunc(((startDate.getMonth() + 1 + value.period) / 12));
+      const endDateMonth = ((startDate.getMonth() + value.period) % 12) - 1;
+      const endDateYear = startDate.getFullYear() + Math.trunc(((startDate.getMonth() + value.period) / 12));
       const endDate = new Date(endDateYear, endDateMonth, 1);
-      timeTag.textContent = `${startDate.getFullYear}年${startDate.getMonth + 1}月〜${endDate.getFullYear}年${endDate.getMonth + 1}月`
+      timeTag.textContent = `${startDate.getFullYear()}年${startDate.getMonth() + 1}月〜${endDate.getFullYear()}年${endDate.getMonth() + 1}月`;
       article.appendChild(timeTag);
 
-      //
+      // 追加
       this.__targetElement.appendChild(article);
     });
   }
