@@ -23,11 +23,10 @@ class skillTag {
     //ファイル読み込み
     try {
       const response = await fetch("./doc/engineering-skill.json");
-      if (!response.ok) throw new Error(`HTTPエラー: ${response.status}`);
+      if (!response.ok) throw new Error("スキルセットのファイル読み込みに失敗");
       data =  await response.json();
-      
     } catch (error) {
-      alert('ファイル読み込み失敗:', error);
+      alert("Webページの読み込みに失敗しました。¥n時間をおいて再度アクセスしてください。");
       return;
     }
 
@@ -39,24 +38,24 @@ class skillTag {
     data.sort((a, b) => (a.group_order * groupPow + a.order) - (b.group_order * groupPow + b.order));
 
     // スキルタグの生成処理
-    for(let i = 0; i < data.length; i++){
+    data.forEach((value, i) => {
       // タイプが異なる場合はタイプ見出し新規作成
-      if (i === 0 || data[i - 1].type !== data[i].type) {
+      if (i === 0 || data[i - 1].type !== value.type) {
         const h3 = document.createElement("h3");
         h3.className = "";
-        h3.textContent = data[i].type;
+        h3.textContent = value.type;
         this.__targetElement.appendChild(h3);
       }
 
       // スキルタグを作成
       const span = document.createElement('span');
       span.className = "skill-tag all";
-      span.dataset.tech = data[i].key;
-      span.textContent = data[i].value;
+      span.dataset.tech = value.key;
+      span.textContent = value.value;
 
       // 追加
       this.__targetElement.appendChild(span);
-    }
+    });
 
     this.__isCreate == true;
   }
@@ -107,7 +106,7 @@ class projectCard {
    *  コンストラクタ
    */
   constructor(){
-    this.__targetElement = document.querySelector();
+    this.__targetElement = document.querySelector("#project-list");
     this.__isCreate = false;
   }
 
@@ -115,34 +114,66 @@ class projectCard {
    * プロジェクト履歴のカードを作成
    */
   async create(){
+    let process = [];
+    let data = [];
 
-  }
+    try {
+      // 工程のファイル読み込み
+      // const response1 = await fetch("./doc/data/enginnering-process.json");
+      // if (!response1.ok) throw new Error("工程ファイルの読み込みに失敗");
+      // process =  await response1.json();
 
-  /**
-   * オブザーバーの設定
-   * rootMargin: '-45% 0px -45% 0px' とすることで、「画面の中央10%のライン」を通過したものを検知エリアにします。
-   * これにより、画面内に複数入っても「中央にあるもの」を判定しやすくなります。
-   */
-  observerOptions(){
-    root: null;
-    // rootMargin: '-45% 0px -45% 0px',
-    threshold: 0;
+      // プロジェクト履歴のファイル読み込み
+      const response2 = await fetch("./doc/enginnering-history.json");
+      if (!response2.ok) throw new Error("プロジェクト履歴のファイル読み込みに失敗");
+      data =  await response2.json();
+    } catch (error) {
+      alert("Webページの読み込みに失敗しました。時間をおいて再度アクセスしてください。");
+      return;
+    }
+
+    // プロジェクト履歴の初期化
+    this.__targetElement.innerHTML = "";
+
+    // プロジェクトカードの生成処理
+    data.forEach((value) => {
+      // カード作成
+      const article = document.createElement("article");
+
+      // 見出し作成
+      const h3 = document.createElement("h3");
+      h3.textContent = value.industry;
+      article.appendChild(h3);
+
+      // 時期作成
+      const timeTag = document.createElement("time");
+      timeTag.dateTime = value.date;
+      const startDate = new Date(value.date);
+      const endDateMonth = ((startDate.getMonth() + 1 + value.period) % 12) - 1;
+      const endDateYear = startDate.getFullYear() + Math.trunc(((startDate.getMonth() + 1 + value.period) / 12));
+      const endDate = new Date(endDateYear, endDateMonth, 1);
+      timeTag.textContent = `${startDate.getFullYear}年${startDate.getMonth + 1}月〜${endDate.getFullYear}年${endDate.getMonth + 1}月`
+      article.appendChild(timeTag);
+
+      //
+      this.__targetElement.appendChild(article);
+    });
   }
 }
 
 /**
- * HTML Loaded
+ * HTML Loaded Event
  */
 document.addEventListener('DOMContentLoaded', () => {
   const skillTags = new skillTag();
-  const projects = document.querySelectorAll('.project-card');
+  const projects = new projectCard();
   const introArea = document.querySelector('.intro-area');
 
   // スキルタグ作成
   skillTags.create();
 
   // プロジェクト履歴を作成
-
+  projects.create();
 
   /**
    * オブザーバーの設定

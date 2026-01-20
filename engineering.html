@@ -42,9 +42,7 @@
     <header class="font-ja">
         <div class="wrapper">
             <h1>
-                <a class="font-en-ex-light font-color-accents" href="./index.html">
-                    Portfolio
-                </a>
+                <a class="font-en-ex-light font-color-accents" href="./index.html">Portfolio</a>
             </h1>
             <nav class="header-desktop-nav">
                 <ul class="header-desktop-nav-content font-en-bold">
@@ -62,9 +60,7 @@
             <section class="header-mobile-menu">
                 <input type="checkbox" id="header-mobile-menu-check" hidden>
                 <label class="header-mobile-menu-icon" for="header-mobile-menu-check">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span><span></span>
                 </label>
                 <div class="overlay"></div>
                 <nav class="header-mobile-nav">
@@ -84,7 +80,7 @@
     <main class="split wrapper wrapper-height font-ja">
         <section class="split-item split-left">
             <div class="split-left-fix">
-                <h2>Skill Set</h2>
+                <h2>スキルセット</h2>
                 <div id="skill-list" class="skill-cloud">
                     <h3>Now Loading...</h3>
                     <span class="active">skill loading</span>
@@ -95,32 +91,30 @@
             <div class="split-center-fix"></div>
         </div>
         <section class="split-item split-right">
-            <!-- <h2>Project History</h2> -->
-            <div class="spacer-top"></div>
-
-            <article data-techs="win">
-                <time>今現在</time>
-                <h3>すべてのスキルセット</h3>
-                <div>
-                    <span>skill</span>
-                </div>
-                <p>ー</p>
-            </article>
-
-            <article data-techs="mac">
-                <time datetime="2025-01-01">2025年 1月</time>
-                <h3>件名</h3>
-                <p>詳細</p>
-            </article>
-
-            <article data-techs="lin">
-                <time>時期３</time>
-                <h3>件名</h3>
-                <p>詳細</p>
-            </article>
+            <h2>Project History</h2>
+            <div id="project-list">
+                <div class="spacer-top"></div>
+                <article data-techs="mac">
+                    <time datetime="2025-01-01">2025年 1月</time>
+                    <h3>件名</h3>
+                    <ul>
+                        <li>要件定義</li>
+                        <li>基本設計</li>
+                        <li>詳細設計</li>
+                        <li>製造</li>
+                        <li>単体試験</li>
+                        <li>結合試験</li>
+                        <li>総合試験</li>
+                        <li>保守運用</li>
+                    </ul>
+                    <div class="project-skill">
+                        <span>skill</span>
+                    </div>
+                    <p>詳細</p>
+                </article>
+                <div class="spacer-bottom"></div>
+            </div>
         </section>
-
-        <div class="spacer-bottom"></div>
     </main>
     <footer>
         <small class="font-en-ex-light">&copy; 2026 Oxmilch</small>

@@ -163,6 +163,7 @@ img {
     height: auto;
 }
 
+
 /** Header **/
 header {
     display: var(--header-display);
@@ -350,6 +351,42 @@ header h1 a{
 /** Main **/
 main {
     width: 100vw;
+}
+
+/** Main - 404 Not Found **/
+.not-found{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(100vh - var(--header-height-min) - var(--footer-height));
+    height: calc(100vh - var(--header-heigh) - var(--footer-height));
+    max-height: calc(100vh - var(--header-height-max) - var(--footer-height));
+    padding: 1%;
+    text-align: center;
+    z-index: 1;
+}
+
+.not-found h2{
+    position: relative;
+    font-size: 3rem;
+}
+.not-found h2::before{
+    position: absolute;
+    content: "404";
+    color: var(--color-accents);
+    text-shadow:
+        0.01em  0.01em 0 var(--color-accents),
+       -0.01em  0.01em 0 var(--color-accents),
+        0.01em -0.01em 0 var(--color-accents),
+       -0.01em -0.01em 0 var(--color-accents);
+    z-index: 2;
+}
+
+.not-found p{
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 2rem 1rem 0;
 }
 
 /** Footer **/
