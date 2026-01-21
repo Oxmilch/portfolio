@@ -10,6 +10,8 @@
         --header-height: 0px;
         --header-height-max: 0px;
         --header-display: none;
+        --wrapper-width: 133.33vh;
+        --wrapper-height: 100vh;
         --wrapper-height-max: 1080px;
 
         /* Index Variables */
@@ -58,6 +60,8 @@
         --header-height: 0px;
         --header-height-max: 0px;
         --header-display: none;
+        --wrapper-width: 100vw;
+        --wrapper-height: 75vw;
         --wrapper-height-max: 1080px;
 
         /* Index Variables */
@@ -102,6 +106,9 @@
 /* Mobile Landscape Layout */
 @media(max-width:767px) and (min-aspect-ratio:4/3) {
     :root {
+        /* Common Variables Override */
+        --wrapper-height: 100vh;
+
         /* Index Variables */
         /* Main */
         --grid-col: auto;
@@ -145,6 +152,9 @@
 /* Mobile Portrait Layout */
 @media(max-width:767px) and (max-aspect-ratio:4/3) {
     :root {
+        /* Common Variables Override */
+        --wrapper-height: 100vh;
+
         /* Index Variables */
         /* Main */
         --grid-col: auto;

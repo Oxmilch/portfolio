@@ -72,6 +72,8 @@
 
 ### JavaScript
 - [JavaScriptをHTMLのどこで読み込むのか？メリット/デメリットも解説](https://qiita.com/ota_LHL/items/7d3ccbf4a920d1776d9d)
+- [JavaScriptで親要素・子要素・兄弟要素の取得と追加や削除する方法まとめ](https://haniwaman.com/javascript-relative-element/)
+
 
 ### MarkDown
 - [Markdown記法で画像サイズを変更する方法（widthを指定する）](https://k-koh.hatenablog.com/entry/2020/02/22/111440)

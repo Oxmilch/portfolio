@@ -61,7 +61,7 @@
 
     /* Wrapper */
     --wrapper-width-min: 768px;
-    --wrapper-width: 133.33vh;
+    --wrapper-width: 96vw;
     --wrapper-width-max: 1440px;
     --wrapper-height-min: 576px;
     --wrapper-height: 100vh;
@@ -84,10 +84,10 @@
 
         /* Wrapper */
         --wrapper-width-min: 768px;
-        --wrapper-width: 100vw;
+        --wrapper-width: 96vw;
         --wrapper-width-max: 1440px;
         --wrapper-height-min: 576px;
-        --wrapper-height: 75vw;
+        --wrapper-height: auto;
         --wrapper-height-max: auto;
     }
 }
@@ -111,7 +111,7 @@
         --wrapper-width: 96vw;
         --wrapper-width-max: 767px;
         --wrapper-height-min: auto;
-        --wrapper-height: 100vh;
+        --wrapper-height: auto;
         --wrapper-height-max: auto;
     }
 }
@@ -135,7 +135,7 @@
         --wrapper-width: 92vw;
         --wrapper-width-max: 767px;
         --wrapper-height-min: auto;
-        --wrapper-height: 100vh;
+        --wrapper-height: auto;
         --wrapper-height-max: auto;
     }
 }
