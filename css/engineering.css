@@ -18,7 +18,7 @@
 
 
 /*** Styles ***/
-/** Common **/
+/** Base **/
 body {
   overflow: hidden;
 }
@@ -35,11 +35,6 @@ h2 {
   margin-top: 0.5em;
 }
 
-h3 {
-  font-size: 1.5rem;
-  color: var(--color-main);
-  margin-top: 0.5em;
-}
 
 /* レイアウト構成 (Split Screen) */
 .split {
@@ -51,6 +46,9 @@ h3 {
 
 .split-item{
   display: table-cell;
+  min-height: calc(100vh - var(--header-height-min) - var(--footer-height));
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  max-height: calc(100vh - var(--header-height-max) - var(--footer-height))
 }
 
 .split-left{
@@ -72,22 +70,22 @@ h3 {
 
 .split-center-fix{
   position: fixed;
-  height: 88%;
   border: 1px solid var(--color-accents);
 }
 
 .split-right{
   position: relative;
   width: 50%;
-  height: 90vh;
-  overflow:auto;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 }
 
 /* Split - Left */
-/* SkillSet - Skilltag - Base */
-.skill-tag {
+.split-left h3{
+  font-size: 1.5rem;
+  color: var(--color-main);
+  margin-top: 0.5em;
+}
+
+.split-left span{
   display: inline-block;
   padding: 0.33rem 0.67rem;
   margin: 0.33rem;
@@ -98,44 +96,67 @@ h3 {
   transition: all 0.3s ease;
 }
 
-/* SkillSet - Skilltag - All */
-.skill-tag.all {
+.split-left .disp{
   background-color: var(--color-background-main);
   color: var(--color-main);
   border: 1px solid var(--color-accents);
 }
 
-/* SkillSet - Skilltag - Active */
-.skill-tag.active {
+.split-left .active{
   background-color: var(--color-accents);
   color: var(--color-background-main);
   transform: scale(1.2);
 }
 
-/* Skillset - Skilltag - nonActive */
-.skill-tag.non-active {
+.split-left .non-active{
   border-color: transparent;
   transform: scale(0.8);
 }
 
 
 /* Split - Right */
-article {
+/* プロジェクト履歴エリア全体 */
+.project-list {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+/* 上下のダミー余白（スクロールの調整用） */
+.project-list-spacer{
+  height: 10%;
+  max-height: 144px;
+  scroll-snap-align: none;
+}
+
+/* プロジェクト履歴カード */
+.split-right dl {
   scroll-snap-align: center;
   background-color: var(--color-background-main);
-  height: 60vh;
+  height: 80%;
+  max-height: 1440px;
   padding: 1rem;
-  margin-top: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  margin-top: 2rem;
 }
 
-article div{
-  margin-top: 0.5rem;
+/* プロジェクト履歴タイトル */
+.split-right dt{
+  font-size: 1.5rem;
+  color: var(--color-main);
+  margin-top: 0.5em;
 }
 
-article ul,
-.project-skills{
+/* プロジェクト履歴時期 */
+.split-right time {
+  font-size: 0.75rem;
+  color: var(--color-accents);
+}
+
+/* プロジェクト履歴作業工程 */
+.split-right ul{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -159,8 +180,12 @@ article .enable{
   border:2px solid var(--color-accents);
 }
 
+/* プロジェクト履歴スキルセット */
+.split-right dl div{
+  margin-top: 0.5rem;
+}
 
-article span{
+.split-right span{
   font-size:  0.75rem;
   color: var(--color-main);
   background-color: var(--color-background-main);
@@ -170,20 +195,9 @@ article span{
   border-radius: 0.75rem;
 }
 
-time {
-  font-size: 0.75rem;
-  color: var(--color-accents);
-}
-
-p {
+/* プロジェクト履歴説明 */
+.split-right dd{
   font-size: 1rem;
   color: var(--color-main);
   margin: 0.5rem 0 0 0.5rem;
-}
-
-/* 上下のダミー余白（スクロールの調整用） */
-.spacer-top,
-.spacer-bottom {
-  height: 10vh;
-  scroll-snap-align: none;
 }
