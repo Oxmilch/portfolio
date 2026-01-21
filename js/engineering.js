@@ -38,24 +38,22 @@ class skillTag {
 
     // スキルタグの生成処理
     data.forEach((value, i) => {
-      // タイプが異なる場合はタイプ見出し新規作成
+      // タイプが異なる場合はタイプ見出しを新規作成
       if (i === 0 || data[i - 1].type !== value.type) {
-        const h3 = document.createElement("h3");
-        h3.className = "";
-        h3.textContent = value.type;
-        this.__targetElement.appendChild(h3);
+        const dt = document.createElement("dt");
+        dt.textContent = value.type;
+        this.__targetElement.appendChild(dt);
+        this.__targetElement.appendChild(document.createElement("dd"));
       }
 
       // スキルタグを作成
-      const span = document.createElement('span');
-      span.className = "disp";
+      const span = document.createElement("span");
       span.dataset.tech = value.key;
       span.textContent = value.value;
 
       // 追加
-      this.__targetElement.appendChild(span);
+      this.__targetElement.lastElementChild.appendChild(span);
     });
-
     this.__isCreate == true;
   }
 
@@ -65,7 +63,7 @@ class skillTag {
   styleReset(){
     if (!this.__isCreate) return;
     this.__skillTags.forEach(tag => {
-      tag.className = "disp";
+      tag.className = "";
     });
   }
 
@@ -227,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   skillTags.create();
 
   // プロジェクト履歴を作成
-  projects.create();
+  // projects.create();
 
   /**
    * オブザーバーの設定

@@ -77,36 +77,39 @@
             </section>
         </div>
     </header>
-    <main class="split wrapper wrapper-height font-ja">
-        <section class="split-item split-left">
-            <div class="split-left-fix">
-                <h2>スキルセット</h2>
-                <div id="skill-list" class="skill-cloud">
-                    <h3>Now Loading...</h3>
-                    <span class="active">skill loading</span>
-                </div>
-            </div>
-        </section>
-        <div class="split-item split-center">
-            <div class="split-center-fix"></div>
-        </div>
-        <section class="split-item split-right">
+    <section class="split wrapper wrapper-height font-ja">
+        <main>
             <h2>プロジェクト履歴</h2>
-            <div id="project-list">
-                <dl data-techs="mac">
-                    <dt>件名</dt>
-                    <time datetime="2016-05-01">2016年 5月</time>
-                    <ul>
-                        <li>学習</li>
-                    </ul>
-                    <div class="project-skills">
-                        <span>skill</span>
-                    </div>
-                    <dd>詳細</dd>
-                </dl>
-            </div>
-        </section>
-    </main>
+            <dl id="project-list">
+                <div class="spacer"></div>
+                <div class="card" data-techs="mac,js">
+                    <dt>プロジェクトタイトル</dt>
+                    <dd>
+                        <span>業種</span>
+                        <time datetime="2016-05-01">2016年 5月</time>
+                        <ul class="process">
+                            <li>作業工程</li>
+                        </ul>
+                        <ul class="skills">
+                            <li>macOS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <p>詳細</p>
+                    </dd>
+                </div>
+                <div class="spacer"></div>
+            </dl>
+        </main>
+        <aside>
+            <h2>スキルセット</h2>
+            <dl id="skill-list">
+                <dt>Now Loading...</dt>
+                <dd>
+                    <span data-tech="js">JavaScript</span>
+                </dd>
+            </dl>
+        </aside>
+    </section>
     <footer>
         <small class="font-en-ex-light">&copy; 2026 Oxmilch</small>
     </footer>

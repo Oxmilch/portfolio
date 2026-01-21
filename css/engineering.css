@@ -23,7 +23,7 @@ body {
   overflow: hidden;
 }
 
-main {
+section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,86 +37,23 @@ h2 {
 
 
 /* レイアウト構成 (Split Screen) */
-.split {
-  display: table;
-  width: 100%;
-  height: calc(100vh - 4rem);
-  padding: 1vh 1vw;
-}
-
-.split-item{
-  display: table-cell;
-  min-height: calc(100vh - var(--header-height-min) - var(--footer-height));
-  height: calc(100vh - var(--header-height) - var(--footer-height));
-  max-height: calc(100vh - var(--header-height-max) - var(--footer-height))
-}
-
-.split-left{
+.split{
   position: relative;
-  width: 49vw;
-  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content:stretch;
+  align-content:flex-start;
 }
 
-.split-left-fix{
-  position: fixed;
-  width: 49vw;
-  max-width: calc(var(--width-max-desktop) * 0.49);
-}
-
-.split-center{
-  position: relative;
-  width: 1vw;
-}
-
-.split-center-fix{
-  position: fixed;
-  border: 1px solid var(--color-accents);
-}
-
-.split-right{
-  position: relative;
+main,
+aside{
   width: 50%;
 }
 
-/* Split - Left */
-.split-left h3{
-  font-size: 1.5rem;
-  color: var(--color-main);
-  margin-top: 0.5em;
-}
 
-.split-left span{
-  display: inline-block;
-  padding: 0.33rem 0.67rem;
-  margin: 0.33rem;
-  border-radius: 0.75rem;
-  background-color: var(--color-background-sub);
-  color: var(--color-main);
-  font-size:  0.75rem;
-  transition: all 0.3s ease;
-}
-
-.split-left .disp{
-  background-color: var(--color-background-main);
-  color: var(--color-main);
-  border: 1px solid var(--color-accents);
-}
-
-.split-left .active{
-  background-color: var(--color-accents);
-  color: var(--color-background-main);
-  transform: scale(1.2);
-}
-
-.split-left .non-active{
-  border-color: transparent;
-  transform: scale(0.8);
-}
-
-
-/* Split - Right */
+/* プロジェクト履歴 */
 /* プロジェクト履歴エリア全体 */
-.project-list {
+main dl{
   overflow: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -124,14 +61,14 @@ h2 {
 }
 
 /* 上下のダミー余白（スクロールの調整用） */
-.project-list-spacer{
+main .spacer{
   height: 10%;
   max-height: 144px;
   scroll-snap-align: none;
 }
 
 /* プロジェクト履歴カード */
-.split-right dl {
+main .card{
   scroll-snap-align: center;
   background-color: var(--color-background-main);
   height: 80%;
@@ -143,20 +80,30 @@ h2 {
 }
 
 /* プロジェクト履歴タイトル */
-.split-right dt{
+main dt{
   font-size: 1.5rem;
   color: var(--color-main);
   margin-top: 0.5em;
 }
 
+/* プロジェクト業種 */
+main span{
+  font-size: 1rem;
+  color: var(--color-main);
+  padding: 0.25em 0.5em;
+  border: 1px solid var(--color-accents);
+  border-radius: 1em;
+}
+
 /* プロジェクト履歴時期 */
-.split-right time {
+main time{
   font-size: 0.75rem;
   color: var(--color-accents);
+  margin-left: 1rem;
 }
 
 /* プロジェクト履歴作業工程 */
-.split-right ul{
+main .process{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -165,7 +112,7 @@ h2 {
   margin-top: 0.25rem;
 }
 
-article li{
+main .process li{
   font-size: 0.75rem;
   color: var(--color-sub);
   padding: 0.125em 0.5em;
@@ -174,18 +121,22 @@ article li{
   margin-top: 0.25em;
 }
 
-article .enable{
+main .process .enable{
   font-size: 0.91rem;
   color: var(--color-main);
   border:2px solid var(--color-accents);
 }
 
 /* プロジェクト履歴スキルセット */
-.split-right dl div{
+main .skills{
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.split-right span{
+main .skills li{
   font-size:  0.75rem;
   color: var(--color-main);
   background-color: var(--color-background-main);
@@ -196,8 +147,45 @@ article .enable{
 }
 
 /* プロジェクト履歴説明 */
-.split-right dd{
+main p{
   font-size: 1rem;
+  line-height: 1.3;
   color: var(--color-main);
   margin: 0.5rem 0 0 0.5rem;
+}
+
+
+/* スキルセット */
+aside{
+  position: fixed;
+}
+
+aside dt{
+  font-size: 1.5rem;
+  color: var(--color-main);
+  margin-top: 0.5em;
+}
+
+aside span{
+  display: inline-block;
+  font-size:  0.75rem;
+  color: var(--color-main);
+  background-color: var(--color-background-main);
+  padding: 0.33rem 0.67rem;
+  border: 1px solid var(--color-accents);
+  border-radius: 0.75rem;
+  margin: 0.33rem;
+  transition: all 0.3s ease;
+}
+
+aside .active{
+  color: var(--color-background-main);
+  background-color: var(--color-accents);
+  transform: scale(1.2);
+}
+
+aside .non-active{
+  color: var(--color-sub);
+  border: 1px solid var(--color-background-sub);
+  transform: scale(0.8);
 }
