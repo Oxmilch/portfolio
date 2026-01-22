@@ -4,16 +4,12 @@
 /** Responsive Layout **/
 /* Desktop Landscape Layout */
 :root{
-  --main-position: absolute;
-  --main-right: 0;
   --main-width: 50%;
   --aside-display: block;
 }
 /* Desktop Portrait Layout*/
 @media(min-width:768px) and (max-aspect-ratio:4/3) {
   :root{
-    --main-position: absolute;
-    --main-right: 0;
     --main-width: 50%;
     --aside-display: block;
   }
@@ -22,8 +18,6 @@
 /* Mobile Landscape Layout */
 @media(max-width:768px) and (min-aspect-ratio:4/3) {
   :root{
-    --main-position: relative;
-    --main-right: auto;
     --main-width: 100%;
     --aside-display: none;
   }
@@ -32,8 +26,6 @@
 /* Mobile Portrait Layout */
 @media(max-width:768px) and (max-aspect-ratio:4/3) {
   :root{
-    --main-position: relative;
-    --main-right: auto;
     --main-width: 100%;
     --aside-display: none;
   }
@@ -42,10 +34,6 @@
 
 /*** Styles ***/
 /** Base **/
-body {
-  overflow: hidden;
-}
-
 h2 {
   font-size: 2rem;
   color: var(--color-accents);
@@ -65,10 +53,8 @@ aside{
 
 
 /* プロジェクト履歴 */
-main {
-  position: var(--main-position);
-  top: 0;
-  right: var(--main-right);
+main{
+  float: right;
   width: var(--main-width);
 }
 
@@ -83,6 +69,7 @@ main dl{
 
 /* 上下のダミー余白（スクロールの調整用） */
 main .spacer{
+  background-color: transparent;
   height: 10%;
   max-height: 144px;
   scroll-snap-align: none;
@@ -118,7 +105,7 @@ main span{
   color: var(--color-main);
   padding: 0.25em 0.5em;
   border: 1px solid var(--color-accents);
-  border-radius: 1em;
+  border-radius: 5px;
   margin-top: 0.5rem;
 }
 
@@ -140,20 +127,28 @@ main .skills{
   margin-top: 0.25rem;
 }
 
-main .process li,
-main .skills li{
+main .process li{
   font-size: 0.75rem;
   color: var(--color-sub);
   padding: 0.125em 0.5em;
   border:1px solid var(--color-sub);
-  border-radius: 1em;
+  border-radius: 3px;
+  margin-top: 0.25em;
+}
+
+main .skills li{
+  font-size: 0.75rem;
+  color: var(--color-sub);
+  padding: 0.125em 0.75em;
+  border:1px solid var(--color-sub);
+  border-radius: 0.75rem;
   margin-top: 0.25em;
 }
 
 main li.active{
-  font-size: 0.83rem;
+  /* font-size: 0.83rem; */
   color: var(--color-main);
-  border:1px solid var(--color-accents);
+  border-color: var(--color-accents);
 }
 
 /* プロジェクト履歴説明 */
@@ -167,9 +162,7 @@ main p{
 
 /* スキルセット */
 aside{
-  position: sticky;
-  top: 0;
-  left: 0;
+  float: left;
   display: var(--aside-display);
   width: 50%;
 }
@@ -202,4 +195,8 @@ aside .non-active{
   color: var(--color-sub);
   border: 1px solid var(--color-background-sub);
   transform: scale(0.8);
+}
+
+footer{
+  clear:both;
 }

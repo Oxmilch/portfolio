@@ -175,7 +175,7 @@ class projectCard {
       process.forEach((procValue) => {
         const li = document.createElement("li");
         li.textContent = procValue.name;
-        if(value.process.filter((v) => v == procValue.key).length == 1) li.className = "enable";
+        if(value.process.filter((v) => v == procValue.key).length == 1) li.className = "active";
         ulProcess.appendChild(li);
       });
       dd.appendChild(ulProcess);
@@ -196,7 +196,6 @@ class projectCard {
       dd.appendChild(ulSkills);
 
       // スキルセットを親のdivにdata-techsに設定
-      div.dataset.name = "techs";
       div.dataset.techs = dataTechs.join(",");
 
       // 本文
@@ -210,6 +209,11 @@ class projectCard {
       // カード追加
       this.__targetElement.appendChild(div);
     });
+
+    // 一番下
+    const divSpaceBottom = document.createElement("div");
+    divSpaceBottom.className = "spacer";
+    this.__targetElement.appendChild(divSpaceBottom);
   }
 }
 
