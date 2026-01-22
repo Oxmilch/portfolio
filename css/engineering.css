@@ -89,7 +89,7 @@ main .spacer{
 }
 
 /* プロジェクト履歴カード */
-main .card{
+main div{
   scroll-snap-align: center;
   background-color: var(--color-background-main);
   height: 80%;
@@ -104,27 +104,34 @@ main .card{
 main dt{
   font-size: 1.5rem;
   color: var(--color-main);
-  margin-top: 0.5em;
+  padding-left: 0.25rem;
+}
+
+main dd{
+  display: block;
 }
 
 /* プロジェクト業種 */
 main span{
+  display: inline-block;
   font-size: 1rem;
   color: var(--color-main);
   padding: 0.25em 0.5em;
   border: 1px solid var(--color-accents);
   border-radius: 1em;
+  margin-top: 0.5rem;
 }
 
 /* プロジェクト履歴時期 */
 main time{
-  font-size: 0.75rem;
+  font-size: 0.91rem;
   color: var(--color-accents);
   margin-left: 1rem;
 }
 
-/* プロジェクト履歴作業工程 */
-main .process{
+/* プロジェクト履歴作業工程・スキルセット */
+main .process,
+main .skills{
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -133,7 +140,8 @@ main .process{
   margin-top: 0.25rem;
 }
 
-main .process li{
+main .process li,
+main .skills li{
   font-size: 0.75rem;
   color: var(--color-sub);
   padding: 0.125em 0.5em;
@@ -142,35 +150,16 @@ main .process li{
   margin-top: 0.25em;
 }
 
-main .process .enable{
-  font-size: 0.91rem;
+main li.active{
+  font-size: 0.83rem;
   color: var(--color-main);
-  border:2px solid var(--color-accents);
-}
-
-/* プロジェクト履歴スキルセット */
-main .skills{
-  display: flex;
-  justify-content: flex-start;
-  align-content: center;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-
-main .skills li{
-  font-size:  0.75rem;
-  color: var(--color-main);
-  background-color: var(--color-background-main);
-  padding: 0.33rem 0.67rem;
-  margin: 0.5rem 0.33rem 0.5rem 0;
-  border: 1px solid var(--color-accents);
-  border-radius: 0.75rem;
+  border:1px solid var(--color-accents);
 }
 
 /* プロジェクト履歴説明 */
 main p{
   font-size: 1rem;
-  line-height: 1.3;
+  line-height: 1.5;
   color: var(--color-main);
   margin: 0.5rem 0 0 0.5rem;
 }
@@ -196,10 +185,10 @@ aside span{
   font-size:  0.75rem;
   color: var(--color-main);
   background-color: var(--color-background-main);
-  padding: 0.33rem 0.67rem;
+  padding: 0.125em 1em;
   border: 1px solid var(--color-accents);
   border-radius: 0.75rem;
-  margin: 0.33rem;
+  margin: 0.15em 0.33em;
   transition: all 0.3s ease;
 }
 

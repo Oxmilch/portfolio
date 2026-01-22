@@ -135,27 +135,25 @@ class projectCard {
     // プロジェクト履歴の初期化
     this.__targetElement.innerHTML = "";
 
-    // プロジェクトカード上部の余白
-    const projectCardTop = document.createElement("div");
-    projectCardTop.className = "project-list-spacer";
-    this.__targetElement.appendChild(projectCardTop);
-
-    // プロジェクトカードの生成処理
+    // プロジェクト明細のカードの生成処理
     data.forEach((value) => {
       // カード作成
-      const dl = document.createElement("dl");
+      const div = document.createElement("div");
 
       // 見出し作成
       const dt = document.createElement("dt");
       dt.textContent = value.title;
-      dl.appendChild(dt);
+      div.appendChild(dt);
+
+      // 明細作成
+      const dd = document.createElement("dd");
 
       // 業種
       const span_industry = document.createElement("span");
       span_industry.textContent = value.industry;
-      dl.appendChild(span_industry);
+      dd.appendChild(span_industry);
 
-      // 時期作成
+      // 時期
       const timeTag = document.createElement("time");
       timeTag.dateTime = value.date;
       const startDate = new Date(value.date);
@@ -169,47 +167,49 @@ class projectCard {
         const endDate = new Date(endDateYear, endDateMonth, 1);
         timeTag.textContent = `${startDate.getFullYear()}年${startDate.getMonth() + 1}月〜${endDate.getFullYear()}年${endDate.getMonth() + 1}月`;
       }
-      dl.appendChild(timeTag);
+      dd.appendChild(timeTag);
 
       // 作業工程
-      const ul = document.createElement("ul");
+      const ulProcess = document.createElement("ul");
+      ulProcess.className = "process";
       process.forEach((procValue) => {
         const li = document.createElement("li");
         li.textContent = procValue.name;
         if(value.process.filter((v) => v == procValue.key).length == 1) li.className = "enable";
-        ul.appendChild(li);
+        ulProcess.appendChild(li);
       });
-      dl.appendChild(ul);
+      dd.appendChild(ulProcess);
 
       // スキルセット
       const dataTechs = [];
-      const divSkills = document.createElement("div");
-      divSkills.classList = "project-skills";
+      const ulSkills = document.createElement("ul");
+      ulSkills.className = "skills";
       skills.forEach((skill) => {
         if(Object.values(value.skill).filter(a => a.find(v => v == skill.key)).length == 1) {
-          const span = document.createElement("span");
-          span.className = "skill-tag all";
-          span.textContent = skill.value;
-          divSkills.appendChild(span);
-          dataTechs.push(skill);
+          const li = document.createElement("li");
+          li.className = "active";
+          li.textContent = skill.value;
+          ulSkills.appendChild(li);
+          dataTechs.push(skill.value);
         }
       });
-      dl.dataset.name = "techs";
-      dl.dataset.techs = dataTechs.join(",");
-      dl.appendChild(divSkills);
+      dd.appendChild(ulSkills);
+
+      // スキルセットを親のdivにdata-techsに設定
+      div.dataset.name = "techs";
+      div.dataset.techs = dataTechs.join(",");
 
       // 本文
       const p = document.createElement("p");
       p.textContent = value.body;
-      dl.appendChild(p);
+      dd.appendChild(p);
 
-      // 追加
-      this.__targetElement.appendChild(dl);
+      // 明細追加
+      div.appendChild(dd);
+
+      // カード追加
+      this.__targetElement.appendChild(div);
     });
-    // プロジェクトカード下部の余白
-    const projectCardBottom = document.createElement("div");
-    projectCardBottom.className = "project-list-spacer";
-    this.__targetElement.appendChild(projectCardBottom);
   }
 }
 
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   skillTags.create();
 
   // プロジェクト履歴を作成
-  // projects.create();
+  projects.create();
 
   /**
    * オブザーバーの設定
