@@ -2,19 +2,18 @@
 
 /*** design.css ***/
 
-/* Main container overrides if necessary (though style.css handles wrapper) */
-/* Assuming 'main' in 'wrapper' takes full width by default or need adjustment?
-   In engineering.html, main was float right and width calc'ed.
-   In style.css, 'main' is width: 100vw broadly but overridden in specific CSS?
-   style.css line 352: main { width: 100vw; }
-   engineering.css line 58: main { float: right; width: var(--main-width); }
-   We should probably reset or ensure design page main works well.
+/* メインコンテナは必要に応じてオーバーライドします（ただし、style.css はラッパーを処理します） */
+/* 「wrapper」内の「main」はデフォルトで全幅を占めると想定していますか？それとも調整が必要ですか？
+engineering.html では、main は右にフロートされ、幅が計算されています。
+style.css では、「main」は概ね width: 100vw に設定されていますが、特定の CSS で上書きされていますか？
+style.css 352 行目: main { width: 100vw; }
+engineering.css 58 行目: main { float: right; width: var(--main-width); }
+デザインページの main が正しく機能するようにリセットするか、確認する必要があるでしょう。
 */
 
 main {
-    /* Resetting/Ensuring full width for design page */
+    /* デザインページの全幅をリセット/確保する */
     width: 100%;
-    float: none;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
@@ -35,21 +34,21 @@ h2 {
 }
 
 /* Blue Block (Card) */
-.design-card {
+article {
     /* height: 333px ~ 480px variable */
-    /* Using aspect ratio or min-height to simulate the range/flexibility */
+    /* アスペクト比または最小高さを使用して範囲/柔軟性をシミュレートする */
     min-height: 333px;
     height: auto;
     max-height: 480px;
 
     background-color: var(--color-accents);
-    /* "Blue block" as requested, assuming accent is blue */
+    /* アクセントが青であると仮定して、要求どおりに「青いブロック」 */
     border-radius: var(--card-radius);
     box-shadow: var(--card-shadow);
     overflow: hidden;
     position: relative;
 
-    /* Flex content for Image and Title */
+    /*　 画像とタイトルのフレックスコンテンツ */
     display: flex;
     flex-direction: column;
 
@@ -57,30 +56,30 @@ h2 {
     cursor: pointer;
 }
 
-.design-card:hover {
+article:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
 /* Image Area */
-.card-image {
+figure {
     flex-grow: 1;
     background-color: #fff;
-    /* White bg for image area inside the blue card? or transparent? */
+    /* 青いカード内の画像領域の背景は白ですか? それとも透明ですか? */
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
-.card-image img {
+figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.design-card:hover .card-image img {
+article:hover figure img {
     transform: scale(1.05);
 }
 
@@ -103,14 +102,14 @@ h2 {
     margin: 0;
 }
 
-/* Responsive restrictions if needed to enforce the 320px max width more strictly */
+/* 320pxの最大幅をより厳密に適用する必要がある場合のレスポンシブ制限 */
 @media (min-width: 350px) {
-    /* If grid items stretch too much beyond 320px, we might want to cap them relative to the grid gap.
-      However, '1fr' with auto-fill usually handles it well. 
-      If strictly max-width: 320px is required per card:
+    /* グリッドアイテムが320pxを超えて伸びすぎる場合は、グリッドギャップに応じて上限を設定することをお勧めします。
+ただし、通常は「1fr」と自動入力の組み合わせで問題なく処理できます。
+カードごとにmax-width: 320pxが厳密に必要な場合
    */
     /*
-   .design-card {
+   article {
        max-width: 320px;
        margin: 0 auto;
    }
