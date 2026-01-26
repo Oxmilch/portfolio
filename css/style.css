@@ -1,4 +1,17 @@
 @charset "UTF-8";
+
+:root{
+    --color-profile-header-back: #eae4d7; /* 4320B blanc ivoire */
+    --color-profile-header-font: #3a3b3b; /* 4320E noir d'ivoire */
+    --color-engineer-header-back: #d9e1dd; /* 32024 outremer gris */
+    --color-engineer-header-font: #313d6b; /*4320T bleu outremer foncé */
+    --color-design-header-back: #e6cdbf; /* 32091 rose pâle */
+    --color-design-header-font: #8f3a43; /* 32100 rouge carmin */
+    --color-contact-header-back: #45423e; /* 4320R ombre naturelle 59 */
+    --color-contact-header-font: #bcbbb6; /* 32013 gris clair 31 */
+}
+
+
 /**** Common ****/
 /*** Variables ***/
 /** Prefers Color Scheme Mode **/
