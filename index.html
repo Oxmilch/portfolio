@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
-    <title>Top | Oxmlich's Portfolio</title>
+    <title>Oxmlich's Portfolio</title>
     <meta name="description" content="ミルクせんせーのポートフォリオを公開しているサイトです - Oxmilch's Portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Crawler -->
@@ -11,7 +10,7 @@
     <meta name="googlebot" content="nosnippet">
     <meta name="googlebot-news" content="nosnippet">
     <!-- OGP Common -->
-    <meta property="og:title" content="Top | Oxmlich's Portfolio">
+    <meta property="og:title" content="Oxmlich's Portfolio">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://oxmilch.github.io/portfolio/">
     <meta property="og:site_name" content="">
@@ -21,130 +20,81 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@oxmilch">
     <meta name="twitter:creator" content="@oxmilch">
-    <meta name="twitter:title" content="Top | Oxmilch's Portfolio">
+    <meta name="twitter:title" content="Oxmilch's Portfolio">
     <meta name="twitter:description" content="ミルクせんせーのポートフォリオを公開しているサイトです - Oxmilch's Portfolio">
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./css/ress.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP&display=swap" rel="stylesheet">
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="shortcut icon" href="./img/portfolio-logo-icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="./img/portfolio-logo-icon.svg">
+    <!-- Style -->
+     <style>
+        :root{
+            /* 4320B blanc ivoire */
+            --color-profile-header-light: #eae4d7;
+            /* 4320E noir d'ivoire */
+            --color-profile-header-dark: #3a3b3b;
+            /* 32024 outremer gris */
+            --color-engineer-header-light: #d9e1dd;
+            /*4320T bleu outremer foncé */
+            --color-engineer-header-dark: #313d6b;
+            /* 32091 rose pâle */
+            --color-design-header-light: #e6cdbf;
+            /* 32100 rouge carmin */
+            --color-design-header-dark: #8f3a43;
+            /* 32013 gris clair 31 */
+            --color-contact-header-light: #bcbbb6;
+            /* 4320R ombre naturelle 59 */
+            --color-contact-header-dark: #45423e;
+
+            --font-weight-extralight: 200;
+            --font-weight-Regular: 400;
+            --font-weight-bold: 700;
+        }
+
+        html{ font-size: 100%; scroll-behavior: smooth; }
+        body{ font-family: "Noto Serif JP", serif; font-style: normal; font-weight: var(--font-weight-Regular); }
+        a   { display:block; text-decoration: none; color: var(--color-contact-header-light);}
+        img { max-width: 100%; }
+        li  { list-style-type: none; }
+
+        h2  { font-size: 2rem; }
+        h2 span { font-size: 1rem;}
+        .header { position:sticky; top:0; width:100vw;
+                  display: grid; grid-template-columns: repeat(6, minmax(128px, 1fr)); grid-template-rows: minmax(72px, auto);
+                  align-items: center;}
+
+        #portfolio{ color: var(--color-profile-header-light); background-color: var(--color-contact-header-dark); 
+                    z-index: 100;}
+        #portfolio .header{grid-template-areas: ".. .. pf en ds cn";}
+        #portfolio .title {position:sticky; top:0;
+                            }
+
+     </style>
 </head>
-
-<body>
-    <header class="font-ja">
-        <div class="wrapper">
-            <h1>
-                <a class="font-en-ex-light font-color-accents" href="./index.html">Portfolio</a>
-            </h1>
-            <nav class="header-desktop-nav">
-                <ul class="header-desktop-nav-content font-en-bold">
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="./engineering.html">Engineering</a></li>
-                    <li><a href="./design.html">Design</a></li>
-                </ul>
-                <ul class="header-desktop-nav-sns">
-                    <li><a class="logo-git" href="https://github.com/oxmilch/"></a></li>
-                    <li><a class="logo-x" href="https://x.com/oxmilch"></a></li>
-                    <li><a class="logo-repository" href="https://github.com/oxmilch/Portfolio/"></a></li>
-                    <li><a class="logo-comprehensive" href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ"></a></li>
-                </ul>
-            </nav>
-            <section class="header-mobile-menu">
-                <input type="checkbox" id="header-mobile-menu-check" hidden>
-                <label class="header-mobile-menu-icon" for="header-mobile-menu-check">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-                <div class="overlay"></div>
-                <nav class="header-mobile-nav">
-                    <ul>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="./engineering.html">Engineering</a></li>
-                        <li><a href="./design.html">Design</a></li>
-                        <li><a href="https://github.com/oxmilch/">github トップ</a></li>
-                        <li><a href="https://x.com/oxmilch">X (Twitter)</a></li>
-                        <li><a href="https://github.com/oxmilch/Portfolio/">ソースコード</a></li>
-                        <li><a href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ">デザイン詳細</a></li>
-                    </ul>
-                </nav>
-            </section>
+<body id="top">
+    <section id="portfolio">
+        <div class="header">
+            <a style="grid-area: pf;" href="#profile">Profile</a>
+            <a style="grid-area: en;" href="#engineer">Engineer</a>
+            <a style="grid-area: ds;" href="#design">Design</a>
+            <a style="grid-area: cn;" href="#contact">Contact</a>
         </div>
-    </header>
-    <main>
-        <ul class="font-ja font-color-main wrapper wrapper-height">
-            <li class="grid-title">
-                <h1 class="font-en-ex-light font-color-accents">Portfolio</h1>
-            </li>
-            <li class="grid-profile">
-                <a href="#">
-                    <!-- id prev を作る Styleから移動 -->
-                    <h2 class="grid-profile-title font-en-bold">Profile</h2>
-                    <p class="grid-profile-name-key">name</p>
-                    <p class="grid-profile-name-value">ミルクせんせー</p>
-                    <p class="grid-profile-job-key">job</p>
-                    <p class="grid-profile-job-value">デザイン学生</p>
-                    <img class="gird-profile-image" src="./img/profile.webp" alt="プロフィール画像">
-                </a>
-            </li>
-            <li class="grid-engineer">
-                <a href="./engineering.html">
-                    <h2 class="grid-engineer-title font-en-bold">Engineer</h2>
-                    <p>
-                        <span class="grid-engineer-middle font-en-bold">Windows</span>
-                        <span class="grid-engineer-middle">WSL2</span>
-                        <span class="grid-engineer-small">macOS</span>
-                    <p>
-                        <span class="grid-engineer-middle">shell</span>
-                        <span class="grid-engineer-small">HTML4.01</span>
-                        <span class="grid-engineer-small font-en-ex-light">HTML Living Standard</span>
-                    </p>
-                    <p>
-                        <span class="grid-engineer-small">CSS2</span>
-                        <span class="grid-engineer-small font-en-ex-light">CSS3</span>
-                        <span class="grid-engineer-middle font-en-bold">JavaScript</span>
-                    </p>
-                    <p>
-                        <span class="grid-engineer-middle font-en-bold">jQuery</span>
-                        <span class="grid-engineer-small">VB.Net</span>
-                        <span class="grid-engineer-middle font-en-bold">C#.Net</span>
-                        <span class="grid-engineer-small">ASP.Net</span>
-                    </p>
-                    <p>
-                        <span class="grid-engineer-middle font-en-bold">Python</span>
-                        <span class="grid-engineer-small font-en-ex-light">Django</span>
-                        <span class="grid-engineer-middle font-en-bold">SQL</span>
-                        <span class="grid-engineer-small">PL/SQL</span>
-                    </p>
-                    <p>
-                        <span class="grid-engineer-small">SQLServer</span>
-                        <span class="grid-engineer-middle">Oracle</span>
-                        <span class="grid-engineer-small font-en-ex-light">PostgreSql</span>
-                        <span class="grid-engineer-small font-en-ex-light">Docker</span>
-                    </p>
-                    <span class="grid-engineer-more font-en-bold">And More..</span>
-                </a>
-            </li>
-            <li class="grid-design">
-                <a href="./design.html">
-                    <h2 class="grid-design-title font-en-bold">Design</h2>
-                </a>
-            </li>
-            <li class="grid-sns"><a class="logo-git" href="https://github.com/oxmilch/"></a></li>
-            <li class="grid-sns"><a class="logo-x" href="https://x.com/oxmilch"></a></li>
-            <li class="grid-sns"><a class="logo-repository" href="https://github.com/oxmilch/Portfolio/"></a></li>
-            <li class="grid-sns"><a class="logo-comprehensive" href="https://github.com/oxmilch/Portfolio/?tab=readme-ov-file#サイトマップ"></a></li>
-        </ul>
-    </main>
-    <footer>
-        <small class="font-en-ex-light">&copy; 2026 Oxmilch</small>
-    </footer>
+        <div class="title">
+            <p>ポートフォリオ</p>
+            <h2>Portfolio</h2>
+        </div>
+    </section>
+    <section id="profile">
+    </section>
+    <section id="engineer">
+    </section>
+    <section id="design">
+    </section>
+    <section id="contact">
+    </section>
 </body>
-
 </html>
