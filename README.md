@@ -22,7 +22,6 @@ https://oxmilch.github.io/portfolio/
     - JavaScript
 - デザインソフトウェア
     - [Adobe Creative Cloud](https://www.adobe.com/jp/)
-        - Illustrator 2024 (28.0) (mac)
         - Illustrator 2025 (29.8.4) (mac / win)
         - Adobe Photoshop 2025 (26.11.2) (mac / win)
         - Adobe Premiere Pro 2025 (25.6.3) (mac / win)
@@ -42,28 +41,21 @@ https://oxmilch.github.io/portfolio/
 ### サイトマップ 
 ```mermaid
 graph TD
-    A[Index / Bento UI] --- B[Profile]
-    A --- C[Engineering Portfolio / Split Layout and Timeline UI]
-    A --- D[Design Portfolio / Tile UI]
-
-    D --- E[Design Portfolio Detail]
+    A[Index / Swiss Layout]
 ```
 
 ### ラフ 
-- Index
-     - Desktop Layout
-        ![Rouph Design - Index(Desktop)](./doc/design-rouph/rough-index-desktop.webp)
-        - Card - Engineering
-        ![Engineering](./doc/design-rouph/rough-index-desktop-engineering.webp)
-        - Card - Design
-        ![Design](./doc/design-rouph/rough-index-desktop-design.svg)
-    - Mobile Layout
-        ![Rouph Design - Index(Mobile)](./doc/design-rouph/rough-index-mobile.webp)
-- Profile
-- Engineering Portfolio
-    - Desktop Layout
-        ![Rouph Design - Engineering(Desktop)](./doc/design-rouph/rough-engineering-desktop.webp)
-- Design Portfolio
-    - Desktop Layout
-        ![Rouph Design - Design(Desktop)](./doc/design-rouph/rouph-design-desktop.svg)
-- Design Portfolio Detail
+- Index(Desktop Layout)
+    - Top  
+        ![](./doc/design-rouph/portfolio-re-pc-%20top-1.webp)  
+        ![](./doc/design-rouph/portfolio-re-pc-%20top-2.webp)
+    - Profile  
+        ![](./doc/design-rouph/portfolio-re-pc-%20profile-1.webp)  
+        ![](./doc/design-rouph/portfolio-re-pc-%20profile-2.webp)
+    - Engineer  
+        ![](./doc/design-rouph/portfolio-re-pc-%20engineer-1.webp)  
+        ![](./doc/design-rouph/portfolio-re-pc-%20engineer-2.webp)
+    - Design  
+        ![](./doc/design-rouph/portfolio-re-pc-design.webp)
+    - Contact  
+        ![](./doc/design-rouph/portfolio-re-pc-%20contact.webp)
