@@ -61,15 +61,22 @@
         img { max-width: 100%; }
         li  { list-style-type: none; }
 
-        h2  { font-size: 2rem; }
-        h2 span { font-size: 1rem;}
-        .header { position:sticky; top:0; width:100vw;
-                  display: grid; grid-template-columns: repeat(6, minmax(128px, 1fr)); grid-template-rows: minmax(72px, auto);
-                  align-items: center;}
+        /* Header */
+        .header         { position:sticky; top:0; width:100% /* ensure full width for centering */;
+                          display: grid; grid-template-columns: repeat(6, minmax(128px, 256px)); grid-template-rows: auto;
+                          align-items: center; justify-content: center;}
+        .header-title   { grid-area: t; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .header-profile { grid-area: p; aspect-ratio: 16/9; display: flex; justify-content: center; align-items: center; }
+        .header-engineer{ grid-area: e; aspect-ratio: 16/9; display: flex; justify-content: center; align-items: center; }
+        .header-design  { grid-area: d; aspect-ratio: 16/9; display: flex; justify-content: center; align-items: center; }
+        .header-contact { grid-area: c; aspect-ratio: 16/9; display: flex; justify-content: center; align-items: center; }
+        .header p       { font-size: 1rem; }
+        .header h2      { font-size: 2rem; }
 
+        /* Portfolio */
         #portfolio{ color: var(--color-profile-header-light); background-color: var(--color-contact-header-dark); 
                     z-index: 100;}
-        #portfolio .header{grid-template-areas: ".. .. pf en ds cn";}
+        #portfolio .header{grid-template-areas: "t t p e d c";}
         #portfolio .title {position:sticky; top:0;
                             }
 
@@ -78,14 +85,14 @@
 <body id="top">
     <section id="portfolio">
         <div class="header">
-            <a style="grid-area: pf;" href="#profile">Profile</a>
-            <a style="grid-area: en;" href="#engineer">Engineer</a>
-            <a style="grid-area: ds;" href="#design">Design</a>
-            <a style="grid-area: cn;" href="#contact">Contact</a>
-        </div>
-        <div class="title">
-            <p>ポートフォリオ</p>
-            <h2>Portfolio</h2>
+            <a class="header-title" href="#portfolio">
+                <p>ポートフォリオ</p>
+                <h2>Portfolio</h2>
+            </a>
+            <a class="header-profile" href="#profile">Profile</a>
+            <a class="header-engineer" href="#engineer">Engineer</a>
+            <a class="header-design" href="#design">Design</a>
+            <a class="header-contact" href="#contact">Contact</a>
         </div>
     </section>
     <section id="profile">
