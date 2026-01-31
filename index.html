@@ -34,42 +34,49 @@
      <style>
         :root{
             /* 4320B blanc ivoire */
-            --color-profile-header-light: #eae4d7;
+            --color-profile-light: #eae4d7;
             /* 4320E noir d'ivoire */
-            --color-profile-header-dark: #3a3b3b;
+            --color-profile-dark: #3a3b3b;
             /* 32024 outremer gris */
-            --color-engineer-header-light: #d9e1dd;
+            --color-engineer-light: #d9e1dd;
             /*4320T bleu outremer foncé */
-            --color-engineer-header-dark: #313d6b;
+            --color-engineer-dark: #313d6b;
             /* 32091 rose pâle */
-            --color-design-header-light: #e6cdbf;
+            --color-design-light: #e6cdbf;
             /* 32100 rouge carmin */
-            --color-design-header-dark: #8f3a43;
+            --color-design-dark: #8f3a43;
             /* 32013 gris clair 31 */
-            --color-contact-header-light: #bcbbb6;
+            --color-contact-light: #bcbbb6;
             /* 4320R ombre naturelle 59 */
             --color-contact-dark: #45423e;
 
             --font-weight-extralight: 200;
             --font-weight-Regular: 400;
             --font-weight-bold: 700;
+
+            --cell-width-min: 128px;
+            --cell-width-max: 256px;
+            --cell-height-min: 72px;
+            --cell-height-max: 144px;
         }
 
-        html{ font-size: 100%; scroll-behavior: smooth; }
-        body{ font-family: "Noto Serif JP", serif; font-style: normal; font-weight: var(--font-weight-Regular); }
-        a   { display:block; text-decoration: none; color: var(--color-contact-header-light); }
-        img { max-width: 100%; }
-        li  { list-style-type: none; }
+        html    { font-size: 100%; scroll-behavior: smooth; }
+        body    { font-family: "Noto Serif JP", serif; font-style: normal; font-weight: var(--font-weight-Regular); }
+        a       { display:block; text-decoration: none; color: var(--color-contact-light); height: 100%; transition: all 0.3s; }
+        img     { max-width: 100%; }
+        li      { list-style-type: none; }
+        section { min-height: calc(var(--cell-height-min) * 8); height: 100vh; max-height: calc(var(--cell-height-max) * 8);}
 
         /* Header */
         .header         { position:sticky; top:0; width:100% /* ensure full width for centering */;
-                          display: grid; grid-template-columns: repeat(6, minmax(128px, 256px)); grid-template-rows: auto;
+                          min-height: var(--cell-height-min); height: calc(100vh / 8); max-height: var(--cell-height-max);
+                          display: grid; grid-template-columns: repeat(6, minmax(var(--cell-width-min), var(--cell-width-max))); grid-template-rows: auto;
                           align-items: center; justify-content: center;}
         .header-title,
         .header-profile,
         .header-engineer,
         .header-design,
-        .header-contact { aspect-ratio: 16/9; display: flex; justify-content: flex-start; align-items: center; padding-left: 1rem; }
+        .header-contact { display: flex; justify-content: flex-start; align-items: center; padding-left: 1rem; }
         .header-title   { grid-area: t; }
         .header-profile { grid-area: p; }
         .header-engineer{ grid-area: e; }
@@ -79,37 +86,38 @@
         .header h2      { font-size: 2rem; }
 
         /* Portfolio */
-        #portfolio              { color: var(--color-profile-header-light); background-color: var(--color-profile-header-dark); 
-                                  z-index: 100;}
-        #portfolio .header      { grid-template-areas: "t t p e d c";}
-        #portfolio .header-title{ flex-direction: column; justify-content: center; align-items: flex-start; }
+        #portfolio                { color: var(--color-profile-light); background-color: var(--color-profile-dark);
+                                    z-index: 100; }
+        #portfolio .header        { grid-template-areas: "t t p e d c";}
+        #portfolio .header a:hover{ color: var(--color-profile-dark); background-color: var(--color-profile-light);}
+        #portfolio .header-title  { flex-direction: column; justify-content: center; align-items: flex-start; }
 
         /* Profile */
-        #profile              { color: var(--color-profile-header-dark); background-color: var(--color-contact-header-light); 
-                                z-index: 200;}
-        #profile .header      { grid-template-areas: "t p p e d c";}
-        #profile .header a { color: var(--color-profile-header-dark);  }
+        #profile                { color: var(--color-profile-dark); background-color: var(--color-contact-light); 
+                                  z-index: 200; }
+        #profile .header        { grid-template-areas: "t p p e d c"; }
+        #profile .header a      { color: var(--color-profile-dark); }
         #profile .header-profile{ flex-direction: column; justify-content: center; align-items: flex-start; }
 
         /* Engineer */
-        #engineer              { color: var(--color-engineer-header-dark); background-color: var(--color-engineer-header-light); 
-                                z-index: 300;}
-        #engineer .header      { grid-template-areas: "t p e e d c";}
-        #engineer .header a { color: var(--color-engineer-header-dark);  }
+        #engineer                 { color: var(--color-engineer-dark); background-color: var(--color-engineer-light); 
+                                    z-index: 300;}
+        #engineer .header         { grid-template-areas: "t p e e d c";}
+        #engineer .header a       { color: var(--color-engineer-dark); }
         #engineer .header-engineer{ flex-direction: column; justify-content: center; align-items: flex-start; }
 
         /* Design */
-        #design              { color: var(--color-design-header-dark); background-color: var(--color-design-header-light); 
+        #design               { color: var(--color-design-dark); background-color: var(--color-design-light); 
                                 z-index: 400;}
-        #design .header      { grid-template-areas: "t p e d d c";}
-        #design .header a { color: var(--color-design-header-dark);  }
+        #design .header       { grid-template-areas: "t p e d d c";}
+        #design .header a     { color: var(--color-design-dark); }
         #design .header-design{ flex-direction: column; justify-content: center; align-items: flex-start; }
 
         /* Contact */
-        #contact              { color: var(--color-contact-dark); background-color: var(--color-contact-header-light); 
-                                z-index: 500;}
-        #contact .header      { grid-template-areas: "t p e d c c";}
-        #contact .header a { color: var(--color-contact-dark);  }
+        #contact                { color: var(--color-contact-dark); background-color: var(--color-contact-light); 
+                                 z-index: 500;}
+        #contact .header        { grid-template-areas: "t p e d c c";}
+        #contact .header a      { color: var(--color-contact-dark); }
         #contact .header-contact{ flex-direction: column; justify-content: center; align-items: flex-start; }
      </style>
 </head>
@@ -125,6 +133,8 @@
             <a class="header-design" href="#design">Design</a>
             <a class="header-contact" href="#contact">Contact</a>
         </div>
+        <div class="body">
+        </div>
     </section>
     <section id="profile">
         <div class="header">
@@ -137,17 +147,21 @@
             <a class="header-design" href="#design">Design</a>
             <a class="header-contact" href="#contact">Contact</a>
         </div>
+        <div class="body">
+        </div>
     </section>
     <section id="engineer">
         <div class="header">
             <a class="header-title" href="#portfolio">Portfolio</a>
-            <a class="header-profile" href="#profile">Profile</a>   
+            <a class="header-profile" href="#profile">Profile</a>
             <a class="header-engineer" href="#engineer">
                 <p>エンジニア</p>
                 <h2>Engineer</h2>
             </a>
             <a class="header-design" href="#design">Design</a>
             <a class="header-contact" href="#contact">Contact</a>
+        </div>
+        <div class="body">
         </div>
     </section>
     <section id="design">
@@ -161,6 +175,8 @@
             </a>
             <a class="header-contact" href="#contact">Contact</a>
         </div>
+        <div class="body">
+        </div>
     </section>
     <section id="contact">
         <div class="header">
@@ -172,6 +188,8 @@
                 <p>コンタクト</p>
                 <h2>Contact</h2>
             </a>
+        </div>
+        <div class="body">
         </div>
     </section>
 </body>
