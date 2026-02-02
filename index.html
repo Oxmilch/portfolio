@@ -54,6 +54,8 @@
             --font-weight-Regular: 400;
             --font-weight-bold: 700;
 
+            --cell-column-quantity: 6;
+            --cell-row-quantity: 8;
             --cell-width-min: 128px;
             --cell-width-max: 256px;
             --cell-height-min: 72px;
@@ -65,12 +67,12 @@
         a       { display:block; text-decoration: none; color: var(--color-contact-light); height: 100%; transition: all 0.3s; }
         img     { max-width: 100%; }
         li      { list-style-type: none; }
-        section { min-height: calc(var(--cell-height-min) * 8); height: 100vh; max-height: calc(var(--cell-height-max) * 8);}
+        section { min-height: calc(var(--cell-height-min) * var(--cell-row-quantity)); height: 100vh; max-height: calc(var(--cell-height-max) * var(--cell-row-quantity));}
 
         /* Header */
         .header         { position:sticky; top:0; width:100% /* ensure full width for centering */;
                           min-height: var(--cell-height-min); height: calc(100vh / 8); max-height: var(--cell-height-max);
-                          display: grid; grid-template-columns: repeat(6, minmax(var(--cell-width-min), var(--cell-width-max))); grid-template-rows: auto;
+                          display: grid; grid-template-columns: repeat(var(--cell-column-quantity), minmax(var(--cell-width-min), var(--cell-width-max))); grid-template-rows: auto;
                           align-items: center; justify-content: center;}
         .header-title,
         .header-profile,
@@ -97,28 +99,47 @@
                                   z-index: 200; }
         #profile .header        { grid-template-areas: "t p p e d c"; }
         #profile .header a      { color: var(--color-profile-dark); }
+        #profile .header a:hover{ color: var(--color-profile-light); background-color: var(--color-profile-dark);}
         #profile .header-profile{ flex-direction: column; justify-content: center; align-items: flex-start; }
+        #profile .body          { display: grid; grid-template-columns: repeat(var(--cell-column-quantity), minmax(var(--cell-width-min), var(--cell-width-max)));
+                                  grid-template-areas: "ik ik iv iv iv .."
+                                                       "hk hk hv hv hv .."
+                                                       "ck ck cv cv cv cv"
+                                                       "k0 k1 v1 v1 v1 v1";
+                                  align-items: center; justify-content: center; }
+        #profile .body .icon-key     { grid-area: ik; }
+        #profile .body .icon-value   { grid-area: iv; }
+        #profile .body .handle-key   { grid-area: hk; }
+        #profile .body .handle-value { grid-area: hv; }
+        #profile .body .current-key     { grid-area: ck; }
+        #profile .body .current-value   { grid-area: cv; }
+        #profile .body .key-0   { grid-area: k0; }
+        #profile .body .key-1   { grid-area: k1; }
+        #profile .body .value-1 { grid-area: v1; }
 
         /* Engineer */
         #engineer                 { color: var(--color-engineer-dark); background-color: var(--color-engineer-light); 
                                     z-index: 300;}
         #engineer .header         { grid-template-areas: "t p e e d c";}
         #engineer .header a       { color: var(--color-engineer-dark); }
+        #engineer .header a:hover { color: var(--color-engineer-light); background-color: var(--color-engineer-dark);}
         #engineer .header-engineer{ flex-direction: column; justify-content: center; align-items: flex-start; }
 
         /* Design */
-        #design               { color: var(--color-design-dark); background-color: var(--color-design-light); 
-                                z-index: 400;}
-        #design .header       { grid-template-areas: "t p e d d c";}
-        #design .header a     { color: var(--color-design-dark); }
-        #design .header-design{ flex-direction: column; justify-content: center; align-items: flex-start; }
+        #design                 { color: var(--color-design-dark); background-color: var(--color-design-light); 
+                                  z-index: 400;}
+        #design .header         { grid-template-areas: "t p e d d c";}
+        #design .header a       { color: var(--color-design-dark); }
+        #design .header a:hover { color: var(--color-design-light); background-color: var(--color-design-dark);}
+        #design .header-design  { flex-direction: column; justify-content: center; align-items: flex-start; }
 
         /* Contact */
-        #contact                { color: var(--color-contact-dark); background-color: var(--color-contact-light); 
-                                 z-index: 500;}
-        #contact .header        { grid-template-areas: "t p e d c c";}
-        #contact .header a      { color: var(--color-contact-dark); }
-        #contact .header-contact{ flex-direction: column; justify-content: center; align-items: flex-start; }
+        #contact                 { color: var(--color-contact-dark); background-color: var(--color-contact-light); 
+                                  z-index: 500;}
+        #contact .header         { grid-template-areas: "t p e d c c";}
+        #contact .header a       { color: var(--color-contact-dark); }
+        #contact .header a:hover { color: var(--color-contact-light); background-color: var(--color-contact-dark);}
+        #contact .header-contact { flex-direction: column; justify-content: center; align-items: flex-start; }
      </style>
 </head>
 <body>
@@ -147,8 +168,17 @@
             <a class="header-design" href="#design">Design</a>
             <a class="header-contact" href="#contact">Contact</a>
         </div>
-        <div class="body">
-        </div>
+        <ul class="body">
+            <li class="icon-key">プロフィール画像</li>
+            <li class="icon-value"></li>
+            <li class="handle-key">ハンドルネーム</li>
+            <li class="handle-value">ミルクせんせー</li>
+            <li class="current-key">現在</li>
+            <li class="current-value">デザイン学校学生</li>
+            <li class="key-0">経歴</li>
+            <li class="key-1">2025年</li>
+            <li class="value-1">会社倒産後、療養を経てデザインの学校に入学</li>
+        </ul>
     </section>
     <section id="engineer">
         <div class="header">
